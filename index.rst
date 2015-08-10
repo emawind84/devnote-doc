@@ -1,15 +1,79 @@
-.. Disco Sphinx Test! documentation master file, created by
+.. SangAh Development Note documentation master file, created by
    sphinx-quickstart on Mon Aug 10 00:04:35 2015.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Disco Sphinx Test!'s documentation!
+SangAh Development Note
 ==============================================
 
+.. _learn git:
+
+.. seealso:: 
+    Learn about git
+    
+    - http://rogerdudler.github.io/git-guide/
+
+.. seealso:: 
+    Learn about reStructuredText Markup
+
+    - http://sphinx-doc.org/rest.html#explicit-markup
+    - http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html
+
+How to edit this documentation
+-------------------------------
+
+.. note::
+    
+    Start installing python version 2.7::
+    
+        Go here and download version 2.7 https://www.python.org/downloads/
+        
+    Open Windows Powershell as Administrator::
+    
+        Run >> powershell.exe
+    
+    Create a folder where you want::
+    
+        C:\> mkdir devnote
+    
+    Install the plugin virtualenv using pip::
+    
+        > C:\Python27\Scripts\pip.exe install -U virtualenv
+    
+    Go to the folder you created (*C:/devnote*)::
+    
+        > cd C:\devnote
+        PS C:\devnote>
+        
+    Disable windows signature policy for local stuff, just run::
+    
+        PS C:\devnote> Set-ExecutionPolicy RemoteSigned
+        
+    Create a virtual environment for python:: 
+    
+        PS C:\devnote> C:\Python27\Scripts\virtualenv.exe sphinx
+        
+    A new folder named *sphinx* will be created, then activate the new environment, run::
+    
+        PS C:\devnote> .\sphinx\Scripts\activate
+        
+    Now if everything work you will have a shell like this::
+    
+        (sphinx) PS C:\devnote>
+        
+    Download the source from git using this URL: https://github.com/emawind84/devnote-doc.git ( see :ref:`Learn about git <learn git>` )
+    and put it in a folder inside *devnote* and run::
+    
+        (sphinx) PS C:\devnote\doc> .\make.bat html
+        
+    The documentation will be built and a new folder *_build* will be created inside the current folder.
+    You can edit *rst* file and then build again, the documentation will be updated.
+
 Contents:
+---------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    restructured-text-example
    add-leading-zero-to-query-data

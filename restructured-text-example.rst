@@ -1,5 +1,5 @@
 .. highlightlang:: rest
-
+.. index:: REST
 .. _restructured-text-example:
 
 ============================
@@ -102,3 +102,19 @@ Paragraph
 Lorem ipsum [Ref]_ dolor sit amet.
 
 .. [Ref] Book or article reference, URL or whatever.
+
+
+Add some index!
+"""""""""""""""""
+
+::
+
+	.. index::
+	   single: execution; context
+	   module: __main__
+	   module: sys
+	   triple: module; search; path
+	   see: entry; other
+		   
+	This is a normal reST :index:`paragraph` that contains several
+	:index:`index entries <pair: index; entry>`.

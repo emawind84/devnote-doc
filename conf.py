@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Disco Sphinx Test! documentation build configuration file, created by
+# SangAh Development Note documentation build configuration file, created by
 # sphinx-quickstart on Mon Aug 10 00:04:35 2015.
 #
 # This file is execfile()d with the current directory set to its
@@ -46,7 +46,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Disco Sphinx Test!'
+project = u'SangAh Development Note'
 copyright = u'2015, Disco Emanuele'
 author = u'Disco Emanuele'
 
@@ -222,7 +222,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'DiscoSphinxTest.tex', u'Disco Sphinx Test! Documentation',
+  (master_doc, 'DiscoSphinxTest.tex', u'SangAh Development Note',
    u'Disco Emanuele', 'manual'),
 ]
 
@@ -252,7 +252,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'discosphinxtest', u'Disco Sphinx Test! Documentation',
+    (master_doc, 'discosphinxtest', u'SangAh Development Note',
      [author], 1)
 ]
 
@@ -266,7 +266,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'DiscoSphinxTest', u'Disco Sphinx Test! Documentation',
+  (master_doc, 'DiscoSphinxTest', u'SangAh Development Note',
    author, 'DiscoSphinxTest', 'One line description of project.',
    'Miscellaneous'),
 ]
