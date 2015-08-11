@@ -9,12 +9,14 @@ JQUERY Dialog
 
 [NEW PMIS FUNCTIONS]
 
-#. pmis.openDialog();
-#. pmis.closeDialog();
+.. js:function:: pmis.openDialog()
+.. js:function:: pmis.closeDialog()
+
+.. seealso:: functionsml.js pmis object
 
 Example:
 
-::
+.. code-block:: javascript
 
     //local content
     pmis.openDialog({
@@ -47,7 +49,7 @@ Example:
 
 -------------------------------------------------------------------
 
-::
+.. code-block:: html
     
     <style>
     // to remove the close button on the top bar
@@ -59,6 +61,8 @@ Example:
     <div id="modalDialog">
         <span>Document saved. Go to the document list?<br />Click [Yes] to continue or [No] to create another document.</span>
     </div>
+    
+.. code-block:: javascript
     
     function cmdOpenDialog(){
         $("#modalDialog").dialog("open");
@@ -81,6 +85,7 @@ Example:
             }
         }
     });    
-
-reference: http://jqueryui.com/dialog/
+    
+.. seealso::
+    reference: http://jqueryui.com/dialog/
 

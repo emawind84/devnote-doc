@@ -13,33 +13,38 @@ Parameters class has a getMap() method that change every parameters in String if
 
 To use Parameters class in an Action class simply extends BaseAction abstract class
 
-public class WorkflowAction extends BaseAction {
-
-    ...
+.. code-block:: java
     
-    public String executeWorkflow() throws Exception{
-        Map params = parameters.getMap();        
-        params.put("user_id", SessionUtil.getSession().getUser_no());
-        params.put("pjt_cd", SessionUtil.getSession().getPjt_cd());
+    public class WorkflowAction extends BaseAction {
+    
+        ...
         
-        coreDao.getView("core.sql.pmisUserInfo", params );
-        
-        for (int i=0; i < parameters.get("wf_user_ids").length; i++) {
-            ...
-        
+        public String executeWorkflow() throws Exception{
+            Map params = parameters.getMap();        
+            params.put("user_id", SessionUtil.getSession().getUser_no());
+            params.put("pjt_cd", SessionUtil.getSession().getPjt_cd());
+            
+            coreDao.getView("core.sql.pmisUserInfo", params );
+            
+            for (int i=0; i < parameters.get("wf_user_ids").length; i++) {
+                ...
+            
         
 In a service class is possible to inizialize a Parameters class in this way:
-        
-public String generateWorkflow(HttpServletRequest request) {
-    Parameters parameters = new Parameters(request);
-    ...
+
+.. code-block:: java
+    
+    public String generateWorkflow(HttpServletRequest request) {
+        Parameters parameters = new Parameters(request);
+        ...
     
     
-[IMPORTANT! the method getMap() will return a new Map 'without array with a single value', so in case is expected an array of length 1 is important to NOT USE the getMap() method;
-    instead use get(String key) method that will return an array even if the array has length 1 ]
+.. note:: [IMPORTANT! the method getMap() will return a new Map 'without array with a single value', 
+  so in case is expected an array of length 1 is important to NOT USE the getMap() method;
+  instead use get(String key) method that will return an array even if the array has length 1 ]
     
-    parameters.get("ids").length // ids will be an array even if the array has length 1
+.. note:: parameters.get("ids").length // ids will be an array even if the array has length 1
     
-    parameters.getMap().get("ids") // ids will be an array if the original array had length > 1 otherwise will be a String and ClassCastException will be thrown.
+.. note:: parameters.getMap().get("ids") // ids will be an array if the original array had length > 1 otherwise will be a String and ClassCastException will be thrown.
     
 

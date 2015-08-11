@@ -5,11 +5,26 @@ jqGrid search
 =============
 
 
+.. js:function:: jqGridSearch(obj, type, text)
 
 
-var obj = "JQ그리드 오브젝트" | String Grid Id
-var type = "검색 항목"        [ex : <select name="srchType"><option value='코드'>코드</option><option value='이름'>이름</option></select>]
-var text = "검색 텍스트"        [ex : <input type="text" name="srchText" value=""/>]
+.. js:data:: obj
 
-jqGridSearch(obj, type, text)
+   "JQ그리드 오브젝트" | String Grid Id
+   
+.. js:data:: type
+
+   "검색 항목"
+   
+   ::
+   
+      <select name="srchType"><option value='코드'>코드</option><option value='이름'>이름</option></select>
+   
+.. js:data:: text
+
+   "검색 텍스트"
+   
+   ::
+   
+       <input type="text" name="srchText" value=""/>
     

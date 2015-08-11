@@ -4,9 +4,12 @@
 jqGrid default options
 ======================
 
+Use cmTemplate to set default options for colModel
 
-example:
+Example:
 
-$("#detailList_${rid}").jqGrid({
-    ...
-    cmTemplate: { sortable: false }
+::
+    
+    $("#detailList_${rid}").jqGrid({
+        ...
+        cmTemplate: { sortable: false }

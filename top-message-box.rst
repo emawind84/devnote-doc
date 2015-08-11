@@ -5,15 +5,15 @@ Top Message Box
 ===============
 
 
-
-
-pmis.successMessage(message);
-pmis.infoMessage(message);
-pmis.errorMessage(message);
-pmis.warningMessage(message);
+.. js:function:: pmis.successMessage(message)
+.. js:function:: pmis.infoMessage(message)
+.. js:function:: pmis.errorMessage(message)
+.. js:function:: pmis.warningMessage(message)
 
 reference: 
 
-/ext/script/Functionsml.js, 
-/ext/style/maindesigns/STND_PMIS/main.css
+.. seealso::
+
+	| /ext/script/Functionsml.js, 
+	| /ext/style/maindesigns/STND_PMIS/main.css
 

@@ -7,11 +7,14 @@ Spring Security 2
 
 
 
-see: 
-    spring-security.xml
-    LoginAction.java
+.. seealso:: 
+    
+    | spring-security.xml
+    | LoginAction.java
     
 classes, interfaces:
+
+::
      
      [I] org.springframework.security.Authentication
      [I] org.springframework.security.providers.AuthenticationProvider
@@ -44,7 +47,9 @@ classes, interfaces:
      
      
 example:
-    
+
+.. code-block: java
+ 
     // pre authenticated user ( credential check not required )
     Authentication auth = new PreAuthenticatedAuthenticationToken([userid], [password]);
     auth = preAuthAuthenticationProvider.authenticate(auth);
@@ -58,17 +63,19 @@ example:
     }
     
 reference:
-    http://docs.spring.io/spring-security/site/reference.html
-    http://docs.spring.io/spring-security/site/docs/2.0.7.RELEASE/reference/springsecurity.html
-    http://docs.spring.io/spring-security/site/docs/2.0.7.RELEASE/reference/authentication-common-auth-services.html#concurrent-sessions
-    http://docs.spring.io/spring-security/site/docs/3.0.x/reference/springsecurity.html ( recommended )
-    http://docs.spring.io/spring-security/site/docs/3.0.x/reference/core-services.html
-    http://docs.spring.io/spring-security/site/docs/3.0.x/reference/technical-overview.html
-    http://docs.spring.io/spring-security/site/docs/3.0.x/reference/security-filter-chain.html
-    http://docs.spring.io/spring-security/site/docs/3.0.x/apidocs/org/springframework/security/core/Authentication.html
-    http://docs.spring.io/spring-security/site/docs/3.0.x/apidocs/org/springframework/security/core/userdetails/UserDetails.html
-    http://docs.spring.io/spring-security/site/docs/3.0.x/apidocs/org/springframework/security/core/userdetails/UserDetailsService.html
-    
-    supplement: http://www.codeproject.com/Articles/253901/Getting-Started-Spring-Security
+
+.. seealso::
+
+    #. http://docs.spring.io/spring-security/site/reference.html
+    #. http://docs.spring.io/spring-security/site/docs/2.0.7.RELEASE/reference/springsecurity.html
+    #. http://docs.spring.io/spring-security/site/docs/2.0.7.RELEASE/reference/authentication-common-auth-services.html#concurrent-sessions
+    #. http://docs.spring.io/spring-security/site/docs/3.0.x/reference/springsecurity.html ( recommended )
+    #. http://docs.spring.io/spring-security/site/docs/3.0.x/reference/core-services.html
+    #. http://docs.spring.io/spring-security/site/docs/3.0.x/reference/technical-overview.html
+    #. http://docs.spring.io/spring-security/site/docs/3.0.x/reference/security-filter-chain.html
+    #. http://docs.spring.io/spring-security/site/docs/3.0.x/apidocs/org/springframework/security/core/Authentication.html
+    #. http://docs.spring.io/spring-security/site/docs/3.0.x/apidocs/org/springframework/security/core/userdetails/UserDetails.html
+    #. http://docs.spring.io/spring-security/site/docs/3.0.x/apidocs/org/springframework/security/core/userdetails/UserDetailsService.html
+    #. supplement: http://www.codeproject.com/Articles/253901/Getting-Started-Spring-Security
     
 

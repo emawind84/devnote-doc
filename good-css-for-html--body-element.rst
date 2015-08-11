@@ -12,19 +12,20 @@ http://phrogz.net/css/htmlvsbody.html
 
 CSS:
 
-
-html{
-	overflow: auto;
-	height: 100%;
-	min-height: 100%;
-}
-
-body{
-	position: relative;
-}
-
-html,body {
-	width: 100%;
-	margin: 0;
-	/* overflow: auto; the main page doesn't show the vertical scroll if quick right is on */
-}
+.. code-block:: css
+	
+	html{
+		overflow: auto;
+		height: 100%;
+		min-height: 100%;
+	}
+	
+	body{
+		position: relative;
+	}
+	
+	html,body {
+		width: 100%;
+		margin: 0;
+		/* overflow: auto; the main page doesn't show the vertical scroll if quick right is on */
+	}

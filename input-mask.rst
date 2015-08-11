@@ -6,12 +6,14 @@ Input Mask
 
 
 
-
-<input ... data-keylvl="H" data-masktype="date" data-label="input_name_field" maxlength="10" >
+::
+    
+    <input ... data-keylvl="H" data-masktype="date" data-label="input_name_field" maxlength="10" >
 
 data-dsize: the number of decimal places to format the number to ( in case 'numeric' or 'number' masktype is used )
 
-data-masktype:
+data-masktype::
+
     date
     shortdate -> 2013-04
     mediumdate -> 2013-04-01
@@ -25,26 +27,34 @@ data-masktype:
     jumin
     string
 
-data-keylvl:
+data-keylvl::
+
     R -> READONLY
     H -> REQUIRED
     M -> if the value is empty a popup will ask if we want to save the empty field ( not tested! )
 
-class available: 
+class available::
+ 
     input_data3, input_text -> NORMAL textbox
     input_data2, input_required -> REQUIRED textbox
     input_data1, input_readonly -> READONLY textbox
     
-    
-<input ... data-keylvl="R" ... >  == <input ... class="input_readonly" readonly="readonly" ... >
-<input ... data-keylvl="H" ... >  == <input ... class="input_required" ... >
 
+::
+    
+    <input ... data-keylvl="R" ... >  == <input ... class="input_readonly" readonly="readonly" ... >
+    <input ... data-keylvl="H" ... >  == <input ... class="input_required" ... >
+
+
+.. note:: [NOTE maxlength property is required during validation if data-masktype="STRING" is used]
 
 Input alignment automatic method:
 
+.. warning:: DEPRECATED do not use it
+
+::
+
     <input ... class="input-resize" data-resize="45" >
     
-    the input will be resized as follow: parent.width - 45 
-    
-[NOTE maxlength property is required during validation if data-masktype="STRING" is used]
+the input will be resized as follow: parent.width - 45 
 

@@ -10,12 +10,15 @@ ModalWindow -> jQuery Dialog
 docView.jsp:
 -------------------------------------------------------------------------------------------------------------
 
-<body>
-    ...
-    <div style="display: none;" id="serviceDialog"><iframe style="height: 100%; width: 100%;"></iframe></div>
-    ...
+.. code-block:: html
+    
+    <body>
+        ...
+        <div style="display: none;" id="serviceDialog"><iframe style="height: 100%; width: 100%;"></iframe></div>
+        ...
 
-<script>
+.. code-block:: javascript
+
     function cmdFindWorkObs(){
         $("#serviceDialog iframe").get(0).src = commonPopDialogUrl("/Core/CoreList.action", { ... });
         $("#serviceDialog").dialog( "option", { "height": 650, "width": 650 } );
@@ -49,17 +52,19 @@ docView.jsp:
 dialog jsp:
 ------------------------------------------------------------------
 
-function cmdClose(){topic.publish('dialog/close');}
+.. code-block:: javascript
+    
+    function cmdClose(){topic.publish('dialog/close');}
+    
+    function cmdSelect() {
+        ...
+        topic.publish("fbs/selected", {
+            doc_cd: ret.doc_cd,
+            doc_nm: ret.doc_clss_name
+        })
+        cmdClose();
+    }
 
-function cmdSelect() {
-    ...
-    topic.publish("fbs/selected", {
-        doc_cd: ret.doc_cd,
-        doc_nm: ret.doc_clss_name
-    })
-    cmdClose();
-}
-
-[NOTE function commonPopDialogUrl in functionsml.js]
+.. seealso:: commonPopDialogUrl in functionsml.js
 
 
