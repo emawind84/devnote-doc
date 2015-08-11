@@ -24,9 +24,7 @@ How to edit this documentation
 
 .. note::
     
-    Start installing python version 2.7::
-    
-        Go here and download version 2.7 https://www.python.org/downloads/
+    Start installing python version 2.7 from here https://www.python.org/downloads/
         
     Open Windows Powershell as Administrator::
     
@@ -53,7 +51,8 @@ How to edit this documentation
     
         PS C:\devnote> C:\Python27\Scripts\virtualenv.exe sphinx
         
-    A new folder named *sphinx* will be created, then activate the new environment, run::
+    A new folder named *sphinx* will be created, 
+    then activate the new environment with the following command::
     
         PS C:\devnote> .\sphinx\Scripts\activate
         
@@ -61,13 +60,20 @@ How to edit this documentation
     
         (sphinx) PS C:\devnote>
         
-    Download the source from git using this URL: https://github.com/emawind84/devnote-doc.git ( see :ref:`Learn about git <learn git>` )
+    Using Subversion or Git ( :ref:`Learn about git <learn git>` ) download the source from 
+    svn using this URL: https://github.com/emawind84/devnote-doc.git
     and put it in a folder inside *devnote* and run::
     
         (sphinx) PS C:\devnote\doc> .\make.bat html
         
     The documentation will be built and a new folder *_build* will be created inside the current folder.
     You can edit *rst* file and then build again, the documentation will be updated.
+    
+    After the powershell is closed the virtual environment will be lost, 
+    the next time you open the powershell, if you want to build the doc, make sure you run the following command inside *devnote*::
+    
+        PS C:\devnote> .\sphinx\Scripts\activate
+        (sphinx) PS C:\devnote\doc> .\make.bat html
 
 Contents:
 ---------
