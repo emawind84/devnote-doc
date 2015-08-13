@@ -43,26 +43,32 @@ How to edit this documentation
         > cd C:\devnote
         PS C:\devnote>
         
-    Disable windows signature policy for local stuff, just run::
-    
-        PS C:\devnote> Set-ExecutionPolicy RemoteSigned
-        
     Create a virtual environment for python:: 
     
         PS C:\devnote> C:\Python27\Scripts\virtualenv.exe sphinx
+    
+    A new folder named *sphinx* is created and will contains an isolated working Python environments ready to use.
+    See `Virtualenv <https://virtualenv.pypa.io/en/latest/>`_ for more info.
         
-    A new folder named *sphinx* will be created, 
-    then activate the new environment with the following command::
+    Disable Windows signature policy in order to run the next command or you might get an exception::
+    
+        PS C:\devnote> Set-ExecutionPolicy RemoteSigned
+     
+    Then activate the new environment with the following command::
     
         PS C:\devnote> .\sphinx\Scripts\activate
         
-    Now if everything work you will have a shell like this::
+    Install `Sphinx`_ with pip command:
+    
+        PS C:\devnote> pip.exe install -U Sphinx        
+        
+    Now if everything is good you will have a shell like this::
     
         (sphinx) PS C:\devnote>
         
     Using Subversion or Git ( :ref:`Learn about git <learn git>` ) download the source from 
     svn using this URL: https://github.com/emawind84/devnote-doc.git
-    and put it in a folder inside *devnote* and run::
+    and put it in a folder inside *devnote* and from your folder run::
     
         (sphinx) PS C:\devnote\doc> .\make.bat html
         
@@ -74,6 +80,8 @@ How to edit this documentation
     
         PS C:\devnote> .\sphinx\Scripts\activate
         (sphinx) PS C:\devnote\doc> .\make.bat html
+
+.. seealso:: `[Python] 스핑크스(sphinx)를 이용한 파이썬 API 문서화 <http://egloos.zum.com/mcchae/v/11080328>`_
 
 Contents:
 ---------
@@ -181,3 +189,4 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
+.. _Sphinx: http://sphinx-doc.org/

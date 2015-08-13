@@ -12,7 +12,22 @@ Example for reStructuredText
 
 Take a look at the rest specification at this `link <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html>`_. ::
 
-	`link label <http://example.com/>`_
+	To make a link you can use the embedded URI method:
+	
+		`link label <http://example.com/>`_
+		
+	or the recommended hyperlink target method:
+	
+		`link`_
+		
+		.. _link: http://example.com
+
+
+This one too is a `link <http://example.com>`__ but is an `Anonymous Hyperlink`__.
+
+.. __: http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#anonymous-hyperlinks
+
+--------------------
 
 .. _thisis-a-subsection:
 
@@ -24,14 +39,11 @@ We can reference this page with this link :ref:`restructured-text-example` every
 
 	:ref:`restructured-text-example`
 
+--------------------
 
 **Java String Object will remove the leading zero if a number is returned without formatting**
 
-This is a paragraph that contains `a link`_.
-
-.. _a link: http://example.com
-
-This one too is a `link <http://example.com>`_.
+--------------------
 
 This is a code sample ``test``.
  
@@ -44,12 +56,21 @@ reference::
 	http://docs.oracle.com/cd/B19306_01/server.102/b14200/sql_elements004.htm
 	http://www.techonthenet.com/oracle/functions/rtrim.php
 
+--------------------
+
+We can put images too!
+
+.. image:: images/example.gif
 
 .. _sample-code:
 
 ##############
 This is a Part
 ##############
+
+This is a reference to a previous section `thisis-a-subsection`_.
+
+---------------
 
 This is an html code example:
 
