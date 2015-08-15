@@ -48,7 +48,7 @@ classes, interfaces:
      
 example:
 
-.. code-block: java
+.. code-block:: java
  
     // pre authenticated user ( credential check not required )
     Authentication auth = new PreAuthenticatedAuthenticationToken([userid], [password]);

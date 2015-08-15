@@ -13,7 +13,7 @@ after the execution of prepare method this parameters will be set again, so exis
 Preparable comes in handy when some parameters are useless on jsp but they are required in action. 
 In this situation is possible to get these parameters directly from database without directly put these parameters on jsp as <input type="hidden" ...
 
-.. code-block: java
+.. code-block:: java
     
     @Preparable
     public class className {

@@ -11,7 +11,7 @@ SessionInterceptor
 .. note:: If NoAuth annotation is used on class definition, every methods will not have session check.
 .. note:: If NoAuth annotation is used on method definition the annotated method will not have session check. 
 
-.. code-block: java
+.. code-block:: java
 
     @NoAuth
     public class NoSessionCoreAction extends CoreAction {
@@ -22,7 +22,7 @@ SessionInterceptor
 .. important:: 
     IMPORTANT: Is not needed to put session check in every action method implementation; the check will be done by SessionInterceptor if required.
     
-.. code-block: java
+.. code-block:: java
     
     public String methodName(){ 
         if (!SessionUtil.setValidate()) return ActionSupport.NONE; // NOT REQUIRED
