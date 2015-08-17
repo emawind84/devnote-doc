@@ -7,5 +7,5 @@ TemporaryFileService
 
 
 
-Utility class for manage temporary files 
+Utility class for managing temporary files 
 

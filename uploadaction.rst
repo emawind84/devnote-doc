@@ -12,28 +12,32 @@ Utility Action for uploading file
 jsp:
 -----------------------------------------------------------------------------------
 
-<form method="post" enctype="multipart/form-data">
-    ...
-    <input type="file" name="upload" class="input_text" style="width: 380px">
-
+.. code-block:: jsp
+    
+    <form method="post" enctype="multipart/form-data">
+        ...
+        <input type="file" name="upload" class="input_text" style="width: 380px">
+    
 
 
 java:
 -----------------------------------------------------------------------------------
 
-public abstract class UploadAction extends ActionSupport {
-
-    @Resource protected TemporaryFileService temporaryFileService;
-    protected File upload;
-    protected String uploadContentType;
-    protected String uploadFileName;
-    ...
+.. code-block:: java
     
-public class DesignEdsAction extends UploadAction ...
-
-    ...
-
-    public String importResult() throws Exception {
-        list = designEdsDao.importEds(upload);
-        return SUCCESS;
-    }
+    public abstract class UploadAction extends ActionSupport {
+    
+        @Resource protected TemporaryFileService temporaryFileService;
+        protected File upload;
+        protected String uploadContentType;
+        protected String uploadFileName;
+        ...
+        
+    public class DesignEdsAction extends UploadAction ...
+    
+        ...
+    
+        public String importResult() throws Exception {
+            list = designEdsDao.importEds(upload);
+            return SUCCESS;
+        }

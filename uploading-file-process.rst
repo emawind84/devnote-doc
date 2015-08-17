@@ -14,21 +14,21 @@ uploading file process
     }
     
     function cmdSave() {
-        $("body").append('<div class="pmis-proc-loading" ></div>');
+        cmdDoingView(true);
         prepareUpload().done(function(){
             $.ajax({
                 ...
             }).always(function(){
-                $('.pmis-proc-loading').remove();
+                cmdDoingView(false);
             });
         });
         ...
 
-.. note::
+.. code-block:: javascript
 
-    | [NOTE $("body").append('<div class="pmis-proc-loading" ></div>') // loading logo on]
-    | [NOTE prepareUpload() // file upload ajax calls ( prepareUpload return a jQuery Promise object )]
-    | [NOTE $('.pmis-proc-loading').remove(); // loading logo off]
+    cmdDoingView(true);
+    prepareUpload() // file upload ajax calls ( prepareUpload return a jQuery Promise object )]
+    cmdDoingView(false);
 
 Please take a look at::
 
