@@ -62,7 +62,7 @@ CKeditor How To
     - http://docs.ckeditor.com/#!/api/CKEDITOR.editor-event-dataReady
     - http://docs.ckeditor.com/#!/api/CKEDITOR-event-currentInstance
 
-.. highlightlang:: javascript
+.. highlight:: javascript
 
 Basic Creation Function
 -----------------------------------
