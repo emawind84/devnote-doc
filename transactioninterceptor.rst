@@ -38,7 +38,7 @@ Note the difference between pmis Transactional and spring Transactional annotati
 
 .. important:: To make the rolling back procedure work correctly a RuntimeException have to be thrown!!!
 
-.. node::
+.. note::
     Using TransactionInterceptor, is not required to explicitly throw a RuntimeException inside an action method,
     every exception will be catched and a rollback will be executed anyway.
 
