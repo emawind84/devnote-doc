@@ -1,3 +1,5 @@
+.. highlight:: properties
+
 .. _system-properties:
 
 System Properties
@@ -7,7 +9,7 @@ System Properties
 Base/System Properties
 -----------------------------------------------------------------
 
-.. code-block:: properties
+::
 
 	# Define Common Settings
 	system.domain=URL
@@ -34,6 +36,12 @@ Base/System Properties
 	system.pjt_cd=SANGAH
 	system.loginpage.home=
 	
+
+Password Validation Properties
+--------------------------------
+
+::
+
 	# ADMISSIBLE_CHECK
 	# 1: lowercase letters
 	# 2: capital letters
@@ -41,6 +49,11 @@ Base/System Properties
 	# 4: special characters
 	system.pwd.length=8
 	system.pwd.check=123,1234
+	
+Zip Encoding
+-----------------
+
+::
 
 	#@@ default language for zip file encoding
 	#   - euc-kr (Korean encoding)
@@ -55,7 +68,7 @@ Base/System Properties
 DB Connection Info Properties
 -----------------------------------------------------------------
 
-.. code-block:: properties
+::
 
 	db.DriverClassName=core.log.jdbc.driver.OracleDriver
 	#db.DriverClassName=oracle.jdbc.driver.OracleDriver
@@ -71,11 +84,17 @@ DB Connection Info Properties
 	db.RemoveAbandonedTimeout=30
 	db.LogAbandoned=false
 
+Default Locale
+--------------------
+
+::
+
+	default_locale=en_US
 
 Common Modules (appliables for each program modules)
 -----------------------------------------------------------------
 
-.. code-block:: properties
+::
 
 	common.path.underconst=/pmis/STND_PMIS/common/def/Unknown.jsp
 	common.path.style=/ext/style
@@ -83,7 +102,7 @@ Common Modules (appliables for each program modules)
 EDMS Module
 -----------------------------------------------------------------
 
-.. code-block:: properties
+::
 	
 	# Define Common Options
 	edms.PathLog=C:\\Users\\Disco\\workspace_egov\\log\\edms
@@ -96,7 +115,7 @@ EDMS Module
 Others
 -------
 
-.. code-block:: properties
+::
 
 	milestone.xml.root=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/web/data/xml/milestone
 	xml.root=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/web/Main/assets
@@ -105,7 +124,7 @@ Others
 Groupware Module
 -----------------------------------------------------------------
 
-.. code-block:: properties
+::
 	
 	# Define Paths
 	gw.PathWeb=
@@ -125,7 +144,7 @@ Groupware Module
 Gmail provider
 ----------------
 	
-.. code-block:: properties
+::
 
 	Gmail.getAuthId=
 	Gmail.getAuthPw=
@@ -133,7 +152,7 @@ Gmail provider
 ezpert Module
 -----------------------------------------------------------------
 
-.. code-block:: properties
+::
 	
 	ezpert.ip=
 	ezpert.port=
@@ -142,7 +161,7 @@ ezpert Module
 Pdf Converter
 ----------------
 
-.. code-block:: properties
+::
 	
 	# Define HTML PDF converter
 	coverter.htmltopdf=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/util/pdf/
@@ -151,19 +170,17 @@ Pdf Converter
 Thumbnails & Temporary Folders
 -------------------------------	
 	
-.. code-block:: properties
+::
 
 	# Thumb converter temp path
 	thumb.temp=C:/Users/Disco/workspace/temp
 	# Main temporary path
 	upload.temp=C:/Users/Disco/workspace/temp
-	
-	default_locale=en_US
 
 excel & eMail & SMS template
 -------------------------------
 	
-.. code-block:: properties
+::
 
 	template.home=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/web/data/template
 	email.template.home=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/web/data/template
@@ -172,14 +189,14 @@ excel & eMail & SMS template
 Edms server mirroring
 ------------------------
 
-.. code-block:: properties
+::
 
 	#mirror.server=SERVER3
 
 Auto login for development env.
 --------------------------------
 
-.. code-block:: properties	
+::
 
 	autologin.user_no=
 	autologin.password=
@@ -189,7 +206,7 @@ Auto login for development env.
 Terms of Use
 ----------------------	
 	
-.. code-block:: properties
+::
 
 	#@@ TERMS OF SERVICE PROPERTIES
 	tos.enabled=true
@@ -200,7 +217,7 @@ Terms of Use
 Document & Workflow
 ----------------------
 
-.. code-block:: properties
+::
 
 	#@@ Document ID generation service availables: documentIdGnrService (default), pmisDocumentIdGnrService
 	#doc.idgnr.service.name=documentIdGnrService
@@ -230,7 +247,7 @@ Document & Workflow
 Module Workflow/Transmittal Enable/Disable
 -------------------------------------------
 
-.. code-block:: properties
+::
 	
 	workflow.disabled=false
 	transmittal.disabled=false
@@ -238,7 +255,7 @@ Module Workflow/Transmittal Enable/Disable
 Aconex Dashboard
 -----------------
 
-.. code-block:: properties
+::
 	
 	#@@ Temporary authentication parameters for aconex dashboard
 	aconex.auth.username=
@@ -250,7 +267,7 @@ DEPRECATED PROPERTIES
 
 .. warning:: These properties will be removed soon or later...
 
-.. code-block:: properties
+::
 
 	#@@ Inside jsp replace these properties with RequestUtil.getWebRoot
 	#@@ ex: <%=RequestUtil.getWebRoot() %>/data/edms

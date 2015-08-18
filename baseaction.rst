@@ -1,3 +1,5 @@
+.. hightlight:: java
+
 .. _baseaction:
 
 ==========

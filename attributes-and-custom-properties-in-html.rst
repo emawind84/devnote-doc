@@ -6,13 +6,11 @@ Attributes and custom properties in HTML
 
 
 
-
-reference::
-
 .. seealso::
-    http://javascript.info/tutorial/attributes-and-custom-properties
-    http://api.jquery.com/prop/
-    http://api.jquery.com/attr/
+    
+    - http://javascript.info/tutorial/attributes-and-custom-properties
+    - http://api.jquery.com/prop/
+    - http://api.jquery.com/attr/
 
 In contrast with properties, attributes:
 

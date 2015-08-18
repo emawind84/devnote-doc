@@ -5,8 +5,8 @@ Checked versus unchecked exceptions
 ===================================
 
 
-.. seealso::
-	Checked versus unchecked exceptions
+.. seealso:: Checked versus unchecked exceptions
+
 	reference: http://www.javapractices.com/topic/TopicAction.do?Id=129
 
 Unchecked exceptions

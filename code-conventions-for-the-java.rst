@@ -1,11 +1,13 @@
 .. _code-conventions-for-the-java:
 
 =============================
-Code Conventions for the Java
+Code Conventions for Java
 =============================
 
+.. important:: http://www.oracle.com/technetwork/java/javase/documentation/codeconvtoc-136057.html
 
 
-reference: http://www.oracle.com/technetwork/java/javase/documentation/codeconvtoc-136057.html
+Naming Conventions 
+-----------------------
 
-Naming Conventions ( reference: http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-135099.html#367 )
+.. important:: http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-135099.html#367

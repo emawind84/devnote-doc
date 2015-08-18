@@ -1,4 +1,4 @@
-.. highlightlang:: rest
+.. highlight:: rest
 .. index:: REST
 .. _restructured-text-example:
 

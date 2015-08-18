@@ -58,7 +58,7 @@ How to edit this documentation
     
         PS C:\devnote> .\sphinx\Scripts\activate
         
-    Install `Sphinx`_ with pip command:
+    Install `Sphinx`_ with pip command::
     
         PS C:\devnote> pip.exe install -U Sphinx        
         
@@ -66,9 +66,8 @@ How to edit this documentation
     
         (sphinx) PS C:\devnote>
         
-    Using Subversion or Git ( :ref:`Learn about git <learn git>` ) download the source from 
-    svn using this URL: https://github.com/emawind84/devnote-doc.git
-    and put it in a folder inside *devnote* and from your folder run::
+    Using Subversion or Git ( :ref:`Learn about git <learn git>` ) copy the documentation from here 
+    https://github.com/emawind84/devnote-doc.git inside the folder you created and then from that folder type::
     
         (sphinx) PS C:\devnote\doc> .\make.bat html
         
