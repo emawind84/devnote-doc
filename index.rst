@@ -88,6 +88,8 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   doc-list-main-readme
+   db-backup-script
    ckeditor-how-to
    db-version-control-update-script
    restructured-text-example
@@ -154,7 +156,6 @@ Contents:
    load-select-options-using-ajax-and-coreaction
    main-page-header-content-example
    modalwindow---jquery-dialog
-   new-note
    ognl-variable-name-and-get-set-problem
    oracle-overall-result-hierarchical-query-template
    parameters-class

@@ -42,13 +42,22 @@ Password Validation Properties
 
 ::
 
+	system.pwd.length=8
+
 	# ADMISSIBLE_CHECK
 	# 1: lowercase letters
 	# 2: capital letters
 	# 3: numbers
 	# 4: special characters
-	system.pwd.length=8
-	system.pwd.check=123,1234
+	
+	# lowercase or capital + number required
+	system.pwd.check=13,23,134,234,123,1234
+	
+	# lowercase + upper + number required
+	#system.pwd.check=123,1234
+	
+	# lowercase or capital required
+	#system.pwd.check=12,13,123,1234,124,134,23,234
 	
 Zip Encoding
 -----------------
@@ -191,7 +200,7 @@ Edms server mirroring
 
 ::
 
-	#mirror.server=SERVER3
+	mirror.server=SERVER3
 
 Auto login for development env.
 --------------------------------
@@ -220,32 +229,37 @@ Document & Workflow
 ::
 
 	#@@ Document ID generation service availables: documentIdGnrService (default), pmisDocumentIdGnrService
-	#doc.idgnr.service.name=documentIdGnrService
+	doc.idgnr.service.name=documentIdGnrService
 	
 	#@@ Default ID generation service format token available: ${ENTPRS} ${FBS} ${YEAR} ${PJT_CD}
-	#doc.idgnr.format=${ENTPRS}-${FBS}-${YEAR}-
-	#doc.idgnr.required=true
+	doc.idgnr.format=${ENTPRS}-${FBS}-${YEAR}-
+	doc.idgnr.required=true
 	
-	#@@ Document eMail Notification
+	#@@ View by Organization or Private
+	#doc.authorization.mode=ORG|PRIVATE
+	doc.authorization.mode=ORG
+	
+	#@@ Drawings View by Organization or All
+	#register.authorization.mode=ALL|ORG
+	register.authorization.mode=ORG
+	
+Document Notification Template
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+	#@@ Document eMail Notification Template
 	doc.noti.email.received=noti_doc_recv.html
 	doc.noti.email.waitapprove=noti_doc_wait_app.html
 	doc.noti.email.trn.waitreview=noti_trn_wait_review.html
 	
-	#@@ Document SMS Notification
+	#@@ Document SMS Notification Template
 	doc.noti.sms.received=sms_noti_doc_recv.txt
 	doc.noti.sms.waitapprove=sms_noti_doc_wait_app.txt
 	doc.noti.sms.trn.waitreview=sms_noti_trn_wait_rev.txt
-	
-	#@@ Documents/Letters/Transmittals
-	#doc.authorization.type=ORG|PRIVATE
-	doc.authorization.mode=ORG
-	
-	#@@ Drawings
-	#register.authorization.type=ALL|ORG
-	register.authorization.mode=ORG
 
 Module Workflow/Transmittal Enable/Disable
--------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 	
