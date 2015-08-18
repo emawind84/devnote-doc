@@ -89,6 +89,8 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   ckeditor-how-to
+   db-version-control-update-script
    restructured-text-example
    add-leading-zero-to-query-data
    arguments-validation-java-class
