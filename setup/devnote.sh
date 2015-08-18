@@ -44,7 +44,9 @@ else
 	echo "Package manager not supported!"
 fi
 
-cd $SCRIPT_BASE_PATH
+echo "Doc folder: $DOC_FOLDER"
+echo "Python env folder: $PY_ENV_FOLDER"
+echo "Package manager: $PKG_MANAGER"
 
 create (){
 
