@@ -104,3 +104,15 @@ DocListMain_draft.jsp
 	
 DocListMain_manager.jsp
 	1. tab: custom (type 따라)
+	
+	
+Document Type ( FBS Setting )
+--------------------------------
+
+Select the fbs from the list
+
+.. image:: _images/doc-list-main_1.png
+
+Choose the type of document associated with this fbs
+
+.. image:: _images/doc-list-main_2.png

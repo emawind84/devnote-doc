@@ -60,7 +60,7 @@ reference::
 
 We can put images too!
 
-.. image:: _static/example.gif
+.. image:: _images/example.gif
 
 .. _sample-code:
 
