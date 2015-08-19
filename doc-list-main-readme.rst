@@ -109,6 +109,10 @@ DocListMain_manager.jsp
 Document Type ( FBS Setting )
 --------------------------------
 
+.. important:: It's important to choose the correct document type associated to the fbs.
+	If the user change the document type (FBS), the document change 
+	in accordance with the fbs type choosen. 
+
 Select the fbs from the list
 
 .. image:: _images/doc-list-main_1.png

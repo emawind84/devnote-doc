@@ -130,22 +130,22 @@ build (){
 }
 
 case "$1" in
-        create|install)
+	create|install)
 		create
-                ;;
-
-        build|update)
+		;;
+	
+	build|update)
 		build
 		;;
-
-        pkgmng)
-                $PKG_MANAGER -V
-                ;;
-
+	
+	pkgmng)
+		$PKG_MANAGER -V
+		;;
+	
 	*)
-                echo "Usage: $NAME {create|install|build|update}" >&2
-                exit 1
-                ;;
+		echo "Usage: $NAME {create|install|build|update}" >&2
+		exit 1
+		;;
 
 esac
 
