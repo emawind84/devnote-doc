@@ -113,10 +113,12 @@ Document Type ( FBS Setting )
 	If the user change the document type (FBS), the document change 
 	in accordance with the fbs type choosen. 
 
-Select the fbs from the list
+Select the fbs to modify from the list.
 
 .. image:: _images/doc-list-main_1.png
 
-Choose the type of document associated with this fbs
+---------------------
+
+Then choose the type of document associated with this fbs.
 
 .. image:: _images/doc-list-main_2.png

@@ -1,4 +1,4 @@
-.. hightlight:: java
+.. highlight:: java
 
 .. _baseaction:
 

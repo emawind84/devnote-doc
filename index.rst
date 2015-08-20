@@ -162,7 +162,6 @@ Contents:
    pmis-z-index-settings
    pmis.trigger-(-ex-dojo-topic-)
    preparableinterceptor
-   project-main-folder-creation
    sessioninterceptor
    spring-security-2
    ssl-tomcat-configuration
