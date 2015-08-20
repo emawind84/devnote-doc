@@ -1,5 +1,6 @@
 .. highlight:: rest
 .. index:: REST
+.. sectionauthor:: Emanuele Disco <emanuele.disco@gmail.com>
 .. _restructured-text-example:
 
 ============================

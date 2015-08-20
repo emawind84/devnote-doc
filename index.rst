@@ -88,6 +88,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   oracle-tablespace-schema-howto
    doc-list-main-readme
    db-backup-script
    ckeditor-how-to

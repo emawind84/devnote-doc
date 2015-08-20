@@ -1,3 +1,4 @@
+.. sectionauthor:: Emanuele Disco <emanuele.disco@gmail.com>
 .. _doc-list-main-readme:
 
 =================================== 
