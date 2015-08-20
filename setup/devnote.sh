@@ -48,6 +48,9 @@ echo "Doc folder: $DOC_FOLDER"
 echo "Python env folder: $PY_ENV_FOLDER"
 echo "Package manager: $PKG_MANAGER"
 
+cd $SCRIPT_BASE_PATH
+echo "Current folder: $(pwd)"
+
 create (){
 
 	if ! command -v pip >/dev/null 2>&1; then
