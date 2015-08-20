@@ -1,9 +1,9 @@
-.. SangAh Development Note documentation master file, created by
+.. Disco Development Note documentation master file, created by
    sphinx-quickstart on Mon Aug 10 00:04:35 2015.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-SangAh Development Note
+Disco Development Note
 ==============================================
 
 .. _learn git:
@@ -18,69 +18,8 @@ SangAh Development Note
 
     - http://sphinx-doc.org/rest.html#explicit-markup
     - http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html
-
-How to edit this documentation
--------------------------------
-
-.. note::
     
-    Start installing python version 2.7 from here https://www.python.org/downloads/
-        
-    Open Windows Powershell as Administrator::
     
-        Run >> powershell.exe
-    
-    Create a folder where you want::
-    
-        C:\> mkdir devnote
-    
-    Install the plugin virtualenv using pip::
-    
-        > C:\Python27\Scripts\pip.exe install -U virtualenv
-    
-    Go to the folder you created (*C:/devnote*)::
-    
-        > cd C:\devnote
-        PS C:\devnote>
-        
-    Create a virtual environment for python:: 
-    
-        PS C:\devnote> C:\Python27\Scripts\virtualenv.exe sphinx
-    
-    A new folder named *sphinx* is created and will contains an isolated working Python environments ready to use.
-    See `Virtualenv <https://virtualenv.pypa.io/en/latest/>`_ for more info.
-        
-    Disable Windows signature policy in order to run the next command or you might get an exception::
-    
-        PS C:\devnote> Set-ExecutionPolicy RemoteSigned
-     
-    Then activate the new environment with the following command::
-    
-        PS C:\devnote> .\sphinx\Scripts\activate
-        
-    Install `Sphinx`_ with pip command::
-    
-        PS C:\devnote> pip.exe install -U Sphinx        
-        
-    Now if everything is good you will have a shell like this::
-    
-        (sphinx) PS C:\devnote>
-        
-    Using Subversion or Git ( :ref:`Learn about git <learn git>` ) copy the documentation from here 
-    https://github.com/emawind84/devnote-doc.git inside the folder you created and then from that folder type::
-    
-        (sphinx) PS C:\devnote\doc> .\make.bat html
-        
-    The documentation will be built and a new folder *_build* will be created inside the current folder.
-    You can edit *rst* file and then build again, the documentation will be updated.
-    
-    After the powershell is closed the virtual environment will be lost, 
-    the next time you open the powershell, if you want to build the doc, make sure you run the following command inside *devnote*::
-    
-        PS C:\devnote> .\sphinx\Scripts\activate
-        (sphinx) PS C:\devnote\doc> .\make.bat html
-
-.. seealso:: `[Python] 스핑크스(sphinx)를 이용한 파이썬 API 문서화 <http://egloos.zum.com/mcchae/v/11080328>`_
 
 Contents:
 ---------
