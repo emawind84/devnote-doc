@@ -27,6 +27,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   learning-python
    oracle-tablespace-schema-howto
    doc-list-main-readme
    db-backup-script
