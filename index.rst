@@ -88,6 +88,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   pmis-file-manager
    oracle-tablespace-schema-howto
    doc-list-main-readme
    db-backup-script
@@ -183,6 +184,16 @@ Contents:
    media-types-official-list-(contenttype)
    system-properties
 
+Python Scripts:
+-----------------
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+   
+   python_scripts/*
+   
+   
 
 Indices and tables
 ==================
