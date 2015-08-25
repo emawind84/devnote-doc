@@ -41,17 +41,20 @@ This is the new file manager, no more iframe.
 Available Parameters
 ----------------------
 
-form
+.. describe:: form
+
 	It is the 'form id' to attach the input tag to, after files are uploaded to temporary folder.
 	
 	**Required** if upload is enabled or the input tags can't be generated.
 	
-accept_filter
+.. describe:: accept_filter
+
 	Define the file types that are visible in the file selection window.
 	
 	.. seealso:: `File Upload state (type=file) <http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#file-upload-state-%28type=file%29>`_
 	
-readonly
+.. describe:: readonly
+
 	As it says, set the file manager in read only mode.
 	
 file_seq
