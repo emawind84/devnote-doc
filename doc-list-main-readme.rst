@@ -8,39 +8,39 @@ DocListMain_*.jsp Parameters List
 Parameters definition
 -----------------------
 
-.. describe:: fbs_cd
+fbs_cd
 
 	선택된 FBS 트리item & 작성될 문서 
 
-.. describe:: form_cd1
+form_cd1
 
 	FBS ROOT트리
 	
-.. describe:: form_cd2
+form_cd2
 
 	자료등록(도면등록) FBS ROOT트리
 	
-.. describe:: form_cd3
+form_cd3
 
 	검토회시 FBS
 
-.. describe:: fbshide
+fbshide
 
 	fbs트리 안 나옴
 	
-.. describe:: doc_type
+doc_type
 
 	목록/작성된 문서구분
 	 
-.. describe:: treeview
+treeview
 
 	이력보기
 	
-.. describe:: srch_priv
+srch_priv
 
 	개인 문서만 나옴
 
-.. describe:: type
+type
 
 	목록보기 구분
 
@@ -96,27 +96,27 @@ Parameters definition
 Main JSP Tabs
 ----------------------
 
-.. describe:: DocListMain.jsp
+DocListMain.jsp
 
 	1. tab: 수신함
 	2. tab: 발신함
 	3. tab: 문서작성함
 	
-.. describe:: DocListMain_approval.jsp
+DocListMain_approval.jsp
 
 	1. tab: 수신함
 	2. tab: 발신함
 	
-.. describe:: DocListMain_cre_app.jsp
+DocListMain_cre_app.jsp
 
 	1. tab: 개인 작성 문서
 	2. tab: 개인 승인 발신문서
 	
-.. describe:: DocListMain_draft.jsp
+DocListMain_draft.jsp
 
 	1. tab: 개인 임시저장 문서
 	
-.. describe:: DocListMain_manager.jsp
+DocListMain_manager.jsp
 
 	1. tab: custom (type 따라)
 	
