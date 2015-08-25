@@ -187,9 +187,9 @@ Contents:
 Python Scripts:
 -----------------
 
-You can find these scripts inside the folder ``pmis/STND_PMIS/test/console/example``.
+.. note::
 
-If you want to execute them, you can use the *Jython Console* from the *devtool* menu.
+    .. include:: python-example-header.txt
 
 .. toctree::
    :maxdepth: 1

@@ -4,6 +4,9 @@
 Add organization authorization to every document inside the project set 
 ========================================================================
 
+.. note::
+	
+	.. include:: ../python-example-header.txt
 
 ``ex23.py``
 

@@ -9,39 +9,30 @@ Parameters definition
 -----------------------
 
 fbs_cd
-
 	선택된 FBS 트리item & 작성될 문서 
 
 form_cd1
-
 	FBS ROOT트리
 	
 form_cd2
-
 	자료등록(도면등록) FBS ROOT트리
 	
 form_cd3
-
 	검토회시 FBS
 
 fbshide
-
 	fbs트리 안 나옴
 	
 doc_type
-
 	목록/작성된 문서구분
 	 
 treeview
-
 	이력보기
 	
 srch_priv
-
 	개인 문서만 나옴
 
 type
-
 	목록보기 구분
 
 	ALL_ENTPRS
@@ -97,27 +88,22 @@ Main JSP Tabs
 ----------------------
 
 DocListMain.jsp
-
 	1. tab: 수신함
 	2. tab: 발신함
 	3. tab: 문서작성함
 	
 DocListMain_approval.jsp
-
 	1. tab: 수신함
 	2. tab: 발신함
 	
 DocListMain_cre_app.jsp
-
 	1. tab: 개인 작성 문서
 	2. tab: 개인 승인 발신문서
 	
 DocListMain_draft.jsp
-
 	1. tab: 개인 임시저장 문서
 	
 DocListMain_manager.jsp
-
 	1. tab: custom (type 따라)
 	
 	
