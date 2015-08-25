@@ -57,55 +57,69 @@ Available Parameters
 
 	As it says, set the file manager in read only mode.
 	
-file_seq
+.. describe:: file_seq
+
 	The file_seq that will be used to retrieve the files from ( and for uploading too ).
 	
 	**Required** if you want to initialize the file manager with files from the edms folder.
 	You don't need to pass file_seq if plan to make an only upload file manager. Still you need to know the file_seq
 	that will keep the new files to save the actual edms files.
 	
-id
+.. describe:: id
+
 	Set the id for the file manager, it can be used later to retrieve the DOM element with FileManager.instances['<id>'] 
 	to retrieve the file manager instance. The default value is the dom id or a filemanager<random>.
 	
-custom_query
+.. describe:: custom_query
+
 	If you want to use a custom query to retrieve files.
 	
-custom_params
+.. describe:: custom_params
 	If you need custom parameters to use with the custom_query.
 	
-input_prefix
+.. describe:: input_prefix
+
 	How the input tag have to be prefixed. Default to ``file_``.
 	
-filetype
+.. describe:: filetype
+
 	Limit the files that can be uploaded to the passed filetype. 
 	The available filetype are ``image``, ``excel``, ``word``, ``zip``.
 	
-single
+.. describe:: single
+
 	Limit the file manager to a single file (no more than one file can be uploaded).
 	
-html5upload
+.. describe:: html5upload
+
 	Used for testing the old html4. Toggle the html5 support on/off (multi file upload).
 	
-btnsave
+.. describe:: btnsave
+
 	Show a save button that on click will trigger the event ``filemng/save`` on the file manager DOM Element.
 	
-copyfromurl
+.. describe:: copyfromurl
+
 	Enable the file upload though an URL.
 	
-hide_header
+.. describe:: hide_header
+
 	Remove the grid header
 
-hide_webhard
+.. describe:: hide_webhard
+
 	Remove the webhard upload.
 
-hide_downall
+.. describe:: hide_downall
+
 	Remove the download button.
 
-disabledblclick
+.. describe:: disabledblclick
+
 	Disable the double click inside the grid.
 	
-show_reg_date
+.. describe:: show_reg_date
+
 	Show the file uploaded date.
 
 
@@ -119,32 +133,36 @@ Using FileManager.instances[<filemanagerid here>] the DOM element associated to 
 
 Inside the DOM element the following functions and objects can be used and read:
 
-grid
+.. describe:: grid
+
 	It is the grid DOM element inside the file manager.
 	
-settings
+.. describe:: settings
+
 	All the parameters associated to the current instance.
 	
-resize()
+.. describe:: resize()
+
 	Will resize the file manager to the parent DOM element size.
 	
-cmdDown()
+.. describe:: cmdDown()
+
 	Download one or more files inside the file manager (select the files first).
 	
+.. describe:: cmdWebhard()
 
-cmdWebhard()
 	File upload through Webhard page.
 	
-cmdUpload()
+.. describe:: cmdUpload()
+
 	Upload new files into the temporary folder (on the server...).
-	
-cmdThumUpload()
-	DEPRECATED. Upload new images with their thumbnails into the temporary folder.
-	
-getUploadCount()
+		
+.. describe:: getUploadCount()
+
 	Return the number of files that have to be uploaded ( in the temporary folder ) into the server.
 
-cmdHandleFile(obj)
+.. describe:: cmdHandleFile(obj)
+
 	If you use an external input file tag is possible to attach that input handler to the file manager handler.::
 	
 		$('input[name="file"]').change(function (obj){
@@ -152,22 +170,33 @@ cmdHandleFile(obj)
 			FileManager.instances['<managerid>'].cmdHandleFile(obj);
 		});
 		
-getFileCount()
+.. describe:: getFileCount()
+
 	Return the number of files inside the current file manager instance.
 	
-*getID()*
+.. describe:: *cmdThumUpload()*
+
+	DEPRECATED. Upload new images with their thumbnails into the temporary folder.
+
+	
+.. describe:: *getID()*
+
 	DEPRECATED. Return the id of the current file manager instance.
 	
-*getList()*
+.. describe:: *getList()*
+
 	DEPRECATED. Return the grid as DOM Element.
 	
-*getFileSeq()*
+.. describe:: *getFileSeq()*
+
 	DEPRECATED. Return the file seq linked with the file manager.
 
-*addUploadedFile()*
+.. describe:: *addUploadedFile()*
+
 	This is a private function and should not be used.
 	
-*initGrid()*
+.. describe:: *initGrid()*
+
 	This is a private function and should not be used.
 	
 	
@@ -189,29 +218,38 @@ You can use the global object FileManager for the same job::
 	});
 	
 
-filemng/downloaded
+.. describe:: filemng/downloaded
+
 	Event triggered on file download.
 	
-filemng/save
+.. describe:: filemng/save
+
 	Event triggered when the save button is clicked.
 
-filemng/ready
+.. describe:: filemng/ready
+
 	Event triggered when the file manager is ready to be used.
 
-filemng/added
+.. describe:: filemng/added
+
 	Event triggered after a file is added to the grid.
 
-filemng/change
+.. describe:: filemng/change
+
 	Event triggered every time the file manager changes his status.
 
-filemng/dblclick
+.. describe:: filemng/dblclick
+
 	Event triggered after a double click on a file.
 
-filemng/selected
+.. describe:: filemng/selected
+
 	Event triggered after a file on the list is selected.
 
-filemng/uploading
+.. describe:: filemng/uploading
+
 	Event triggered during the upload process.
 
-filemng/uploaded
+.. describe:: filemng/uploaded
+
 	Event triggered when the upload process is terminated.
