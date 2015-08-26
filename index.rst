@@ -27,6 +27,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   nginx-raspberry-install
    learning-python
    oracle-tablespace-schema-howto
    doc-list-main-readme
