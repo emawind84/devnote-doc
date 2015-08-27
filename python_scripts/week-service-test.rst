@@ -5,7 +5,13 @@ Week service test
 ==================
 
 
-``ex28.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex28.py``
 
 ::
 

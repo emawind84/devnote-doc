@@ -5,7 +5,13 @@ How to issue a single SQL execute
 ==================================
 
 
-``ex05.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex05.py``
 
 ::
 

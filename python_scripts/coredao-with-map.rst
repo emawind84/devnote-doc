@@ -5,7 +5,13 @@ CoreDao with Map
 =================
 
 
-``ex01.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex01.py``
 
 ::
 

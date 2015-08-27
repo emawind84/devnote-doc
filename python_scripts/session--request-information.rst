@@ -5,7 +5,13 @@ Session & request information
 ==============================
 
 
-``ex04.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex04.py``
 
 ::
 

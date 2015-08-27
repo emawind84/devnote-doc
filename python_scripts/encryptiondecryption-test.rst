@@ -5,7 +5,13 @@ Encryption/decryption test
 ===========================
 
 
-``ex27.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex27.py``
 
 ::
 

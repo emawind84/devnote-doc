@@ -5,7 +5,13 @@ Update drawing authorization given a document
 ==============================================
 
 
-``ex39.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex39.py``
 
 ::
 

@@ -5,7 +5,13 @@ Generate pdf for a given document & delete edms file
 =====================================================
 
 
-``ex10.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex10.py``
 
 ::
 

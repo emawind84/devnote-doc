@@ -5,7 +5,13 @@ Extract edms file by user
 ==========================
 
 
-``ex35.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex35.py``
 
 ::
 

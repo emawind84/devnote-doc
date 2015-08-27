@@ -5,7 +5,13 @@ Add recipient to document
 ==========================
 
 
-``ex30.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex30.py``
 
 ::
 

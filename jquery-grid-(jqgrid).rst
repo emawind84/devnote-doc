@@ -5,24 +5,22 @@ JQuery GRID (jqGrid)
 ====================
 
 
-example:
+.. note:: 
+    Take a look at document management inside the folder ``/pmis/STND_PMIS/doc2/`` to see some examples.
 
-see document management /ml/doc2/...
-
-[NOTE! Date format convention: http://php.net/manual/en/datetime.formats.date.php]
-
-reference: 
-
-#. http://www.trirand.com/jqgridwiki/doku.php?id=wiki:jqgriddocs
-#. http://www.trirand.com/jqgridwiki/doku.php?id=wiki:retrieving_data
-#. http://www.trirand.com/jqgridwiki/doku.php?id=wiki:treegrid
-#. http://www.trirand.com/jqgridwiki/doku.php?id=wiki:adjacency_model
-#. http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options
-#. http://www.trirand.com/jqgridwiki/doku.php?id=wiki:events
-#. http://www.trirand.com/jqgridwiki/doku.php?id=wiki:colmodel_options
-#. http://www.trirand.com/jqgridwiki/doku.php?id=wiki:methods
-#. http://www.trirand.com/jqgridwiki/doku.php?id=wiki:custom_formatter
-#. http://www.trirand.com/jqgridwiki/doku.php?id=wiki:predefined_formatter
+.. note:: Some links that might be useful
+    
+    - `Date format convention <http://php.net/manual/en/datetime.formats.date.php>`_
+    - http://www.trirand.com/jqgridwiki/doku.php?id=wiki:jqgriddocs
+    - http://www.trirand.com/jqgridwiki/doku.php?id=wiki:retrieving_data
+    - http://www.trirand.com/jqgridwiki/doku.php?id=wiki:treegrid
+    - http://www.trirand.com/jqgridwiki/doku.php?id=wiki:adjacency_model
+    - http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options
+    - http://www.trirand.com/jqgridwiki/doku.php?id=wiki:events
+    - http://www.trirand.com/jqgridwiki/doku.php?id=wiki:colmodel_options
+    - http://www.trirand.com/jqgridwiki/doku.php?id=wiki:methods
+    - http://www.trirand.com/jqgridwiki/doku.php?id=wiki:custom_formatter
+    - http://www.trirand.com/jqgridwiki/doku.php?id=wiki:predefined_formatter
 
 LOADING DATA PROCEDURE:
 ------------------------
@@ -39,7 +37,7 @@ DATA FROM JSP:
             ...
         </j:array>;
     
-    Normal grid:
+    //Normal grid:
             
     $("#listId").jqGrid({
         datatype: "local",
@@ -49,7 +47,7 @@ DATA FROM JSP:
         colModel: [ ... ]
         ...
             
-    Tree grid:
+    //Tree grid:
     
     $("#listId").jqGrid({
         datastr: mydata,
@@ -124,17 +122,19 @@ Add these options to the grid:
     	...
     ...
 		
-.. note:: [NOTE oneditfunc is a function called before the column is editable]
-
-.. note:: [NOTE aftersavefunc is a function called after the column is saved]
+.. note::
+    | ``oneditfunc`` is a function called before the column is editable.
+    | ``aftersavefunc`` is a function called after the column is saved.
 
 EDIT ROW (CELL MODE):
 ----------------------
 
 Add these parameters to the grid:
 
-- cellEdit : true
-- cellsubmit: 'clientArray'
+::
+
+    cellEdit : true
+    cellsubmit: 'clientArray'
 
     
 REMOVE ROW:
@@ -229,7 +229,7 @@ HIERARCHY SELECTION FOR TREE GRID:
     }
 
 
-Change grid's width dynamically with shrinkToFit
+Change grid's width dynamically with ``shrinkToFit``
 
 .. code-block:: javascript
   

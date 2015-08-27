@@ -5,7 +5,13 @@ Delete old pdf and generate pdf for a given document
 =====================================================
 
 
-``ex32.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex32.py``
 
 ::
 

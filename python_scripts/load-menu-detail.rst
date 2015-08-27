@@ -5,7 +5,13 @@ Load menu detail
 =================
 
 
-``ex09.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex09.py``
 
 ::
 

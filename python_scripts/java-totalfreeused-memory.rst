@@ -5,7 +5,13 @@ Java Total/Free/Used Memory
 ============================
 
 
-``ex19.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex19.py``
 
 ::
 

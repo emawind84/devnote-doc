@@ -5,7 +5,13 @@ Generate pdf for a given document
 ==================================
 
 
-``ex11.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex11.py``
 
 ::
 

@@ -5,7 +5,13 @@ Copy edms file from one fileseq to another
 ===========================================
 
 
-``ex38.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex38.py``
 
 ::
 

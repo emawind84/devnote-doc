@@ -5,7 +5,13 @@ Load webpage with URL
 ======================
 
 
-``ex24.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex24.py``
 
 ::
 

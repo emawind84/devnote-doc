@@ -5,7 +5,13 @@ Delete EDMS file with doc_cd
 =============================
 
 
-``ex12.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex12.py``
 
 ::
 

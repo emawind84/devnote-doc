@@ -5,7 +5,13 @@ Export all project users
 =========================
 
 
-``ex36.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex36.py``
 
 ::
 

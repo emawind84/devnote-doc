@@ -5,7 +5,13 @@ Print class information
 ========================
 
 
-``ex03.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex03.py``
 
 ::
 

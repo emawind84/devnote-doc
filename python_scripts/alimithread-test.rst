@@ -5,7 +5,13 @@ AlimiThread test
 =================
 
 
-``ex15.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex15.py``
 
 ::
 

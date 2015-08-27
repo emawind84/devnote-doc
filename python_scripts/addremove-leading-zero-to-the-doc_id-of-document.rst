@@ -5,7 +5,13 @@ Add/Remove leading zero to the doc_id of document
 ==================================================
 
 
-``ex37.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex37.py``
 
 ::
 

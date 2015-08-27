@@ -5,7 +5,13 @@ Update document ID
 ===================
 
 
-``ex31.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex31.py``
 
 ::
 

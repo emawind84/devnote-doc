@@ -5,7 +5,13 @@ MessageDigest
 ==============
 
 
-``ex20.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex20.py``
 
 ::
 

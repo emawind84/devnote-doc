@@ -5,7 +5,13 @@ Kill Inactive Sessions
 =======================
 
 
-``ex34.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex34.py``
 
 ::
 

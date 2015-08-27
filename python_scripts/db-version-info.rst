@@ -5,7 +5,13 @@ DB Version Info
 ================
 
 
-``ex22.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex22.py``
 
 ::
 

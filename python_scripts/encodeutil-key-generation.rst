@@ -5,7 +5,13 @@ EncodeUtil Key Generation
 ==========================
 
 
-``ex21.py``
+
+.. note::
+
+    .. include:: ../python-example-header.txt
+
+    
+filename => ``ex21.py``
 
 ::
 
