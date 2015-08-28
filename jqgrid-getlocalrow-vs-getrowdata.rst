@@ -16,4 +16,4 @@ jqGrid getLocalRow vs getRowData
 
 .. note:: If jqGrid use datatype *json* (ajax request with *url* and *postData*) and loadonce is true use :js:func:`getLocalRow` !
 
-.. note:: if jqGrid use datatype *local* use :js:func:`getLocalRow'
+.. note:: if jqGrid use datatype *local* use :js:func:`getLocalRow`

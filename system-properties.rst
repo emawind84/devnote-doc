@@ -36,6 +36,9 @@ Base/System Properties
 	system.pjt_cd=SANGAH
 	system.loginpage.home=
 	
+	# Define the folder that will be used to style the project select page (root: /ext/style) 
+	system.pjtselect.style.home=LG_DSN1
+	
 
 Password Validation Properties
 --------------------------------
