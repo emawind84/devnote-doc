@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://raspi.emawind.com/devnote/</loc>
+  <lastmod>2015-08-29T03:49:16+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/nginx-raspberry-install.html</loc>
+  <lastmod>2015-08-29T03:48:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/learning-python.html</loc>
+  <lastmod>2015-08-29T03:49:19+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/oracle-tablespace-schema-howto.html</loc>
+  <lastmod>2015-08-22T16:19:40+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/doc-list-main-readme.html</loc>
+  <lastmod>2015-08-22T16:19:15+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/db-backup-script.html</loc>
+  <lastmod>2015-08-22T16:19:13+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/ckeditor-how-to.html</loc>
+  <lastmod>2015-08-22T16:19:06+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/db-version-control-update-script.html</loc>
+  <lastmod>2015-08-22T16:19:13+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/restructured-text-example.html</loc>
+  <lastmod>2015-08-22T16:19:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/add-leading-zero-to-query-data.html</loc>
+  <lastmod>2015-08-22T16:19:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/arguments-validation-java-class.html</loc>
+  <lastmod>2015-08-22T16:19:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/attributes-and-custom-properties-in-html.html</loc>
+  <lastmod>2015-08-22T16:19:04+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/baseaction.html</loc>
+  <lastmod>2015-08-22T16:19:04+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/cascading-order-and-inheritance-in-css.html</loc>
+  <lastmod>2015-08-22T16:19:05+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/checkduple-action.html</loc>
+  <lastmod>2015-08-22T16:19:05+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/checked-versus-unchecked-exceptions.html</loc>
+  <lastmod>2015-08-22T16:19:06+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/code-conventions-for-the-java.html</loc>
+  <lastmod>2015-08-22T16:19:07+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/comm_attch_file-specification-doc-format.html</loc>
+  <lastmod>2015-08-22T16:19:07+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/commonservice-savecontenttofile.html</loc>
+  <lastmod>2015-08-22T16:19:08+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/compress-javascript-file-(-javascript-compressor-).html</loc>
+  <lastmod>2015-08-22T16:19:08+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/content-disposition-and-encodings.html</loc>
+  <lastmod>2015-08-22T16:19:08+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/copy-table-data-query.html</loc>
+  <lastmod>2015-08-22T16:19:09+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/coreaction---nosessioncoreaction.html</loc>
+  <lastmod>2015-08-22T16:19:10+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/cross-browser-javascript-fix.html</loc>
+  <lastmod>2015-08-22T16:19:10+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/css3-box-sizing.html</loc>
+  <lastmod>2015-08-22T16:19:11+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/daum-editor.html</loc>
+  <lastmod>2015-08-22T16:19:11+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/daum-editor-checkbox-radiobox-popup.html</loc>
+  <lastmod>2015-08-22T16:19:12+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/daum-editor-functions-and-events.html</loc>
+  <lastmod>2015-08-22T16:19:12+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/declaring-character-encodings-in-css.html</loc>
+  <lastmod>2015-08-22T16:19:14+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/declaring-variables-before-or-in-loop.html</loc>
+  <lastmod>2015-08-22T16:19:14+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/drop-table-constraints.html</loc>
+  <lastmod>2015-08-22T16:19:15+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/filecopyinterceptor.html</loc>
+  <lastmod>2015-08-22T16:19:15+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/flexgrid-remove-multiple-rows.html</loc>
+  <lastmod>2015-08-22T16:19:16+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/fluid-layout.html</loc>
+  <lastmod>2015-08-22T16:19:16+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/framework-configuration.html</loc>
+  <lastmod>2015-08-22T16:19:17+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/functions-call-bind-apply.html</loc>
+  <lastmod>2015-08-22T16:19:17+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/good-css-for-html--body-element.html</loc>
+  <lastmod>2015-08-22T16:19:18+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/grid-excel-export.html</loc>
+  <lastmod>2015-08-22T16:19:18+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/html-javascript-css-formatter.html</loc>
+  <lastmod>2015-08-22T16:19:19+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/html-compressor-online-tool.html</loc>
+  <lastmod>2015-08-22T16:19:19+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/html5-standard-specification-website.html</loc>
+  <lastmod>2015-08-22T16:19:19+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/i18ninterceptor.html</loc>
+  <lastmod>2015-08-22T16:19:20+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/ibatis-and-hashmap.html</loc>
+  <lastmod>2015-08-22T16:19:20+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/input-mask.html</loc>
+  <lastmod>2015-08-22T16:19:22+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/java-concurrency-(multi-threading)---tutorial.html</loc>
+  <lastmod>2015-08-22T16:19:22+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/java-regex-test-page.html</loc>
+  <lastmod>2015-08-22T16:19:22+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jqgrid-custom-formatter.html</loc>
+  <lastmod>2015-08-22T16:19:23+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jqgrid-custom-select-row.html</loc>
+  <lastmod>2015-08-22T16:19:24+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jqgrid-default-options.html</loc>
+  <lastmod>2015-08-22T16:19:24+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jqgrid-draggable-tree-(-change-row-position-).html</loc>
+  <lastmod>2015-08-22T16:19:24+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jqgrid-find-clicked-column-by-name.html</loc>
+  <lastmod>2015-08-22T16:19:25+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jqgrid-footer-row-(-total-row-).html</loc>
+  <lastmod>2015-08-22T16:19:25+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jqgrid-getlocalrow-vs-getrowdata.html</loc>
+  <lastmod>2015-08-22T16:19:26+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jqgrid-paging-example.html</loc>
+  <lastmod>2015-08-22T16:19:26+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jqgrid-save-editing-row-before-request.html</loc>
+  <lastmod>2015-08-22T16:19:26+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jqgrid-search.html</loc>
+  <lastmod>2015-08-22T16:19:27+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jqgrid-settings-object-content-example.html</loc>
+  <lastmod>2015-08-22T16:19:28+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jquery-ajax.html</loc>
+  <lastmod>2015-08-22T16:19:28+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jquery-calendar-(-datepicker-).html</loc>
+  <lastmod>2015-08-22T16:19:29+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jquery-dialog.html</loc>
+  <lastmod>2015-08-22T16:19:29+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jquery-dialog-as-qtip.html</loc>
+  <lastmod>2015-08-22T16:19:30+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jquery-dialog-reload-page-(-useful-for-paging-in-dialog-).html</loc>
+  <lastmod>2015-08-22T16:19:30+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jquery-grid-(jqgrid).html</loc>
+  <lastmod>2015-08-22T16:19:31+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jquery-plugin-how-to-create-a-plugin.html</loc>
+  <lastmod>2015-08-22T16:19:32+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jquery-tooltip-qtip2.html</loc>
+  <lastmod>2015-08-22T16:19:33+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/json-tags.html</loc>
+  <lastmod>2015-08-22T16:19:33+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jsoninterceptor.html</loc>
+  <lastmod>2015-08-22T16:19:34+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/jstl-javaserver-pages-standard-tag-library.html</loc>
+  <lastmod>2015-08-22T16:19:35+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/linux-rsync-merge-folder--symbolic-link.html</loc>
+  <lastmod>2015-08-22T16:19:37+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/load-select-options-using-ajax-and-coreaction.html</loc>
+  <lastmod>2015-08-22T16:19:37+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/main-page-header-content-example.html</loc>
+  <lastmod>2015-08-22T16:19:38+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/modalwindow---jquery-dialog.html</loc>
+  <lastmod>2015-08-22T16:19:38+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/ognl-variable-name-and-get-set-problem.html</loc>
+  <lastmod>2015-08-22T16:19:39+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/oracle-overall-result-hierarchical-query-template.html</loc>
+  <lastmod>2015-08-22T16:19:40+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/parameters-class.html</loc>
+  <lastmod>2015-08-22T16:19:41+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/pmis-z-index-settings.html</loc>
+  <lastmod>2015-08-22T16:19:42+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/pmis.trigger-(-ex-dojo-topic-).html</loc>
+  <lastmod>2015-08-22T16:19:43+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/preparableinterceptor.html</loc>
+  <lastmod>2015-08-22T16:19:43+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/sessioninterceptor.html</loc>
+  <lastmod>2015-08-22T16:19:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/spring-security-2.html</loc>
+  <lastmod>2015-08-22T16:19:45+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/ssl-tomcat-configuration.html</loc>
+  <lastmod>2015-08-22T16:19:46+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/strict-mode-and-immediately-invoked-function-expression.html</loc>
+  <lastmod>2015-08-22T16:19:46+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/tabs-sangah-widget.html</loc>
+  <lastmod>2015-08-22T16:19:48+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/temporaryfileaction.html</loc>
+  <lastmod>2015-08-22T16:19:48+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/temporaryfileservice.html</loc>
+  <lastmod>2015-08-22T16:19:49+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/thread-management.html</loc>
+  <lastmod>2015-08-22T16:19:49+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/top-message-box.html</loc>
+  <lastmod>2015-08-22T16:19:50+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/transactioninterceptor.html</loc>
+  <lastmod>2015-08-22T16:19:50+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/unwrapexceptionmappinginterceptor.html</loc>
+  <lastmod>2015-08-22T16:19:51+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/uploadaction.html</loc>
+  <lastmod>2015-08-22T16:19:51+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/uploading-file-process.html</loc>
+  <lastmod>2015-08-22T16:19:52+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/useful-javascript-functions.html</loc>
+  <lastmod>2015-08-22T16:19:52+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/user-info.html</loc>
+  <lastmod>2015-08-22T16:19:53+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/wrapper-for-main-page.html</loc>
+  <lastmod>2015-08-22T16:19:53+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/xmlinterceptor-(-how-to-call-another-projects-action-).html</loc>
+  <lastmod>2015-08-22T16:19:53+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/media-types-official-list-(contenttype).html</loc>
+  <lastmod>2015-08-22T16:19:38+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/system-properties.html</loc>
+  <lastmod>2015-08-22T16:19:47+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/genindex.html</loc>
+  <lastmod>2015-08-29T03:49:19+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/search.html</loc>
+  <lastmod>2015-08-29T03:49:20+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://raspi.emawind.com/devnote/index.html</loc>
+  <lastmod>2015-08-29T03:49:16+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+</urlset>
