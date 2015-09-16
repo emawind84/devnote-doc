@@ -88,6 +88,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   oracle-install-centos
    pmis-file-manager
    oracle-tablespace-schema-howto
    doc-list-main-readme
