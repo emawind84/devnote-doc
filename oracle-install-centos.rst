@@ -10,8 +10,8 @@ Oracle 11g r2 Installation on RHEL/CentOS 6.x/5.x/4.x
 We need to install a pre-install package
 
 .. important:: 
-	| For Centos 6.x the package name is `oracle-rdbms-server-11gR2-preinstall`
-	| For Centos 5.x/4.x the package name is `oracle-validated`
+	| For Centos 6.x the package name is ``oracle-rdbms-server-11gR2-preinstall``
+	| For Centos 5.x/4.x the package name is ``oracle-validated``
 	
 Update the system first!::
 
@@ -42,16 +42,16 @@ For Centos 5.x::
 2. Setting Hostname
 ----------------------
 
-Open the “/etc/sysconfig/network” file and modify the HOSTNAME to match your FQDN (Fully Qualified Domain Name) host name.::
+Open the ``/etc/sysconfig/network`` file and modify the ``HOSTNAME`` to match your FQDN (Fully Qualified Domain Name) host name.::
 	
 	# vi /etc/sysconfig/network
 	
-Check if `HOSTNAME` is set::
+Check that ``HOSTNAME`` has a set value:
 
 	# HOSTNAME=pmis.sangah.com
 	
 
-Open “/etc/hosts” file and add fully qualified hostname for the server.::
+Open ``/etc/hosts`` file and add fully qualified hostname for the server.::
 
 	# vi /etc/hosts
 	
