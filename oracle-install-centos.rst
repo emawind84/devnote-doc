@@ -40,6 +40,18 @@ For Centos 5.x::
 
 	# wget https://public-yum.oracle.com/RPM-GPG-KEY-oracle-el5 -O /etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
 	
+Install the pre-install package.
+
+For Centos 6.x::
+
+	# yum install oracle-rdbms-server-11gR2-preinstall
+	
+For Centos 5.x::
+
+	# yum install oracle-validated
+	
+	
+	
 2. Setting Hostname
 ----------------------
 
