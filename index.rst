@@ -29,6 +29,7 @@ Contents:
 
    nginx-raspberry-install
    learning-python
+   learning-python_2
    oracle-tablespace-schema-howto
    doc-list-main-readme
    db-backup-script
