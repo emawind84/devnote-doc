@@ -1,7 +1,11 @@
 
-===============
-Learning Python
-===============
+.. _learning_python:
+
+===========================
+Learning Python Episode One
+===========================
+
+.. seealso:: Second episode :ref:`learning_python_2`!
 
 .. code:: python
 
@@ -209,7 +213,7 @@ Missing Keys: if Tests
 
 
 Index with default value
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -226,7 +230,7 @@ Index with default value
 
 
 if/else expression form
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+++++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -808,7 +812,7 @@ Other Core Types
 ---------------------
 
 Sets
-^^^^^^^^^
++++++++++++++++
 
 .. code:: python
 
@@ -904,7 +908,7 @@ Sets
 
 
 Floating-point, Decimals & Fractions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -990,7 +994,7 @@ Floating-point, Decimals & Fractions
 
 
 The type Object
-^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++
 
 .. code:: python
 
@@ -1082,13 +1086,9 @@ The type Object
 
 
 
-
-
-
-
-===================
+-------------------
 Numeric Literals
-===================
+-------------------
 
 .. code:: python
 
@@ -1343,7 +1343,7 @@ Numeric Literals
 
 
 Comparisons: Normal and Chained
----------------------------------------
++++++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -1414,7 +1414,7 @@ Comparisons: Normal and Chained
 
 
 Division: Classic, Floor, and True
--------------------------------------
+++++++++++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -1496,7 +1496,7 @@ Use the following module to enable Python 3.x ``/`` behaviour
 
 
 Division in Python 3.X
----------------------------
+++++++++++++++++++++++++++++++++
 
 The ``//`` operator is called *truncating* but is more accurate to refer to it as *floor*.
 
@@ -1669,7 +1669,7 @@ The ``//`` operator is called *truncating* but is more accurate to refer to it a
 
 
 Hex, Octal, Binary
-----------------------------
+++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -1843,7 +1843,7 @@ Hex, Octal, Binary
 
 
 Bitwise Operations
-------------------------
++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -2215,7 +2215,7 @@ Bitwise Operations
 
 
 Decimal basics
----------------------
++++++++++++++++++++++
 
 .. code:: python
 
@@ -2356,7 +2356,7 @@ Decimal basics
 
 
 Fraction Type
------------------------
+++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -2605,7 +2605,7 @@ Fraction Type
 
 
 Fraction convertions
---------------------------
+++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -2846,7 +2846,7 @@ Fraction convertions
 
 
 Sets basics in Python 2.6 and earlier
-----------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -3054,7 +3054,7 @@ Sets basics in Python 2.6 and earlier
 
 
 Set literals in Python 3.x and 2.7
------------------------------------
+++++++++++++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -3203,7 +3203,7 @@ Set literals in Python 3.x and 2.7
 
 
 Set comprehensions in Python 3.X and 2.7
-------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -3444,7 +3444,7 @@ Set comprehensions in Python 3.X and 2.7
 
 
 Booleans
---------------------
+++++++++++++++++++
 
 .. code:: python
 
@@ -3787,7 +3787,7 @@ Booleans
 
 
 Variables, Objects, References
-===================================
+-------------------------------------
 
 .. code:: python
 
@@ -3862,7 +3862,7 @@ Variables, Objects, References
 
 
 Strings
-=====================
+----------------------
 
 .. code:: python
 
@@ -4032,7 +4032,7 @@ Strings
 
 
 Raw Strings
---------------------
++++++++++++++++++++++
 
 .. code:: python
 
@@ -4192,7 +4192,7 @@ Raw Strings
 
 
 Indexing and slicing
----------------------------------
++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -4312,7 +4312,7 @@ Indexing and slicing
 
 
 String Convertion Tools
---------------------------------------
++++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -4480,7 +4480,7 @@ String Convertion Tools
 
 
 String Method: Changing String
----------------------------------------
++++++++++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -4582,7 +4582,7 @@ String Method: Changing String
 
 
 Parsing Text
----------------------
++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -4754,7 +4754,7 @@ Parsing Text
 
 
 Formatting Expression Basics
--------------------------------------
++++++++++++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -4811,7 +4811,7 @@ Formatting Expression Basics
 
 
 Advance Formatting
-----------------------------
+++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -4922,7 +4922,7 @@ Advance Formatting
 
 
 Dictionary based formatting exp
------------------------------------
++++++++++++++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -4986,7 +4986,7 @@ Dictionary based formatting exp
 
 
 String formatting Method Calls
--------------------------------------
+++++++++++++++++++++++++++++++++++++++++
 
 .. code:: python
 
@@ -5157,7 +5157,7 @@ String formatting Method Calls
 
 
 Advanced formatting method syntax
---------------------------------------
+++++++++++++++++++++++++++++++++++++++
 
 .. code:: python
 
