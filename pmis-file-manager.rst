@@ -34,7 +34,8 @@ This is the new file manager, no more iframe.
 		hide_webhard: true,
 		hide_downall: true,
 		disabledblclick: true,
-		show_reg_date: true
+		show_reg_date: true,
+		hide_btns: false
 	});
 
 
@@ -92,13 +93,16 @@ copyfromurl
 	Enable the file upload though an URL.
 	
 hide_header
-	Remove the grid header
+	Remove the grid header.
 
 hide_webhard
 	Remove the webhard upload.
 
 hide_downall
 	Remove the download button.
+
+hide_btns
+	Remove the buttons header.
 
 disabledblclick
 	Disable the double click inside the grid.

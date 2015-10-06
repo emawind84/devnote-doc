@@ -8,16 +8,15 @@ SangAh Development Note
 
 .. _learn git:
 
-.. seealso:: 
-    Learn about git
+.. seealso:: Learn about git
     
     - http://rogerdudler.github.io/git-guide/
 
-.. seealso:: 
-    Learn about reStructuredText Markup
+.. seealso:: Learn about reStructuredText Markup
 
     - http://sphinx-doc.org/rest.html#explicit-markup
     - http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html
+    - http://docutils.sourceforge.net/docs/user/rst/quickref.html
 
 How to edit this documentation
 -------------------------------
@@ -88,6 +87,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   oracle-listagg-example
    oracle-install-centos
    pmis-file-manager
    oracle-tablespace-schema-howto
