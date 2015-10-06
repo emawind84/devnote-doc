@@ -87,6 +87,8 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   java-background-job
+   aconex-basic-training-agenda
    oracle-listagg-example
    oracle-install-centos
    pmis-file-manager

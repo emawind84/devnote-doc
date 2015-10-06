@@ -7,4 +7,6 @@ Java concurrency (multi-threading) - tutorial
 
 Java concurrency (multi-threading) - tutorial
 
-http://www.vogella.com/tutorials/JavaConcurrency/article.htm
+- https://docs.oracle.com/javase/tutorial/essential/concurrency/
+- http://tutorials.jenkov.com/java-concurrency/index.html
+- removed - http://www.vogella.com/tutorials/JavaConcurrency/article.htm

@@ -79,20 +79,20 @@ save content
 Custom available functions:
 ----------------------------------------------------
 
-#. init: Editor.init();
-   // required to inizialize the editor
-#. readonly: Editor.readonly(param);
-   // put the editor in readonly mode
-   // parameter: true|false
-#. resize: Editor.resize(height);
-   // resize the editor
-#. onReady: Editor.onReady().done(function(){//do something});
-   // using this function ensures the editor is ready
-#. getDocument: Editor.getDocument();
-   // return the Document object of the editor ( https://developer.mozilla.org/en-US/docs/Web/API/Document ) 
-#. download: Editor.download(filename); 
-   // will save the content of the editor in a temporary file
-   // parameter filename // default value: template.html
-#. print: Editor.print() 
-   // will print the content of the editor
+#. Editor.init();
+    required to inizialize the editor    
+#. Editor.readonly(param);
+    put the editor in readonly mode
+    parameter: true|false
+#. Editor.resize(height);
+    resize the editor
+#. Editor.onReady().done(function(){//do something});
+    using this function ensures the editor is ready
+#. Editor.getDocument();
+    return the Document object of the editor ( https://developer.mozilla.org/en-US/docs/Web/API/Document ) 
+#. Editor.download(filename); 
+    will save the content of the editor in a temporary file
+    parameter filename // default value: template.html
+#. Editor.print() 
+    will print the content of the editor
     
