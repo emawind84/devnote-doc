@@ -87,6 +87,8 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   tomcat-conf-howto
+   java-session-user-hasrole
    java-background-job
    aconex-basic-training-agenda
    oracle-listagg-example
