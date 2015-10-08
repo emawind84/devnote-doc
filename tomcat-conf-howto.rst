@@ -70,7 +70,13 @@ Put this content inside this file::
 
     export JAVA_OPTS="-Dfile.encoding=UTF-8 -Xms128m -Xmx1024m -XX:PermSize=64m -XX:MaxPermSize=512m -Djava.awt.headless=true"
 
+.. note:: 64-bit Tomcat Environment
 
+    1. Make sure the java version is 64bit
+    2. Change setenv.sh with the desired HeapSize (``-Xmx``) as the following (leave PermSize as it is)::
+    
+        export JAVA_OPTS="-Dfile.encoding=UTF-8 -d64 -Xms128m -Xmx2g -XX:PermSize=64m -XX:MaxPermSize=512m -Djava.awt.headless=true"
+      
 
 [Extra options]
 -----------------------------------
