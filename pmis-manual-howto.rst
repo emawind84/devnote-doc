@@ -3,12 +3,12 @@
 How to Install and Update PMIS Manual with Sphinx
 ====================================================
 
-For writing and building the manual should be deployed on 121 server.
+.. note:: The server ``203.239.21.121`` is used for testing and building the manual.
 
 Create and Build the Manual
 -----------------------------
 
-From the server 121 go to the home directory typing::
+From the server 121 go to the home directory::
 
 	> cd ~
 	
@@ -31,22 +31,17 @@ Now the new manual is ready to be built. Type the following to build the manual:
 	Python env folder: python
 	Package manager: apt-get
 	Current folder: /home/sangah/rwjeju-manual/doc/setup
-	Activating Python environment...
-	Checking for updates...
-	Already up-to-date.
-	Building documentation...
-	sphinx-build -b html -d _build/doctrees   . _build/html
-	Running Sphinx v1.3.1
-	loading pickled environment... done
 	...
+	Build finished. The HTML pages are in _build/html.
+	Deactivating Python environment...
+	Script terminated.
+
 	
 If the following output come out the process is complete and ready to be used and tested.
 
 But if you have the following result::
 
-	Doc folder: ../
-	Python env folder: python
-	Package manager: apt-get
+	...
 	Current folder: /home/sangah/rwjeju-manual/doc/setup
 	Activating Python environment...
 	./devnote.sh: 줄 108: python/bin/activate: 그런 파일이나 디렉터리가 없습니다
