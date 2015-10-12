@@ -87,6 +87,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   pmis-manual-howto
    tomcat-conf-howto
    java-session-user-hasrole
    java-background-job
