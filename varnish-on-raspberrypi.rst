@@ -12,29 +12,39 @@ Install Varnish on a Raspberry Pi
     **Built in subroutines** - https://www.varnish-cache.org/docs/trunk/users-guide/vcl-built-in-subs.html
 
 
-1. First install ``checkinstall``::
+1. First install ``checkinstall``
+
+::
 
     $ sudo apt-get install checkinstall
 
-2. Take the Varnish software from GitHub::
+2. Take the Varnish software from GitHub
 
-    sudo git clone https://github.com/varnish/Varnish-Cache.git
-    cd Varnish-Cache/
+::
+
+    $ sudo git clone https://github.com/varnish/Varnish-Cache.git
+    $ cd Varnish-Cache/
 
 3. Get some pre-requisites. Don’t worry if you have some of them they wont be reinstalled 
-but if you missed them things may not work as expected.::
+   but if you missed them things may not work as expected.
+   
+::
 
-    sudo apt-get install autotools-dev autoconf libpcre3-dev libedit-dev libncurses5-dev automake libtool groff-base python-docutils pkg-config
+    $ sudo apt-get install autotools-dev autoconf libpcre3-dev libedit-dev libncurses5-dev automake libtool groff-base python-docutils pkg-config
     
 4. Start the build process – you may not need to run some of these as 
-sudo but its not harmfull to so. This will take about 15 mins::
+   sudo but its not harmfull to so. This will take about 15 mins
+   
+::
 
     $ sudo sh autogen.sh    
     $ sudo sh configure CFLAGS="-O1 -pipe"
     $ sudo make 
     $ sudo checkinstall  
     
-5. To make sure your system has an up-to-date linker to point to your correct modules run the following.::
+5. To make sure your system has an up-to-date linker to point to your correct modules run the following.
+
+::
 
     $ sudo ldconfig
 
@@ -43,15 +53,21 @@ or::
     $ sudo ldconfig -n /usr/local/lib/
 
 6. We need to create dedicated user for varnishd 
-rather than using the default “nobody” user is used for other services::
+rather than using the default “nobody” user is used for other services
+
+::
 
     $ sudo useradd varnishd
 
-7. Create a startup script::
+7. Create a startup script
+
+::
 
     sudo nano start-varnish.sh
     
-8. Copy the following script::
+8. Copy the following script
+
+.. code-block:: bash
     
     #!/bin/sh
     
