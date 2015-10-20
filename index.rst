@@ -27,6 +27,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   varnish-on-raspberrypi
    nginx-raspberry-install
    learning-python
    learning-python_2
