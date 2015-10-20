@@ -4,13 +4,11 @@ Install Varnish on a Raspberry Pi
 =========================================
 
 .. seealso::
-    | Reference:
     | https://www.varnish-cache.org/docs/trunk/reference/vcl.html#reference-vcl-probes
     | http://www.weedpi.com/how-to/install-varnish-in-raspberry-pi
-    | compile and install: https://www.devolve.net/blog/2013/12/29/probable-compiler-bug-on-raspberry-pi/
-
-    **Built in subroutines** - https://www.varnish-cache.org/docs/trunk/users-guide/vcl-built-in-subs.html
-
+    | **Compile & Install**: https://www.devolve.net/blog/2013/12/29/probable-compiler-bug-on-raspberry-pi/
+    | **Built in subroutines**: https://www.varnish-cache.org/docs/trunk/users-guide/vcl-built-in-subs.html
+    
 
 1. First install ``checkinstall``
 
@@ -30,7 +28,9 @@ Install Varnish on a Raspberry Pi
    
 ::
 
-    $ sudo apt-get install autotools-dev autoconf libpcre3-dev libedit-dev libncurses5-dev automake libtool groff-base python-docutils pkg-config
+    $ sudo apt-get install autotools-dev autoconf \
+      libpcre3-dev libedit-dev libncurses5-dev \
+      automake libtool groff-base python-docutils pkg-config
     
 4. Start the build process – you may not need to run some of these as 
    sudo but its not harmfull to so. This will take about 15 mins
