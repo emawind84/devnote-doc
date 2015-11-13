@@ -140,7 +140,7 @@ Link to a file
 
 This is a link to a file `SAH-CI-INIT-1001(A)-D.pdf <_static/SAH-CI-INIT-1001(A)-D.pdf>`_
 
-This is another link to a file `SAH-CI-INIT-1001(A)-D.pdf`_:
+This is another link to a file `SAH-CI-INIT-1001(A)-D.pdf`_
 
 .. _SAH-CI-INIT-1001(A)-D.pdf: _static/SAH-CI-INIT-1001(A)-D.pdf
 
