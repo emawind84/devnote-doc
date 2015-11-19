@@ -39,6 +39,9 @@ Base/System Properties
 	# Define the folder that will be used to style the project select page (root: /ext/style) 
 	system.pjtselect.style.home=LG_DSN1
 	
+	# Number of admissible login attempts before the user is locked
+	system.login.attempts=5
+	
 
 Password Validation Properties
 --------------------------------
@@ -61,6 +64,9 @@ Password Validation Properties
 	
 	# lowercase or capital required
 	#system.pwd.check=12,13,123,1234,124,134,23,234
+	
+	# Max life for user password (days)
+	system.pwd.maxlife=90
 	
 Zip Encoding
 -----------------
