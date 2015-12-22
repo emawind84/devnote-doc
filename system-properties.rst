@@ -159,13 +159,38 @@ Groupware Module
 	gw.SMSAuthorPass=
 
 
-Gmail provider
-----------------
+System SMTP Mail Configuration
+--------------------------------
 	
 ::
+	
+	system.mail.transport.protocol=smtp
+	system.mail.smtp.host=smtp.gmail.com
+	system.mail.smtp.port=465
+	system.mail.smtp.socketFactory.class=
+	system.mail.authid=
+	system.mail.authpwd=
 
-	Gmail.getAuthId=
-	Gmail.getAuthPw=
+.. warning:: The following properties are deprecated:
+	
+	::
+	
+		Gmail.getAuthId=
+		Gmail.getAuthPw=
+		
+User Mail Module
+----------------
+
+::
+	
+	# enable the link mail module
+	user.setting.mail.enabled=true
+	
+	# user email server
+	user.setting.mail.host=pop.gmail.com
+	user.setting.mail.port=995
+	user.setting.mail.protocol=imap
+	
 
 ezpert Module
 -----------------------------------------------------------------
@@ -298,3 +323,6 @@ DEPRECATED PROPERTIES
 	edms.WebRoot=http://URL/data/edms
 	common.path.activex=http://URL/ext/activex
 	common.path.plugin=http://URL/plugin
+	
+	Gmail.getAuthId=
+	Gmail.getAuthPw=
