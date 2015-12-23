@@ -42,6 +42,8 @@ Base/System Properties
 	# Number of admissible login attempts before the user is locked
 	system.login.attempts=5
 	
+	# Max idle time a session will be valid in seconds
+	system.maxidletime=3600
 
 Password Validation Properties
 --------------------------------
