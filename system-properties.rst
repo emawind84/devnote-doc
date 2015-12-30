@@ -16,7 +16,9 @@ Base/System Properties
 	
 	system.project.id=
 	system.project.name=
-
+	
+	# Define the default locale (language)
+	system.locale=ko_KR
 	
 	# Define Paths
 	system.log=C:/Users/Disco/workspace_egov/log/error
@@ -278,6 +280,9 @@ Document & Workflow
 	#@@ Drawings View by Organization or All
 	#register.authorization.mode=ALL|ORG
 	register.authorization.mode=ORG
+	
+	#@@ Register Doc. No. generation service
+	register.idgnr.service.name=registerIdGnrService
 	
 Document Notification Template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
