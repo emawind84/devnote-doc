@@ -1,2 +1,3 @@
-_build
-setup/python
+_build/
+setup/python/
+env/

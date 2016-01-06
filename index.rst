@@ -27,6 +27,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   disk-io-test
    varnish-on-raspberrypi
    nginx-raspberry-install
    learning-python
