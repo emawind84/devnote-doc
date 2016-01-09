@@ -84,3 +84,131 @@ Put this content inside this file::
 For logging java garbage collector add this java options (CATALINA_BASE have to be set!)::
 
     -Xloggc:$CATALINA_BASE/logs/gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps
+
+-------------
+
+.. load_balancer_howto:
+
+Load Balancer How-To
+--------------------------
+
+.. note:: **Reference:** `LoadBalancer HowTo`_
+
+	A load balancer is a worker that does not directly communicate with Tomcat. 
+	Instead it is responsible for the management of several "real" workers, 
+	called members or sub workers of the load balancer.
+
+	This management includes:
+
+		Instantiating the workers in the web server.
+		Using the worker's load-balancing factor, perform weighted load balancing 
+		(distributing load according to defined strengths of the targets).
+		Keeping requests belonging to the same session executing 
+		on the same Tomcat (session stickyness).
+		Identifying failed Tomcat workers, suspending requests to them 
+		and instead falling-back on other workers managed by the load balancer.
+		Providing status and load metrics for the load balancer itself 
+		and all members via the status worker interface.
+		Allowing to dynamically reconfigure load-balancing via the status worker interface.
+
+	Workers managed by the same load balancer worker are load-balanced 
+	(based on their configured balancing factors and current request or session load) 
+	and also secured against failure by providing failover to other members of the same load balancer. 
+	So a single Tomcat process death will not "kill" the entire site.
+
+	Some of the features provided by a load balancer are even interesting, 
+	when only working with a single member worker (where load balancing is not possible).
+
+.. code-block:: properties
+
+	# The load balancer worker balance1 will distribute
+	# load to the members worker1 and worker2
+	worker.balance1.type=lb
+	worker.balance1.balance_workers=worker1, worker2
+
+	worker.worker1.type=ajp13
+	worker.worker1.host=myhost1
+	worker.worker1.port=8009
+
+	worker.worker2.type=ajp13
+	worker.worker1.host=myhost2
+	worker.worker1.port=8009
+	
+	
+.. important:: The name of the Tomcat needs to be equal to the name of the 
+	corresponding load balancer member. In the above example, 
+	Tomcat on host ``myhost1`` needs ``jvmRoute="worker1"``, 
+	Tomcat on host ``myhost2`` needs ``jvmRoute="worker2"``. 
+
+**tomcat1 server.xml**
+	
+.. code-block:: xml
+
+	<Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" />
+		<Engine defaultHost="cicciopanza" jvmRoute="worker1" name="default">
+
+**tomcat2 server.xml**
+	
+.. code-block:: xml
+
+	<Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" />
+		<Engine defaultHost="cicciopanza" jvmRoute="worker2" name="default">
+	
+---------------	
+
+.. status_worker_manager:
+
+Status Worker Manager
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Add the following code to the ``workers.properties``.
+
+.. code-block:: properties
+
+	# Add the status worker to the worker list
+	worker.list=jkstatus
+	# Define a 'jkstatus' worker using status
+	worker.jkstatus.type=status
+	
+Add the following code to the directive VirtualHost inside the host configuration file.
+
+**Apache 2.2**
+
+.. code-block:: apacheconf
+
+	# JK MANAGER
+	<Location /jkmanager/>
+	JkMount jkstatus
+	Order deny,allow
+	Deny from all
+	Allow from 127.0.0.1
+	</Location>
+
+
+**Apache 2.4**
+
+.. code-block:: apacheconf
+
+	# JK MANAGER
+	<Location /jkmanager/>
+	JkMount jkstatus
+	Require all denied
+	Require host 127.0.0.1
+	</Location>
+
+.. note:: The Status Manager will be available at the URI ``<schema>://127.0.0.1/jkmanager/``.
+	If you want to enable other host to access the status manager just add more ``Allow from`` directives.
+	
+.. code-block:: apacheconf
+
+	# JK MANAGER
+	<Location /jkmanager/>
+	JkMount jkstatus
+	Order deny,allow
+	Deny from all
+	Allow from 127.0.0.1
+	Allow from 200.300.20.0/24
+	Allow from 192.168.0.10
+	</Location>
+	
+.. _`LoadBalancer HowTo`: https://tomcat.apache.org/connectors-doc/common_howto/loadbalancers.html
