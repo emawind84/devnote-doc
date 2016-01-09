@@ -1,3 +1,4 @@
+.. highlight:: shell
 .. _varnish-on-raspberrypi:
 
 Install Varnish on a Raspberry Pi
@@ -26,7 +27,7 @@ Install Varnish on a Raspberry Pi
 3. Get some pre-requisites. Don’t worry if you have some of them they wont be reinstalled 
    but if you missed them things may not work as expected.
    
-::
+.. code-block:: shell
 
     $ sudo apt-get install autotools-dev autoconf \
       libpcre3-dev libedit-dev libncurses5-dev \
