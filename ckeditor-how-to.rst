@@ -173,3 +173,18 @@ Destroy all editor instances at once
     for(name in CKEDITOR.instances){
         CKEDITOR.instances[name].destroy(true);
     }
+
+
+Update textarea Element
+------------------------------------
+
+updateElement()
+    Updates the <textarea> element that was replaced by the editor with the current data available in the editor.
+    
+::
+
+    CKEDITOR.instances['editor1'].updateElement();
+    
+    # OR
+    
+    editor.updateElement();

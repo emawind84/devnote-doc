@@ -5,6 +5,42 @@
 System Properties
 =================
 
+Development Mode
+--------------------------------
+
+::
+		
+	# Important for disable static file caching
+	system.devmode=false
+
+.. important:: Remember to set false this property to enable caching for the user!
+
+
+Default Login Page
+---------------------------
+
+Set the login page for the project
+
+::
+
+	# {PROJECT}/main/Login.jsp
+	system.loginpage.home={PROJECT}
+	
+.. important:: 
+	If a file ``Login.jsp`` is not present inside ``{PROJECT}/main/`` folder,
+	the default login page will be used ( ``STND_PMIS/main/Login.jsp`` )
+	
+	
+Projects Select Page Style
+---------------------------
+
+::
+
+	# Define the folder that will be used to style the project select page (root: ``/ext/style/{DESIGN_FOLDER}``) 
+	system.pjtselect.style.home={DESIGN_FOLDER}
+	
+.. important:: Make sure the file ``/ext/style/{DESIGN_FOLDER}/pjtselect.css`` exists!
+
 
 Base/System Properties
 -----------------------------------------------------------------
@@ -16,7 +52,9 @@ Base/System Properties
 	
 	system.project.id=
 	system.project.name=
-
+	
+	# Define the default locale (language)
+	system.locale=ko_KR
 	
 	# Define Paths
 	system.log=C:/Users/Disco/workspace_egov/log/error
@@ -28,14 +66,18 @@ Base/System Properties
 	# Define default login magic-key and user id/password (blank to none)
 	system.master.id=kspmisadmin
 	system.logout.enable=yes
-	system.devmode=false
 	
 	# Define Common Code/Key.
 	system.eis_pjt_cd=TOC
 	system.std_pjt_cd=STND_PMIS
 	system.pjt_cd=SANGAH
-	system.loginpage.home=
 	
+	# Number of admissible login attempts before the user is locked
+	system.login.attempts=5
+	
+	# Max idle time a session will be valid in seconds
+	system.maxidletime=3600
+
 
 Password Validation Properties
 --------------------------------
@@ -58,6 +100,10 @@ Password Validation Properties
 	
 	# lowercase or capital required
 	#system.pwd.check=12,13,123,1234,124,134,23,234
+	
+	# Max life for user password (days)
+	system.pwd.maxlife=90
+	
 	
 Zip Encoding
 -----------------
@@ -93,12 +139,14 @@ DB Connection Info Properties
 	db.RemoveAbandonedTimeout=30
 	db.LogAbandoned=false
 
+
 Default Locale
 --------------------
 
 ::
 
 	default_locale=en_US
+
 
 Common Modules (appliables for each program modules)
 -----------------------------------------------------------------
@@ -107,6 +155,7 @@ Common Modules (appliables for each program modules)
 
 	common.path.underconst=/pmis/STND_PMIS/common/def/Unknown.jsp
 	common.path.style=/ext/style
+
 
 EDMS Module
 -----------------------------------------------------------------
@@ -130,6 +179,7 @@ Others
 	xml.root=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/web/Main/assets
 	devnote.home=C:\\Users\\Disco\\workspace\\devnote
 
+
 Groupware Module
 -----------------------------------------------------------------
 
@@ -150,13 +200,39 @@ Groupware Module
 	gw.SMSAuthorPass=
 
 
-Gmail provider
-----------------
+System SMTP Mail Configuration
+--------------------------------
 	
 ::
+	
+	system.mail.transport.protocol=smtp
+	system.mail.smtp.host=smtp.gmail.com
+	system.mail.smtp.port=465
+	system.mail.smtp.socketFactory.class=
+	system.mail.authid=
+	system.mail.authpwd=
 
-	Gmail.getAuthId=
-	Gmail.getAuthPw=
+.. warning:: The following properties are deprecated:
+	
+	::
+	
+		Gmail.getAuthId=
+		Gmail.getAuthPw=
+	
+		
+User Mail Module
+----------------
+
+::
+	
+	# enable the link mail module
+	user.setting.mail.enabled=true
+	
+	# user email server
+	user.setting.mail.host=pop.gmail.com
+	user.setting.mail.port=995
+	user.setting.mail.protocol=imap
+	
 
 ezpert Module
 -----------------------------------------------------------------
@@ -186,6 +262,7 @@ Thumbnails & Temporary Folders
 	# Main temporary path
 	upload.temp=C:/Users/Disco/workspace/temp
 
+
 excel & eMail & SMS template
 -------------------------------
 	
@@ -195,12 +272,14 @@ excel & eMail & SMS template
 	email.template.home=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/web/data/template
 	excel.template.home=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/web/WEB-INF/excelTemplete
 	
+	
 Edms server mirroring
 ------------------------
 
 ::
 
 	mirror.server=SERVER3
+
 
 Auto login for development env.
 --------------------------------
@@ -242,6 +321,9 @@ Document & Workflow
 	#@@ Drawings View by Organization or All
 	#register.authorization.mode=ALL|ORG
 	register.authorization.mode=ORG
+	
+	#@@ Register Doc. No. generation service
+	register.idgnr.service.name=registerIdGnrService
 	
 Document Notification Template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -289,3 +371,6 @@ DEPRECATED PROPERTIES
 	edms.WebRoot=http://URL/data/edms
 	common.path.activex=http://URL/ext/activex
 	common.path.plugin=http://URL/plugin
+	
+	Gmail.getAuthId=
+	Gmail.getAuthPw=

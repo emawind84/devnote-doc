@@ -4,6 +4,8 @@
 Copy Table Data Query
 =====================
 
+The query block below is well used for copying one or more rows of a table into the same or another table with some modification if required.
+
 .. code-block:: sql
 
   begin

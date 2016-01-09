@@ -9,7 +9,7 @@ Parameters definition
 -----------------------
 
 fbs_cd
-	선택된 FBS 트리item
+	선택된 FBS 트리item & 작성될 문서 
 
 form_cd1
 	FBS ROOT트리

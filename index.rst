@@ -8,18 +8,15 @@ Disco Development Note
 
 .. _learn git:
 
-.. seealso:: 
-    Learn about git
+.. seealso:: Learn about git
     
     - http://rogerdudler.github.io/git-guide/
 
-.. seealso:: 
-    Learn about reStructuredText Markup
+.. seealso:: Learn about reStructuredText Markup
 
     - http://sphinx-doc.org/rest.html#explicit-markup
     - http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html
-    
-    
+    - http://docutils.sourceforge.net/docs/user/rst/quickref.html
 
 Contents:
 ---------
@@ -32,6 +29,15 @@ Contents:
    nginx-raspberry-install
    learning-python
    learning-python_2
+   howto-oracledb-user-import&export
+   pmis-manual-howto
+   tomcat-conf-howto
+   java-session-user-hasrole
+   java-background-job
+   aconex-basic-training-agenda
+   oracle-listagg-example
+   oracle-install-centos
+   pmis-file-manager
    oracle-tablespace-schema-howto
    doc-list-main-readme
    db-backup-script
@@ -127,6 +133,20 @@ Contents:
    media-types-official-list-(contenttype)
    system-properties
 
+Python Scripts:
+-----------------
+
+.. note::
+
+    .. include:: python-example-header.txt
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+   
+   python_scripts/*
+   
+   
 
 Indices and tables
 ==================

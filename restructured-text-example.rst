@@ -126,6 +126,25 @@ Lorem ipsum [Ref]_ dolor sit amet.
 .. [Ref] Book or article reference, URL or whatever.
 
 
++--------------+----------+-----------+-----------+
+| row 1, col 1 | column 2 | column 3  | column 4  |
++--------------+----------+-----------+-----------+
+| row 2        |                                  |
++--------------+----------+-----------+-----------+
+| row 3        |          |           |           |
++--------------+----------+-----------+-----------+
+
+
+Link to a file
+""""""""""""""""""
+
+This is a link to a file `SAH-CI-INIT-1001(A)-D.pdf <_static/SAH-CI-INIT-1001(A)-D.pdf>`_
+
+This is another link to a file `SAH-CI-INIT-1001(A)-D.pdf`_
+
+.. _SAH-CI-INIT-1001(A)-D.pdf: _static/SAH-CI-INIT-1001(A)-D.pdf
+
+
 Add some index!
 """""""""""""""""
 
