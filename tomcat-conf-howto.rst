@@ -125,6 +125,7 @@ Load Balancer How-To
 	# load to the members worker1 and worker2
 	worker.balance1.type=lb
 	worker.balance1.balance_workers=worker1, worker2
+	worker.list=balance1
 
 	worker.worker1.type=ajp13
 	worker.worker1.host=myhost1
@@ -144,15 +145,13 @@ Load Balancer How-To
 	
 .. code-block:: xml
 
-	<Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" />
-		<Engine defaultHost="cicciopanza" jvmRoute="worker1" name="default">
+	<Engine defaultHost="cicciopanza" jvmRoute="worker1" name="default">
 
 **tomcat2 server.xml**
 	
 .. code-block:: xml
 
-	<Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" />
-		<Engine defaultHost="cicciopanza" jvmRoute="worker2" name="default">
+	<Engine defaultHost="cicciopanza" jvmRoute="worker2" name="default">
 	
 ---------------	
 
