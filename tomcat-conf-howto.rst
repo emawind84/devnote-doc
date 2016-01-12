@@ -132,8 +132,8 @@ Load Balancer How-To
 	worker.worker1.port=8009
 
 	worker.worker2.type=ajp13
-	worker.worker1.host=myhost2
-	worker.worker1.port=8009
+	worker.worker2.host=myhost2
+	worker.worker2.port=8010
 	
 	
 .. important:: The name of the Tomcat needs to be equal to the name of the 
