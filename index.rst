@@ -24,6 +24,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   howto-raspi-speech-recognition-and-jasper
    disk-io-test
    varnish-on-raspberrypi
    nginx-raspberry-install
