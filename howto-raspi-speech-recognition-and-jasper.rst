@@ -1,24 +1,34 @@
 .. highlight:: bash
 .. _howto-raspi-speech-recognition-and-jasper:
 
-==============================================================
-Raspberry Pi 2 – Jasper Ready Speech Recognition
-==============================================================
+========================================================
+Raspberry Pi, Pocketsphinx STT and Jasper Good Stuff...
+========================================================
 
+
+.. note::
+	
+	- Part of this documentation has been taken from the `Jasper website`_.
+	- Also take a look at `Wolf Paulus' Journal`_ where you can find a tutorial 
+	  for installing and run your local STT with customized Language Model.
+	
 .. important::
 
 	Before starting you may want to install checkinstall::
 		
 		$ sudo apt-get install checkinstall
 		
-	checkinstall create a deb package that can be easily installed and removed using dpkg or apt-get.
+	Checkinstall create a **deb** package that can be easily installed and removed using ``dpkg`` or ``apt-get``.
 
-	It might happen that checkinstall fail with a recursive thing message.
-	In this situation just do the normal ``make install`` first and than try again with ``checkinstall``.
+	It might happen that checkinstall fail with some recursive thing messages.
+	In that case just go with the normal ``make install`` and than try again with ``checkinstall``.
 
 
 Update the system
 -----------------------
+
+Before compiling and installing all the necessary packages 
+let's update the system with the following commands:
 
 ::
 
@@ -269,8 +279,15 @@ Build Phonetisaurus model:
 
 	$ mv ~/g014b2b ~/phonetisaurus
 
----------------
 
-Follow the configuration instructions on the Jasper website http://jasperproject.github.io/documentation/configuration/ to set your sphinx STT service.
+Configuration
+------------------
+
+Follow the configuration instructions on the Jasper website 
+http://jasperproject.github.io/documentation/configuration/ to set your sphinx STT service.
 
 **Done! Enjoy!**
+
+
+.. _Wolf Paulus' Journal: https://wolfpaulus.com/journal/embedded/raspberrypi2-sr/
+.. _Jasper website: http://jasperproject.github.io/documentation/installation/
