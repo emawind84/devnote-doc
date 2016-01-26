@@ -113,9 +113,9 @@ replace ``<PROJECT PATH>`` and ``<PROJECT DOMAIN>``.
 		DirectoryIndex index.jsp
 
 		<Directory "<PROJECT PATH>/web">
-				Options FollowSymLinks
-				Order allow,deny
-				Allow from all
+			Options FollowSymLinks
+			Order allow,deny
+			Allow from all
 		</Directory>
 
 		# DENY ACCESS TO WEB-INF
@@ -136,6 +136,7 @@ replace ``<PROJECT PATH>`` and ``<PROJECT DOMAIN>``.
 		<Location /maintenance.html>
 		Order allow,deny
 		Allow from all
+		</Location>
 
 		<IfModule mod_rewrite.c>
 		RewriteEngine On
