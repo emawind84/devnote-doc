@@ -63,6 +63,10 @@ Eclipse IDE
 Download & Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Install Java first.
+
+Set ``JAVA_HOME`` to Java jdk folder and add the jre bin folder to the ``PATH`` variable.
+
 Download the last release of Eclipse following this step:
 
 #. Go to the `download page <http://download.eclipse.org/eclipse/downloads/>`_.
