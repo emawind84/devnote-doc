@@ -10,7 +10,8 @@ TODO List
 #. Subversion Control (SVN)
 #. Eclipse IDE
 #. Tomcat Web Application
-#. Java Basic Stuff
+#. Java Basic Concepts
+#. Maven
 #. Spring Framework
 	
 	- Application Context
@@ -25,16 +26,15 @@ TODO List
 	
 #. iBatis (SQL Data Mapper)
 
-#. PMIS Authentication System (Spring Security)
-#. jqGrid
-#. CKEditor
-
 #. Test-driven Development (TDD)
 
 	- JUnit
 
-
-#. Maven
+#. jQuery (Javascript Library)
+#. SangAh Library (Javascript Library)
+#. Web Grid Plugin - jqGrid (Javascript Library)
+#. Web Editor - CKEditor (Javascript Library)
+#. PMIS Authentication System (Spring Security)
 
 -----------------
 
@@ -56,20 +56,33 @@ Eclipse IDE
 ------------------
 
 .. note::
-	Main Download Page: https://eclipse.org/downloads/
-	Other Builds: http://download.eclipse.org/eclipse/downloads/drops4/R-4.5.1-201509040015/
+	| Main Download Page: https://eclipse.org/downloads/
+	| Other Builds: http://download.eclipse.org/eclipse/downloads/drops4/R-4.5.1-201509040015/
 	
+Install & Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*todo*
+
+Tomcat Server Setting
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*todo*
 	
 
 Tomcat Web Application
 ---------------------------
 
+.. note:: 
+	https://tomcat.apache.org/tomcat-7.0-doc/appdev/deployment.html 
+
+
+`Standard_Directory_Layout <https://tomcat.apache.org/tomcat-7.0-doc/appdev/deployment.html#Standard_Directory_Layout>`_
+
 *todo*
 
-.. note:: https://tomcat.apache.org/tomcat-7.0-doc/appdev/deployment.html
 
-
-Java Basic Stuff
+Java Basic Concepts
 ---------------------
 
 - :ref:`code-conventions-for-the-java`
@@ -77,6 +90,32 @@ Java Basic Stuff
 - :ref:`arguments-validation-java-class`
 - :ref:`java-concurrency-(multi-threading)---tutorial`
 - :ref:`java-background-job`
+
+.. note:: `Object-Oriented Programming Concepts <https://docs.oracle.com/javase/tutorial/java/concepts/index.html>`_
+
+
+Maven
+---------------
+
+.. note:: https://maven.apache.org/
+
+Download
+^^^^^^^^^
+
+.. note:: https://maven.apache.org/download.cgi
+
+Install
+^^^^^^^^^^^
+
+.. note:: https://maven.apache.org/install.html
+
+Run
+^^^^^
+
+.. note:: https://maven.apache.org/run.html
+
+
+
 
 Spring Framework
 --------------------
@@ -122,6 +161,8 @@ Struts Framework
 
 *todo*
 
+
+
 Interceptor Stack
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -132,25 +173,63 @@ Interceptor Stack
 iBatis SQL Data Mapper
 ---------------------------
 
+.. note:: 
+	New MyBatis Project Website (with some reference to the old one) http://blog.mybatis.org/
+
 *todo*
 
-.. note:: New MyBatis Project Website (with some reference to the old one) http://blog.mybatis.org/
+
+Test-driven Development (TDD)
+--------------------------------
+
+*todo*
 
 
-Spring Security & PMIS Authentication System
+jQuery (Javascript Library)
+---------------------------------
+
+.. note:: https://api.jquery.com/
+
+*todo*
+
+
+
+SangAh Library (Javascript Library)
+--------------------------------------
+
+Give a look at the files under ``/web/ext/script/``
+
+- ``common.js``
+- ``Functionsml.js``
+- ``coolMask.js``
+- ``pmis_build.js``
+- ``pmis_loader.js``
+
+*todo*
+
+
+
+Web Grid Plugin - jqGrid (Javascript Library)
+-----------------------------------------------
+
+*todo*
+
+
+
+Web Editor - CKEditor (Javascript Library)
+----------------------------------------------
+
+.. note:: 
+	CKEditor Website: http://ckeditor.com/
+
+*todo*
+
+
+
+PMIS Authentication System (Spring Security)
 ------------------------------------------------
 
 .. note::
 	More information here :ref:`spring-security-2`
-
-
-
-jqGrid
------------
-
-*todo*
-
-CKEditor
---------------
-
+	
 *todo*
