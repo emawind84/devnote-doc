@@ -5,14 +5,15 @@ PMIS Framework Training
 ==========================
 
 TODO List
----------------
+-------------------
 
-#. Subversion Control (SVN)
 #. Eclipse IDE
-#. Browser Development Tools
+#. Subversion Control (SVN)
 #. Tomcat Web Application
+#. PMIS Source Code Tour
+#. Browser Development Tools
 #. Java Basic Concepts
-#. Maven
+#. Apache Maven (software project management)
 #. Spring Framework
 	
 	- Application Context
@@ -22,8 +23,10 @@ TODO List
 	- Transaction Management
 	
 #. Struts Framework (MVC Framework)
-	
-	- Interceptor Stack
+		
+	- Actions
+	- Interceptors Stack
+	- Results
 	
 #. iBatis (SQL Data Mapper)
 
@@ -32,33 +35,22 @@ TODO List
 	- JUnit
 
 #. jQuery (Javascript Library)
-#. SangAh Library (Javascript Library)
-#. Web Grid Plugin - jqGrid (Javascript Library)
-#. Web Editor - CKEditor (Javascript Library)
+#. SangAh Libraries (Javascript Library)
+#. jqGrid - Web Grid (Javascript Library)
+#. CKEditor - Web Editor (Javascript Library)
 #. PMIS Authentication System (Spring Security)
+#. Building & Deployment Process
+#. DB Update Process
 
------------------
+---------------------------------------------------------------------
 
-
-Subversion Control (SVN)
-------------------------------
-
-*todo*
-
-.. note:: 
-	| Official Website https://subversion.apache.org/
-	| SVN 1.7 Documentation: http://svnbook.red-bean.com/en/1.7/index.html
-	| SVN 1.8 Documentation: http://svnbook.red-bean.com/nightly/en/index.html 
-	| Windows Client: https://tortoisesvn.net/
-	
-	
 	
 Eclipse IDE
 ------------------
 
 .. note::
-	| Main Download Page: https://eclipse.org/downloads/
-	| Other Builds: http://download.eclipse.org/eclipse/downloads/drops4/R-4.5.1-201509040015/
+	- Main Download Page: https://eclipse.org/downloads/
+	- Other Builds: http://download.eclipse.org/eclipse/downloads/drops4/R-4.5.1-201509040015/
 		
 Download & Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -91,12 +83,28 @@ Download the last release of Eclipse following this step:
 	
 	These plugins should be enough to get started.
 
-*todo*
-
 Tomcat Server Setting
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *todo*
+
+---------------------------------------------------------------------
+
+
+Subversion Control (SVN)
+------------------------------
+
+*todo*
+
+.. note:: 
+	| Official Website https://subversion.apache.org/
+	| SVN 1.7 Documentation: http://svnbook.red-bean.com/en/1.7/index.html
+	| SVN 1.8 Documentation: http://svnbook.red-bean.com/nightly/en/index.html 
+	| Windows Client: https://tortoisesvn.net/
+	
+
+
+---------------------------------------------------------------------	
 	
 	
 Browser Development Tools
@@ -109,6 +117,8 @@ Browser Development Tools
 
 *todo*
 	
+---------------------------------------------------------------------
+
 
 Tomcat Web Application
 ---------------------------
@@ -120,6 +130,8 @@ Tomcat Web Application
 `Standard_Directory_Layout <https://tomcat.apache.org/tomcat-7.0-doc/appdev/deployment.html#Standard_Directory_Layout>`_
 
 *todo*
+
+---------------------------------------------------------------------
 
 
 Java Basic Concepts
@@ -133,98 +145,95 @@ Java Basic Concepts
 - :ref:`java-concurrency-(multi-threading)---tutorial`
 - :ref:`java-background-job`
 
-
-Maven
----------------
-
-.. note:: https://maven.apache.org/
-
-Download
-^^^^^^^^^
-
-.. note:: https://maven.apache.org/download.cgi
-
-Install
-^^^^^^^^^^^
-
-.. note:: https://maven.apache.org/install.html
-
-Run
-^^^^^
-
-.. note:: https://maven.apache.org/run.html
+--------------------------------------------------------------------
 
 
+Apache Maven (software project management)
+----------------------------------------------
 
+.. note:: `Apache Maven Website <https://maven.apache.org/>`_
+
+
+#. Download
+	https://maven.apache.org/download.cgi
+
+#. Install
+	https://maven.apache.org/install.html
+
+#. Run
+	https://maven.apache.org/run.html
+
+
+---------------------------------------------------------------------
 
 Spring Framework
 --------------------
 
-*todo*
+.. note:: `Book Spring in Action <https://www.manning.com/books/spring-in-action-third-edition>`_
 
+**Book Spring in Action (3rd)** useful chapters:
+
+	- 1, 2, 3 Basic concepts
+	- 4 AOP
+	- 5.2 ~ 5.3 Datasource & JDBC
+	- 6 Managing Transactions
+	- 7 MVC
+
+Below some online documentations:
 
 Application Context
-^^^^^^^^^^^^^^^^^^^^^
-
-.. note:: https://spring.io/understanding/application-context
-
+	https://spring.io/understanding/application-context
 
 Inversion of Control (IoC)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note:: https://en.wikipedia.org/wiki/Inversion_of_control
-
+	https://en.wikipedia.org/wiki/Inversion_of_control
 
 Dependency Injection (DI)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note:: http://docs.spring.io/spring/docs/current/spring-framework-reference/html/beans.html
-
+	http://docs.spring.io/spring/docs/current/spring-framework-reference/html/beans.html
 
 Aspect Oriented Programming (AOP)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note:: http://docs.spring.io/spring/docs/current/spring-framework-reference/html/aop.html#aop-understanding-aop-proxies
-
+	http://docs.spring.io/spring/docs/current/spring-framework-reference/html/aop.html#aop-understanding-aop-proxies
 
 Transaction Management
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-:ref:`transactioninterceptor`
-
-.. note:: http://docs.spring.io/spring/docs/current/spring-framework-reference/html/transaction.html
+	http://docs.spring.io/spring/docs/current/spring-framework-reference/html/transaction.html
+	
+	:ref:`transactioninterceptor`
 
 
+
+---------------------------------------------------------------------
 
 Struts Framework
 -----------------------
 
-*todo*
+.. note::
+	- `Struts 2 Documentation - Interceptors <https://struts.apache.org/docs/interceptors.html>`_
+	- `Book Struts 2 in Action <https://www.manning.com/books/struts-2-in-action>`_
 
-
-
-Interceptor Stack
-^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note:: https://struts.apache.org/docs/interceptors.html
-
-
+**Book Struts 2 in Action** useful chapters:
+		
+	- 1, 2, 3, 4 Fundamental
+	- 8 Results
+	- 9 Struts 2 + Spring
+	
+---------------------------------------------------------------------
 
 iBatis SQL Data Mapper
 ---------------------------
 
 .. note:: 
-	New MyBatis Project Website (with some reference to the old one) http://blog.mybatis.org/
-
-*todo*
+	- `New MyBatis Project Website (with some reference to the old one) <http://blog.mybatis.org/>`_
+	- `Books iBATIS in Action <https://www.manning.com/books/ibatis-in-action>`_
 
 
 Test-driven Development (TDD)
 --------------------------------
 
-.. note:: `Test-driven development <https://en.wikipedia.org/wiki/Test-driven_development>`_
-
-	`More results... <https://goo.gl/nIQTWD>`_
+.. note:: 
+	- `Test-driven development <https://en.wikipedia.org/wiki/Test-driven_development>`_
+	- `More results here <https://goo.gl/nIQTWD>`_
+	
+Junit - Java Testing Tool
+	http://junit.org/
 
 *todo*
 
@@ -256,6 +265,8 @@ Give a look at the files under ``/web/ext/script/``
 Web Grid Plugin - jqGrid (Javascript Library)
 -----------------------------------------------
 
+.. note:: `Wiki Documentation <http://www.trirand.com/jqgridwiki/doku.php?id=wiki:jqgriddocs>`_
+
 *todo*
 
 
@@ -264,7 +275,7 @@ Web Editor - CKEditor (Javascript Library)
 ----------------------------------------------
 
 .. note:: 
-	CKEditor Website: http://ckeditor.com/
+	`CKEditor Website <http://ckeditor.com/>`_
 
 *todo*
 
