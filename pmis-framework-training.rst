@@ -9,6 +9,7 @@ TODO List
 
 #. Subversion Control (SVN)
 #. Eclipse IDE
+#. Browser Development Tools
 #. Tomcat Web Application
 #. Java Basic Concepts
 #. Maven
@@ -58,14 +59,49 @@ Eclipse IDE
 .. note::
 	| Main Download Page: https://eclipse.org/downloads/
 	| Other Builds: http://download.eclipse.org/eclipse/downloads/drops4/R-4.5.1-201509040015/
-	
-Install & Configuration
+		
+Download & Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Download the last release of Eclipse following this step:
+
+#. Go to the `download page <http://download.eclipse.org/eclipse/downloads/>`_.
+
+#. Under **Latest Release** click on the latest version and you will be redirected to another page.
+
+#. Scroll down until you find **Platform Runtime Binary** packages and download the correct version for your system.
+
+#. To start using this version of Eclipse with Java you need to install some plugins:
+
+	From inside Eclipse go to ``Help`` -> ``Install New Software`` and from there you should search for these plugins:
+
+	- ``Eclipse Platform`` [already installed] 
+	- ``Eclipse Java Web Developer Tools`` under Eclipse Web Tools Platform
+	- ``m2e-wtp - Maven Integration for WTP``
+	- ``JST Server Adapters``
+	- ``JST Server Adapters Extensions``
+	- ``Marketplace Client`` under Eclipse Marketplace Client
+	
+	If you cannot find JST Server Adapter than after you installed the ``Marketplace Client`` 
+	go to ``Help`` -> ``Eclipse Marketplace`` and from there search and install ``Eclipse JST Server Adapter``.
+	
+	These plugins should be enough to get started.
 
 *todo*
 
 Tomcat Server Setting
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*todo*
+	
+	
+Browser Development Tools
+-------------------------------
+
+.. note:: 
+	| `Firefox Development Tools <https://developer.mozilla.org/en-US/Learn/Discover_browser_developer_tools>`_
+	| `Chrome Development Tools <https://developers.google.com/web/tools/chrome-devtools/?hl=en>`_
+	| `IE Development Tools <https://msdn.microsoft.com/en-us/library/dd565628%28v=vs.85%29.aspx>`_
 
 *todo*
 	
@@ -85,13 +121,13 @@ Tomcat Web Application
 Java Basic Concepts
 ---------------------
 
+.. note:: `Object-Oriented Programming Concepts <https://docs.oracle.com/javase/tutorial/java/concepts/index.html>`_
+
 - :ref:`code-conventions-for-the-java`
 - :ref:`checked-versus-unchecked-exceptions`
 - :ref:`arguments-validation-java-class`
 - :ref:`java-concurrency-(multi-threading)---tutorial`
 - :ref:`java-background-job`
-
-.. note:: `Object-Oriented Programming Concepts <https://docs.oracle.com/javase/tutorial/java/concepts/index.html>`_
 
 
 Maven
@@ -181,6 +217,10 @@ iBatis SQL Data Mapper
 
 Test-driven Development (TDD)
 --------------------------------
+
+.. note:: `Test-driven development <https://en.wikipedia.org/wiki/Test-driven_development>`_
+
+	`More results... <https://goo.gl/nIQTWD>`_
 
 *todo*
 
