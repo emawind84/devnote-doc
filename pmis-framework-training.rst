@@ -256,6 +256,11 @@ Give a look at the files under ``/web/ext/script/``
 Web Grid Plugin - jqGrid (Javascript Library)
 -----------------------------------------------
 
+- Flat Grid Configuration
+- Tree Grid Configuration
+- Pagined Grid (Asynchronous Paging)
+- Fetching Server Data
+
 *todo*
 
 
