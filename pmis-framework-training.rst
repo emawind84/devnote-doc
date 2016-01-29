@@ -9,7 +9,7 @@ TODO List
 
 #. Eclipse IDE
 #. Subversion Control (SVN)
-#. Tomcat Web Application
+#. Apache Tomcat - Web Application Server
 #. PMIS Source Code Tour
 #. Browser Development Tools
 #. Java Basic Concepts
@@ -106,7 +106,25 @@ Subversion Control (SVN)
 
 ---------------------------------------------------------------------	
 	
-	
+
+Apache Tomcat - Web Application Server
+---------------------------------------
+
+Deployment
+	https://tomcat.apache.org/tomcat-7.0-doc/appdev/deployment.html
+
+Apache Tomcat Versions
+	http://tomcat.apache.org/whichversion.html
+
+Standard_Directory_Layout
+	https://tomcat.apache.org/tomcat-7.0-doc/appdev/deployment.html#Standard_Directory_Layout
+
+
+*todo*
+
+---------------------------------------------------------------------
+
+
 Browser Development Tools
 -------------------------------
 
@@ -120,24 +138,12 @@ Browser Development Tools
 ---------------------------------------------------------------------
 
 
-Tomcat Web Application
----------------------------
-
-.. note:: 
-	https://tomcat.apache.org/tomcat-7.0-doc/appdev/deployment.html 
-
-
-`Standard_Directory_Layout <https://tomcat.apache.org/tomcat-7.0-doc/appdev/deployment.html#Standard_Directory_Layout>`_
-
-*todo*
-
----------------------------------------------------------------------
-
-
 Java Basic Concepts
 ---------------------
 
-.. note:: `Object-Oriented Programming Concepts <https://docs.oracle.com/javase/tutorial/java/concepts/index.html>`_
+.. note:: 
+	- `Object-Oriented Programming Concepts <https://docs.oracle.com/javase/tutorial/java/concepts/index.html>`_
+	- `Cohesion & Coupling <http://www.tutorialspoint.com/software_engineering/software_design_basics.htm>`_
 
 - :ref:`code-conventions-for-the-java`
 - :ref:`checked-versus-unchecked-exceptions`
@@ -167,6 +173,7 @@ Apache Maven (software project management)
 
 
 ---------------------------------------------------------------------
+
 
 Spring Framework
 --------------------
@@ -204,6 +211,7 @@ Transaction Management
 
 ---------------------------------------------------------------------
 
+
 Struts Framework
 -----------------------
 
@@ -219,12 +227,16 @@ Struts Framework
 	
 ---------------------------------------------------------------------
 
+
 iBatis SQL Data Mapper
 ---------------------------
 
 .. note:: 
 	- `New MyBatis Project Website (with some reference to the old one) <http://blog.mybatis.org/>`_
 	- `Books iBATIS in Action <https://www.manning.com/books/ibatis-in-action>`_
+
+
+---------------------------------------------------------------------
 
 
 Test-driven Development (TDD)
@@ -239,6 +251,8 @@ Junit - Java Testing Tool
 
 *todo*
 
+---------------------------------------------------------------------
+
 
 jQuery (Javascript Library)
 ---------------------------------
@@ -247,6 +261,7 @@ jQuery (Javascript Library)
 
 *todo*
 
+---------------------------------------------------------------------
 
 
 SangAh Library (Javascript Library)
@@ -262,6 +277,7 @@ Give a look at the files under ``/web/ext/script/``
 
 *todo*
 
+---------------------------------------------------------------------
 
 
 Web Grid Plugin - jqGrid (Javascript Library)
@@ -277,6 +293,7 @@ Web Grid Plugin - jqGrid (Javascript Library)
 
 *todo*
 
+---------------------------------------------------------------------
 
 
 Web Editor - CKEditor (Javascript Library)
@@ -287,6 +304,7 @@ Web Editor - CKEditor (Javascript Library)
 
 *todo*
 
+---------------------------------------------------------------------
 
 
 PMIS Authentication System (Spring Security)
