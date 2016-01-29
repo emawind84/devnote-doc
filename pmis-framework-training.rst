@@ -51,17 +51,21 @@ Eclipse IDE
 .. note::
 	- Main Download Page: https://eclipse.org/downloads/
 	- Other Builds: http://download.eclipse.org/eclipse/downloads/drops4/R-4.5.1-201509040015/
-		
-Download & Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Install Java first.
+.. important:: 
+	**If you install the Java JDK x64 version make sure to download Eclipse 64bit as well!**
 
-Set ``JAVA_HOME`` to Java jdk folder and add the jre bin folder to the ``PATH`` variable.
+#. Install Java first! Take the JDK `HERE <http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>`_.
+
+#. Set ``JAVA_HOME`` to **Java JDK folder**.
+
+#. Set ``PATH`` to the **JRE or JDK bin folder**.
+
+#. Make sure Java is installed. Open **cmd.exe** and type ``> java -version``
 
 Download the last release of Eclipse following this step:
 
-#. Go to the `download page <http://download.eclipse.org/eclipse/downloads/>`_.
+#. Go to the `Eclipse Download Page <http://download.eclipse.org/eclipse/downloads/>`_.
 
 #. Under **Latest Release** click on the latest version and you will be redirected to another page.
 
@@ -83,8 +87,19 @@ Download the last release of Eclipse following this step:
 	
 	These plugins should be enough to get started.
 
-Tomcat Server Setting
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuration Tips
+^^^^^^^^^^^^^^^^^^^
+
+#. Change encoding to UTF-8 for all the file types supported (.jsp, .html, .properties, .xml, .java, .css).
+#. Change the installed Java version JRE -> JDK.
+#. Change the default Java Compiler to 1.6.
+#. Add a new Server Runtime Environment.
+#. Change the Eclipse Perspective to a more suitable for development (``Java EE`` or ``Java``).
+#. Recommended to change the Left Panel View to ``Package Explorer`` and ``Navigator``.
+#. Recommended to change the **Package Presentation** for the **Package Explorer** to ``Hierarchical``. 
+#. You might want to disable auto build (**Project -> Build Automatically**) 
+   and change the ``Ctrl+B`` key combination to build just **one Project**.
+   The default combination will build all projects in the workspace.
 
 *todo*
 
