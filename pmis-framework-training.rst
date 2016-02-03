@@ -34,6 +34,7 @@ TODO List
 
 	- JUnit
 
+#. JavaScript, HTML & CSS
 #. jQuery (Javascript Library)
 #. SangAh Libraries (Javascript Library)
 #. jqGrid - Web Grid (Javascript Library)
@@ -41,6 +42,7 @@ TODO List
 #. PMIS Authentication System (Spring Security)
 #. Building & Deployment Process
 #. DB Update Process
+#. VSFlexGrid Manual & API Reference
 
 ---------------------------------------------------------------------
 
@@ -109,14 +111,17 @@ Configuration Tips
 Subversion Control (SVN)
 ------------------------------
 
-*todo*
+Official Website
+	https://subversion.apache.org/
 
-.. note:: 
-	| Official Website https://subversion.apache.org/
-	| SVN 1.7 Documentation: http://svnbook.red-bean.com/en/1.7/index.html
-	| SVN 1.8 Documentation: http://svnbook.red-bean.com/nightly/en/index.html 
-	| Windows Client: https://tortoisesvn.net/
-	
+SVN 1.7 Documentation
+	http://svnbook.red-bean.com/en/1.7/index.html
+
+SVN 1.8 Documentation
+	http://svnbook.red-bean.com/nightly/en/index.html 
+
+Tortoise SVN Windows Client
+	https://tortoisesvn.net/
 
 
 ---------------------------------------------------------------------	
@@ -143,10 +148,14 @@ Standard_Directory_Layout
 Browser Development Tools
 -------------------------------
 
-.. note:: 
-	| `Firefox Development Tools <https://developer.mozilla.org/en-US/Learn/Discover_browser_developer_tools>`_
-	| `Chrome Development Tools <https://developers.google.com/web/tools/chrome-devtools/?hl=en>`_
-	| `IE Development Tools <https://msdn.microsoft.com/en-us/library/dd565628%28v=vs.85%29.aspx>`_
+Firefox Development Tools 
+	https://developer.mozilla.org/en-US/Learn/Discover_browser_developer_tools
+	
+Chrome Development Tools 
+	https://developers.google.com/web/tools/chrome-devtools/
+	
+IE Development Tools 
+	https://msdn.microsoft.com/en-us/library/dd565628%28v=vs.85%29.aspx
 
 *todo*
 	
@@ -157,10 +166,10 @@ Java Basic Concepts
 ---------------------
 
 Object-Oriented Programming Concepts 
-	<https://docs.oracle.com/javase/tutorial/java/concepts/index.html>
+	https://docs.oracle.com/javase/tutorial/java/concepts/index.html
 	
 Cohesion & Coupling 
-	<http://www.tutorialspoint.com/software_engineering/software_design_basics.htm>
+	http://www.tutorialspoint.com/software_engineering/software_design_basics.htm
 	
 [Logging] Java Util Logging
 	https://docs.oracle.com/javase/7/docs/technotes/guides/logging/overview.html
@@ -180,11 +189,15 @@ Cohesion & Coupling
 Apache Maven (software project management)
 ----------------------------------------------
 
-.. note:: 
-	- `Apache Maven Website <https://maven.apache.org/>`_
-	- 'Maven Repository <http://mvnrepository.com/>'_
+Apache Maven Website
+	https://maven.apache.org
 
+Introduction to the Build Lifecycle	
+	https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
 
+Maven Repository
+	http://mvnrepository.com
+	
 #. Download
 	https://maven.apache.org/download.cgi
 
@@ -238,9 +251,10 @@ Transaction Management
 Struts Framework
 -----------------------
 
-.. note::
-	- `Struts 2 Documentation - Interceptors <https://struts.apache.org/docs/interceptors.html>`_
-	- `Book Struts 2 in Action <https://www.manning.com/books/struts-2-in-action>`_
+.. note:: `Book Struts 2 in Action <https://www.manning.com/books/struts-2-in-action>`_
+
+Struts 2 Documentation - Interceptors
+	https://struts.apache.org/docs/interceptors.html
 
 **Book Struts 2 in Action** useful chapters:
 		
@@ -254,10 +268,11 @@ Struts Framework
 iBatis SQL Data Mapper
 ---------------------------
 
-.. note:: 
-	- `New MyBatis Project Website (with some reference to the old one) <http://blog.mybatis.org/>`_
-	- `Books iBATIS in Action <https://www.manning.com/books/ibatis-in-action>`_
+Books iBATIS in Action
+	https://www.manning.com/books/ibatis-in-action
 
+New MyBatis Project Website (with some reference to the old one)
+	http://blog.mybatis.org
 
 ---------------------------------------------------------------------
 
@@ -265,10 +280,11 @@ iBatis SQL Data Mapper
 Test-driven Development (TDD)
 --------------------------------
 
-.. note:: 
-	- `Test-driven development <https://en.wikipedia.org/wiki/Test-driven_development>`_
-	- `More results here <https://goo.gl/nIQTWD>`_
+Test-driven development
+	https://en.wikipedia.org/wiki/Test-driven_development
 	
+	...more results here https://goo.gl/nIQTWD
+
 Junit - Java Testing Tool
 	http://junit.org/
 
@@ -277,10 +293,47 @@ Junit - Java Testing Tool
 ---------------------------------------------------------------------
 
 
+JavaScript, HTML & CSS
+--------------------------
+
+- Learn JavaScript
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript
+	
+	Start with this guide 
+		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
+
+- Learn HTML
+	https://developer.mozilla.org/en-US/docs/Web/HTML
+	
+	Start with this guide 
+		https://developer.mozilla.org/en-US/docs/Web/Guide/HTML
+	
+- Learn CSS
+	https://developer.mozilla.org/en-US/docs/Web/CSS
+	
+	Getting Started with CSS
+		https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started
+
+---------------------------------------------------------------------
+
+
 jQuery (Javascript Library)
 ---------------------------------
 
-.. note:: https://api.jquery.com/
+jQuery Website
+	http://jquery.com/
+
+Download jQuery
+	http://jquery.com/download/#using-jquery-with-a-cdn
+	
+Learning Center
+	http://learn.jquery.com/
+
+API Documentation
+	https://api.jquery.com/
+
+How to Create a Basic Plugin	
+	https://learn.jquery.com/plugins/basic-plugin-creation/
 
 *todo*
 
@@ -306,13 +359,21 @@ Give a look at the files under ``/web/ext/script/``
 Web Grid Plugin - jqGrid (Javascript Library)
 -----------------------------------------------
 
+Wiki Documentation
+	http://www.trirand.com/jqgridwiki/doku.php?id=wiki:jqgriddocs
+
+TODO
+
 - Flat Grid Configuration
 - Tree Grid Configuration
 - Pagined Grid (Asynchronous Paging)
 - Fetching Server Data
-
-.. note:: `Wiki Documentation <http://www.trirand.com/jqgridwiki/doku.php?id=wiki:jqgriddocs>`_
-
+	
+- :ref:`jqgrid-custom-formatter`
+- :ref:`jqgrid-custom-select-row`
+- :ref:`jqgrid-paging-example`
+- :ref:`jqgrid-save-editing-row-before-request`
+- :ref:`jqgrid-getlocalrow-vs-getrowdata`
 
 *todo*
 
@@ -322,8 +383,10 @@ Web Grid Plugin - jqGrid (Javascript Library)
 Web Editor - CKEditor (Javascript Library)
 ----------------------------------------------
 
-.. note:: 
-	`CKEditor Website <http://ckeditor.com/>`_
+CKEditor Website
+	http://ckeditor.com
+	
+:ref:`ckeditor-how-to`
 
 *todo*
 
@@ -337,3 +400,15 @@ PMIS Authentication System (Spring Security)
 	More information here :ref:`spring-security-2`
 	
 *todo*
+
+---------------------------------------------------------------------
+
+
+VSFlexGrid Manual & API Reference
+------------------------------------
+
+VSFlexGrid Properties, Events, and Methods
+	http://helpcentral.componentone.com/docs/vsflexgrid8/vsflexgridpropertieseventsandmethods.htm
+	
+VS FLex grid manual
+	http://www.scribd.com/doc/22750806/VS-FLex-grid-manual
