@@ -156,9 +156,17 @@ Browser Development Tools
 Java Basic Concepts
 ---------------------
 
-.. note:: 
-	- `Object-Oriented Programming Concepts <https://docs.oracle.com/javase/tutorial/java/concepts/index.html>`_
-	- `Cohesion & Coupling <http://www.tutorialspoint.com/software_engineering/software_design_basics.htm>`_
+Object-Oriented Programming Concepts 
+	<https://docs.oracle.com/javase/tutorial/java/concepts/index.html>
+	
+Cohesion & Coupling 
+	<http://www.tutorialspoint.com/software_engineering/software_design_basics.htm>
+	
+[Logging] Java Util Logging
+	https://docs.oracle.com/javase/7/docs/technotes/guides/logging/overview.html
+	
+[Logging] Apache Log4j 2
+	http://logging.apache.org/log4j/2.x/
 
 - :ref:`code-conventions-for-the-java`
 - :ref:`checked-versus-unchecked-exceptions`
