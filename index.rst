@@ -87,6 +87,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   tomcat-apache-new-server-settings
    pmis-framework-training
    howto-oracledb-user-import&export
    pmis-manual-howto

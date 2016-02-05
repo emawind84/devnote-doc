@@ -165,6 +165,9 @@ IE Development Tools
 Java Basic Concepts
 ---------------------
 
+Learn Java Online
+	https://www.hackerrank.com/domains/java/java-introduction
+
 Object-Oriented Programming Concepts 
 	https://docs.oracle.com/javase/tutorial/java/concepts/index.html
 	
@@ -297,18 +300,21 @@ JavaScript, HTML & CSS
 --------------------------
 
 - Learn JavaScript
+	https://www.codeschool.com/paths/javascript
 	https://developer.mozilla.org/en-US/docs/Web/JavaScript
 	
 	Start with this guide 
 		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
 
 - Learn HTML
+	https://www.codeschool.com/courses/front-end-foundations
 	https://developer.mozilla.org/en-US/docs/Web/HTML
 	
 	Start with this guide 
 		https://developer.mozilla.org/en-US/docs/Web/Guide/HTML
 	
 - Learn CSS
+	https://www.codeschool.com/courses/front-end-foundations
 	https://developer.mozilla.org/en-US/docs/Web/CSS
 	
 	Getting Started with CSS
