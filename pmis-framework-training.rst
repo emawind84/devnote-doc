@@ -300,25 +300,17 @@ JavaScript, HTML & CSS
 --------------------------
 
 - Learn JavaScript
-	https://www.codeschool.com/paths/javascript
-	https://developer.mozilla.org/en-US/docs/Web/JavaScript
-	
-	Start with this guide 
-		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
+	| https://www.codeschool.com/paths/javascript
+	| https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
 
 - Learn HTML
-	https://www.codeschool.com/courses/front-end-foundations
-	https://developer.mozilla.org/en-US/docs/Web/HTML
-	
-	Start with this guide 
-		https://developer.mozilla.org/en-US/docs/Web/Guide/HTML
+	| https://www.codeschool.com/courses/front-end-foundations
+	| https://developer.mozilla.org/en-US/docs/Web/Guide/HTML
 	
 - Learn CSS
-	https://www.codeschool.com/courses/front-end-foundations
-	https://developer.mozilla.org/en-US/docs/Web/CSS
+	| https://www.codeschool.com/courses/front-end-foundations
+	| https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started
 	
-	Getting Started with CSS
-		https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started
 
 ---------------------------------------------------------------------
 
