@@ -152,7 +152,7 @@ Installing Phonetisaurus, m2m-aligner and MITLM
 
 	I had some problems compiling Phonetisaurus from Raspberry Pi 2 and this is how I resolved.
 	
-	Check the version of your g++ with:
+	Check the version of your **g++** compiler with the command:
 
 	::
 		
@@ -170,17 +170,17 @@ Installing Phonetisaurus, m2m-aligner and MITLM
 
 	If you have **g++ 4.7** you still might have this problem and you should try with the compiler **c++11** instead.
 
-	To change the compiler before the make just give this command:
+	To change the compiler before the **make** just give this command:
 
 	::
 		
 		// for g++-4.6
-		CPPFLAGS="-std=c++03" make
+		$ CPPFLAGS="-std=c++03" make
 
 		// for g++-4.7
-		CPPFLAGS="-std=c++11" make
+		$ CPPFLAGS="-std=c++11" make
 
-	reference: https://gcc.gnu.org/projects/cxx0x.html
+	*reference: https://gcc.gnu.org/projects/cxx0x.html*
 
 
 To use the Pocketsphinx STT engine, you also need to install MIT Language Modeling Toolkit, m2m-aligner and Phonetisaurus (and thus OpenFST).:
