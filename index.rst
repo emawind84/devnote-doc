@@ -24,6 +24,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   raspi-adhoc-wifi-network
    howto-raspi-speech-recognition-and-jasper
    disk-io-test
    varnish-on-raspberrypi
