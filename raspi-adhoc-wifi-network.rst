@@ -9,6 +9,12 @@ to the Raspberry Pi 2 using a wireless connection,
 without the need of using a router or access point.
 This tutorial has been tested on **Raspbian wheezy** distribution.
 
+.. seealso:: Some reference:
+	
+	| https://wiki.debian.org/BridgeNetworkConnections#Setting_up_your_Bridge
+	| https://wiki.gentoo.org/wiki/Network_management_using_DHCPCD
+	| https://www.raspberrypi.org/forums/viewtopic.php?f=36&t=125139
+
 We need to edit the network interfaces configuration:
 
 ::
