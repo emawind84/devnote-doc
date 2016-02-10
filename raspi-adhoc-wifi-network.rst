@@ -157,6 +157,11 @@ looking at my output **inet 192.168.10.1/24**, you can see my network has the ad
 	
 Now you can connect directly to your Raspberry Pi 2 using his local address **192.168.10.1**.
 
+----------------------
+
+*skip this part it doesn't work*
+---------------------------------
+
 You will see that you can not use this network to access Internet.
 In case you want to be able to use internet using this network
 you have to install a new service **bridge-utils**, that will bridge the Internet connection

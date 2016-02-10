@@ -95,6 +95,24 @@ alsamixer can be used to increase the capture levels. After an increase, it look
 
 	...
 	Mono: Capture 68 [87%] [10.00dB] [on]
+	
+	
+.. important::
+
+	For the version **0.8v** of **sphinxbase** and **pocketsphinx** 
+	we need to recompile the C source files cause of some bugs.
+	This process is important if you are going to use a 
+	`Python Virtual Environment <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`_ for Jasper.
+	
+	Delete the ``python/sphinxbase.c`` in **sphinxbase** folder 
+	and ``python/pocketsphinx.c`` in **pocketsphinx** folder, these files will be
+	generated again after you execute make from their respective folders. 
+	
+	Install **cython** if you don't have it already, it is required in order to recompile the c files.
+	
+	::
+	
+		$ sudo apt-get install cython
 
 
 Building Sphinxbase
