@@ -207,14 +207,16 @@ htmlhelp_basename = 'DiscoSphinxTestdoc'
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
-'papersize': 'letterpaper',
-'pointsize': '10pt'
-
-# Additional stuff for the LaTeX preamble.
-#'preamble': '',
-
-# Latex figure (float) alignment
-#'figure_align': 'htbp',
+	'papersize': 'letterpaper',
+	'pointsize': '10pt',
+	'inputenc': '',
+	'utf8extra': '',
+	'preamble': '''
+\usepackage{fontspec}
+\setsansfont{Arial Unicode MS}
+\setromanfont{Arial Unicode MS}
+\setmonofont{unifont.ttf} % set path where you installed unifont.ttf
+'''
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
