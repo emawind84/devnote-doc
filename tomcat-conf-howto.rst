@@ -162,6 +162,71 @@ replace ``<PROJECT PATH>`` and ``<PROJECT DOMAIN>``.
 
 -------------
 
+
+SSL Apache Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Upload files necessary for using SSL protocol into the server.
+
+	Locate the folder ``/etc/pki/tls`` create folder ``kspmis`` and put the following files:
+
+	_wildcard_kspmis_com.crt
+		Server certificate data file
+		
+	rsa-dv.chain-bundle.pem
+		Server CA Certificates
+		
+	_wildcard_kspmis_com_SHA256WITHRSA.key
+		Server private key file
+		
+
+2. In order to use SSL verify that ``mod_ssl`` module is enabled.
+
+	- ``mod_ssl.so`` should be present in modules folder
+
+	- The following directives should be present somewhere. 
+		Check files inside extra folder (ex. httpd-ssl.conf)
+		and ``httpd.conf``.::
+		
+		LoadModule ssl_module modules/mod_ssl.so
+		Listen 443
+			
+3. Create a VirtualHost listening on port 80 that will redirect requests from *.kspmis.com to 443::
+
+	<VirtualHost *:80>
+		ServerAlias *.kspmis.com
+		#ServerName kamcoybd.kspmis.com
+		#ServerAlias www.kamcoybd.kspmis.com
+		RewriteEngine on
+		ReWriteCond %{SERVER_PORT} !^443$
+		RewriteRule ^/(.*) https://%{HTTP_HOST}/$1 [NC,R,L]
+	</VirtualHost>
+
+4. Modify the VirtualHost listening on port 80 as follow::
+
+	<VirtualHost *:443>
+	
+		...
+
+		# ============ SSL CERTIFICATE HERE =============
+		SSLEngine On
+		SSLCertificateFile    /etc/pki/tls/kspmis/_wildcard_kspmis_com.crt
+		SSLCertificateKeyFile /etc/pki/tls/kspmis/_wildcard_kspmis_com_SHA256WITHRSA.key
+		SSLCertificateChainFile /etc/pki/tls/kspmis/rsa-dv.chain-bundle.pem
+		# ================================================
+
+5. Test the apache configuration::
+
+	# apachectl -t
+	
+	[Thu Feb 25 16:04:11 2016] [warn] _default_ VirtualHost overlap on port 443, the first has precedence
+	Syntax OK
+	
+	
+-------------
+
+
+
 .. load_balancer_howto:
 
 Load Balancer How-To
