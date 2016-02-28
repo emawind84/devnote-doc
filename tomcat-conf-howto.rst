@@ -87,6 +87,81 @@ For logging java garbage collector add this java options (CATALINA_BASE have to 
 
 -------------
 
+
+Apache Configuration
+---------------------------
+
+The following configuration should be added to the Apache file
+``httpd-vhosts.conf`` or whatever the configuration file is.
+
+**Adapt the configuration to your project settings**, 
+replace ``<PROJECT PATH>`` and ``<PROJECT DOMAIN>``.
+
+.. code-block:: apacheconf
+
+	SetEnvIf Request_URI "^/ext/" dontlog
+	SetEnvIf Request_URI "/maintenance.html" no-jk
+
+	<VirtualHost *:80>
+		ServerAdmin webmaster@dummy-host.example.com
+		DocumentRoot "<PROJECT PATH>/web"
+		ServerName <PROJECT DOMAIN>
+		ErrorLog "logs/garam-error_log"
+		#CustomLog "logs/garam-access_log" common
+		CustomLog "logs/garam-access.log" common env=!dontlog
+
+		DirectoryIndex index.jsp
+
+		<Directory "<PROJECT PATH>/web">
+			Options FollowSymLinks
+			Order allow,deny
+			Allow from all
+		</Directory>
+
+		# DENY ACCESS TO WEB-INF
+		<Location "/WEB-INF/">
+		deny from all
+		</Location>
+
+		#jkMount /*                 balance1
+		jkMount /*.jsp              balance1
+		jkMount /*.action           balance1
+		jkMount /*/edms/*           balance1
+		jkMount /logout             balance1
+		jkMount /Thumb              balance1
+		jkMount /ws/*               balance1
+		jkMount /FileDownServlet    balance1
+
+		ErrorDocument 503 /maintenance.html
+		<Location /maintenance.html>
+		Order allow,deny
+		Allow from all
+		</Location>
+
+		<IfModule mod_rewrite.c>
+		RewriteEngine On
+		RewriteCond %{DOCUMENT_ROOT}/maintenance.html -f
+		RewriteCond %{DOCUMENT_ROOT}/maintenance.enable -f
+		RewriteCond %{SCRIPT_FILENAME} !maintenance.html
+		RewriteRule ^.*$ /maintenance.html [R=503,L]
+		</IfModule>
+
+		# JK MANAGER
+		<Location /jkmanager/>
+		JkMount jkstatus
+		Order deny,allow
+		Deny from all
+		Allow from 127.0.0.1
+		Allow from 203.239.21.0/24
+		</Location>
+
+	</VirtualHost>
+
+
+... and read this https://httpd.apache.org/docs/2.4/upgrading.html if using **Apache 2.4**.
+
+-------------
+
 .. load_balancer_howto:
 
 Load Balancer How-To
@@ -125,14 +200,15 @@ Load Balancer How-To
 	# load to the members worker1 and worker2
 	worker.balance1.type=lb
 	worker.balance1.balance_workers=worker1, worker2
+	worker.list=balance1
 
 	worker.worker1.type=ajp13
 	worker.worker1.host=myhost1
 	worker.worker1.port=8009
 
 	worker.worker2.type=ajp13
-	worker.worker1.host=myhost2
-	worker.worker1.port=8009
+	worker.worker2.host=myhost2
+	worker.worker2.port=8010
 	
 	
 .. important:: The name of the Tomcat needs to be equal to the name of the 
@@ -144,15 +220,13 @@ Load Balancer How-To
 	
 .. code-block:: xml
 
-	<Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" />
-		<Engine defaultHost="cicciopanza" jvmRoute="worker1" name="default">
+	<Engine defaultHost="cicciopanza" jvmRoute="worker1" name="default">
 
 **tomcat2 server.xml**
 	
 .. code-block:: xml
 
-	<Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" />
-		<Engine defaultHost="cicciopanza" jvmRoute="worker2" name="default">
+	<Engine defaultHost="cicciopanza" jvmRoute="worker2" name="default">
 	
 ---------------	
 

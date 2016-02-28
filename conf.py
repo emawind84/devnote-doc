@@ -207,17 +207,16 @@ htmlhelp_basename = 'DiscoSphinxTestdoc'
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
-# The paper size ('letterpaper' or 'a4paper').
-#'papersize': 'letterpaper',
-
-# The font size ('10pt', '11pt' or '12pt').
-#'pointsize': '10pt',
-
-# Additional stuff for the LaTeX preamble.
-#'preamble': '',
-
-# Latex figure (float) alignment
-#'figure_align': 'htbp',
+	'papersize': 'letterpaper',
+	'pointsize': '10pt',
+	'inputenc': '',
+	'utf8extra': '',
+	'preamble': '''
+\usepackage{fontspec}
+\setsansfont{Arial Unicode MS}
+\setromanfont{Arial Unicode MS}
+\setmonofont{unifont.ttf} % set path where you installed unifont.ttf
+'''
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -230,14 +229,14 @@ latex_documents = [
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-#latex_logo = None
+#latex_logo = '_images/logo.gif'
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
-#latex_use_parts = False
+latex_use_parts = True
 
 # If true, show page references after internal links.
-#latex_show_pagerefs = False
+latex_show_pagerefs = True
 
 # If true, show URL addresses after external links.
 #latex_show_urls = False
@@ -246,7 +245,7 @@ latex_documents = [
 #latex_appendices = []
 
 # If false, no module index is generated.
-#latex_domain_indices = True
+latex_domain_indices = True
 
 
 # -- Options for manual page output ---------------------------------------
