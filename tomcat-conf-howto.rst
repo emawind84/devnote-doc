@@ -85,7 +85,79 @@ For logging java garbage collector add this java options (CATALINA_BASE have to 
 
     -Xloggc:$CATALINA_BASE/logs/gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps
 
--------------
+----------------------------
+
+
+[Linux] Apache Tomcat Logging Settings
+---------------------------------------
+
+Set logging.properties
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default with the default settings in ``logging.properties``, Tomcat will rotate the logs and it will logs lots of stuff
+and it will write same log on catalina.out and catalina.log and we do not want this in production.
+
+Replace the ``logging.properties`` file inside the ``conf`` folder of tomcat with this::
+	
+	handlers = 1catalina.org.apache.juli.FileHandler
+
+	.handlers = 1catalina.org.apache.juli.FileHandler
+
+	############################################################
+	# Handler specific properties.
+	# Describes specific configuration info for Handlers.
+	############################################################
+
+	1catalina.org.apache.juli.FileHandler.level = FINE
+	1catalina.org.apache.juli.FileHandler.directory = ${catalina.base}/logs
+	1catalina.org.apache.juli.FileHandler.prefix = catalina
+	1catalina.org.apache.juli.FileHandler.rotatable = false
+
+	############################################################
+	# Facility specific properties.
+	# Provides extra control for each logger.
+	############################################################
+
+Configure a log rotate
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Create a file into /etc/logrotate.d folder:
+
+.. code-block:: bash
+
+	# touch /etc/logrotate.d/tomcat
+	
+Put this content inside the file::
+
+	/var/log/tomcat/*.log {
+		copytruncate
+		daily
+		rotate 7
+		compress
+		missingok
+		size 5M
+	}
+
+Then create a symbolic link to the ``catalina.log``
+(replace the path to the tomcat and change the name catalina.log if you need to):
+
+.. code-block:: bash
+
+	ln -s /usr/local/tomcat/logs/catalina.log catalina.log
+	
+Reload the logrotate deamon:
+
+.. code-block:: bash
+
+	# /usr/sbin/logrotate /etc/logrotate.conf
+
+More on logrorate:
+
+.. code-block:: bash
+
+	# man logrotate
+	
+-----------------------------------
 
 
 Apache Configuration
@@ -167,8 +239,7 @@ SSL Apache Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Upload files necessary for using SSL protocol into the server.
-
-	Locate the folder ``/etc/pki/tls`` create folder ``kspmis`` and put the following files:
+   Locate the folder ``/etc/pki/tls`` create folder ``kspmis`` and put the following files:
 
 	_wildcard_kspmis_com.crt
 		Server certificate data file
@@ -188,10 +259,10 @@ SSL Apache Configuration
 		Check files inside extra folder (ex. httpd-ssl.conf)
 		and ``httpd.conf``.::
 		
-		LoadModule ssl_module modules/mod_ssl.so
-		Listen 443
+			LoadModule ssl_module modules/mod_ssl.so
+			Listen 443
 			
-3. Create a VirtualHost listening on port 80 that will redirect requests from *.kspmis.com to 443::
+3. Create a VirtualHost listening on port 80 that will redirect requests from ``*.kspmis.com`` to 443::
 
 	<VirtualHost *:80>
 		ServerAlias *.kspmis.com
