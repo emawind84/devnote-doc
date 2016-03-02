@@ -171,6 +171,9 @@ replace ``<PROJECT PATH>`` and ``<PROJECT DOMAIN>``.
 
 .. code-block:: apacheconf
 
+	# Add this for Apache 2.2
+	NameVirtualHost *:80
+
 	SetEnvIf Request_URI "^/ext/" dontlog
 	SetEnvIf Request_URI "/maintenance.html" no-jk
 
