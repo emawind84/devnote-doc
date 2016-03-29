@@ -8,7 +8,7 @@
 Linux Server Configuration Apache HTTP - Tomcat
 =================================================
 
-1. Update System
+#. Update System
 -----------------------
 
 ::
@@ -19,18 +19,14 @@ Linux Server Configuration Apache HTTP - Tomcat
 	# for Ubuntu
 	apt-get update && apt-get upgrade
 
-#. Create User sangah
+1. Create User sangah and folder SAPP
+-----------------------------------------
 
 ::
 
 	useradd sangah
 
-#. Create folder /home/sangah/SAPP
-
-::
-
 	mkdir /home/sangah/SAPP
-
 
 
 2. Install PDF Conversion Tool (wkhtmltopdf)
@@ -465,3 +461,9 @@ and so the enforcement will be disabled for this directory and all the subdirect
 ---------------------------------------------------
 
 *TODO*
+
+
+.. seealso:: Other resources:
+
+	- :ref:`apache-pmis-conf-example`
+	- :ref:`system-properties`
