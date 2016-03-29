@@ -4,9 +4,9 @@
 
 .. sectionauthor:: Emanuele Disco <emanuele.disco@sangah.com>
 
-==============================================
-New Server Configuration Apache HTTP - Tomcat
-==============================================
+=================================================
+Linux Server Configuration Apache HTTP - Tomcat
+=================================================
 
 1. Update System
 -----------------------
