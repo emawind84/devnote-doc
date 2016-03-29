@@ -1,5 +1,7 @@
 .. highlight:: bash
 
+.. _nginx-file-upload-handler:
+
 ==================================================
 Nginx File Upload Handler Install & Configuration
 ==================================================

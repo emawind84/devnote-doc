@@ -159,6 +159,7 @@ More on logrorate:
 	
 -----------------------------------
 
+.. _apache-pmis-conf-example:
 
 Apache Configuration
 ---------------------------
@@ -301,7 +302,7 @@ SSL Apache Configuration
 
 
 
-.. load_balancer_howto:
+.. _load_balancer_howto:
 
 Load Balancer How-To
 --------------------------
