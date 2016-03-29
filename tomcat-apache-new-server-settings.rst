@@ -261,10 +261,10 @@ inside our SAPP folder::
 
 
 
-11. Upload struts.properties, log4j.properties and system_config_ko.properties to ~/WEB-INF/classes
------------------------------------------------------------------------------------------------------
+11. Deploy ``struts.properties``, ``log4j.properties`` and ``system_config_ko.properties``
+-------------------------------------------------------------------------------------------
 
-Using WinSCP upload the following files inside the project ``classes`` folder:
+Using WinSCP upload the following files inside the project folder ``~/WEB-INF/classes``:
 
 - struts.properties
 	Struts configuration file
@@ -388,7 +388,7 @@ AJP configuration::
 	worker.worker1.type=ajp13
 
 
-16. Create a conf file for the project under the folder conf.d of Apache
+16. Create a conf file for the project under the folder ``conf.d`` of Apache
 ---------------------------------------------------------------------------
 
 From the apache folder create a new configuration file for the project inside the ``conf.d`` folder::
