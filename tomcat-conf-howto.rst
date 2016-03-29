@@ -183,20 +183,19 @@ replace ``<PROJECT PATH>`` and ``<PROJECT DOMAIN>``.
 		DocumentRoot "<PROJECT PATH>/web"
 		ServerName <PROJECT DOMAIN>
 		ErrorLog "logs/garam-error_log"
-		#CustomLog "logs/garam-access_log" common
 		CustomLog "logs/garam-access.log" common env=!dontlog
 
 		DirectoryIndex index.jsp
 
 		<Directory "<PROJECT PATH>/web">
-			Options FollowSymLinks
-			Order allow,deny
-			Allow from all
+		Options FollowSymLinks
+		Order allow,deny
+		Allow from all
 		</Directory>
 
 		# DENY ACCESS TO WEB-INF
 		<Location "/WEB-INF/">
-		deny from all
+		Deny from all
 		</Location>
 
 		#jkMount /*                 balance1
@@ -406,8 +405,8 @@ Add the following code to the directive VirtualHost inside the host configuratio
 	# JK MANAGER
 	<Location /jkmanager/>
 	JkMount jkstatus
-	Require all denied
-	Require host 127.0.0.1
+	#Require all denied
+	Require ip 127.0.0.1
 	</Location>
 
 .. note:: The Status Manager will be available at the URI ``<schema>://127.0.0.1/jkmanager/``.
@@ -415,7 +414,7 @@ Add the following code to the directive VirtualHost inside the host configuratio
 	
 .. code-block:: apacheconf
 
-	# JK MANAGER
+	# JK MANAGER 2.2
 	<Location /jkmanager/>
 	JkMount jkstatus
 	Order deny,allow
@@ -423,6 +422,15 @@ Add the following code to the directive VirtualHost inside the host configuratio
 	Allow from 127.0.0.1
 	Allow from 200.300.20.0/24
 	Allow from 192.168.0.10
+	</Location>
+	
+	# JK MANAGER 2.4
+	<Location /jkmanager/>
+	JkMount jkstatus
+	
+	Require ip 127.0.0.1
+	Require ip 200.300.20.0/24
+	Require ip 192.168.0.10
 	</Location>
 	
 .. _`LoadBalancer HowTo`: https://tomcat.apache.org/connectors-doc/common_howto/loadbalancers.html
