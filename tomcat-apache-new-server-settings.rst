@@ -467,3 +467,6 @@ and so the enforcement will be disabled for this directory and all the subdirect
 
 	- :ref:`apache-pmis-conf-example`
 	- :ref:`system-properties`
+	- :ref:`howto-oracledb-user-import&export`
+	- :ref:`oracle-tablespace-schema-howto`
+	- :ref:`oracle-install-centos`
