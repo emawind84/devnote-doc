@@ -2,13 +2,13 @@
 
 .. sectionauthor:: Emanuele Disco <emanuele.disco@sangah.com>
 
-.. image:: _images/maintenance.jpg
-
 .. _pmis-linux-server-settings:
 
 =================================================
 PMIS - Linux Server Configuration
 =================================================
+
+.. image:: _images/maintenance.jpg
 
 #. Update System Packages
 ---------------------------
@@ -319,6 +319,10 @@ Using WinSCP upload the following files inside the project folder ``~/WEB-INF/cl
 ---------------------------------------------
 
 Good time for editing ``system_config_ko.properties``
+
+.. note:: Take a look at :ref:`system-properties` for more information.
+
+TODO Check the following properties: 
 
 - fix all the path to the web folder
 - fix all the url & domain
