@@ -88,7 +88,7 @@ Contents:
    :maxdepth: 1
 
    nginx-file-upload-handler.rst
-   tomcat-apache-new-server-settings
+   pmis-linux-server-settings
    pmis-framework-training
    howto-oracledb-user-import&export
    pmis-manual-howto

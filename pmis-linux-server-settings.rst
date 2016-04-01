@@ -1,15 +1,17 @@
 .. highlight:: bash
 
-.. _tomcat-apache-new-server-settings:
-
 .. sectionauthor:: Emanuele Disco <emanuele.disco@sangah.com>
 
+.. image:: _images/maintenance.jpg
+
+.. _pmis-linux-server-settings:
+
 =================================================
-Linux Server Configuration Apache HTTP - Tomcat
+PMIS - Linux Server Configuration
 =================================================
 
-#. Update System
------------------------
+#. Update System Packages
+---------------------------
 
 ::
 
@@ -19,13 +21,18 @@ Linux Server Configuration Apache HTTP - Tomcat
 	# for Ubuntu
 	apt-get update && apt-get upgrade
 
-1. Create User sangah and folder SAPP
------------------------------------------
+1. Create User ``sangah`` and folder ``SAPP``
+----------------------------------------------
 
 ::
 
+	# create the user
 	useradd sangah
+	
+	# make sure the folder has been created
+	cd /home/sangah
 
+	# create the SAPP folder
 	mkdir /home/sangah/SAPP
 
 
@@ -48,19 +55,31 @@ Find the location of the executable for later use with::
 
 	which wkhtmltopdf
 	/usr/local/bin/wkhtmltopdf
-	
 
 
-3. Install Chinese/Japanese/Korean Support Packages
------------------------------------------------------
 
-First check the locale on the server and make sure is set as ``UTF-8``::
+3. Server LOCALE Setting
+-----------------------------	
+
+Fix the locale on the server and make sure is set as ``UTF-8``::
 
 	locale charmap
 	UTF-8
 
 	echo $LANG
 	ko_KR.UTF-8
+	
+If the locale doesn't match modify the LANG variable for the user::
+
+	printf '\nexport LC_ALL=ko_KR.UTF-8' >> .bashrc
+	printf '\nexport LANG=$LC_ALL' >> .bashrc
+	
+To test the change log out and log in again and do the test again.
+
+
+
+4. Install Chinese/Japanese/Korean Support Packages
+-----------------------------------------------------
 
 Install some language packages
 
@@ -78,6 +97,10 @@ Install some language packages
 
 ::
 
+	# Japanese
+	apt-get install fonts-takao-mincho fonts-takao
+	
+	# Other
 	apt-get install language-pack-zh \
 	msttcorefonts \
 	xfonts-intl-chinese \
@@ -87,8 +110,21 @@ Install some language packages
 
 
 
-4. Install MS Fonts and Pmis Fonts for PDF Conversion
+5. Install MS fonts and PMIS fonts for PDF Conversion
 -------------------------------------------------------
+
+We need to install some common Microsoft fonts::
+
+	# for Centos
+	yum install curl cabextract xorg-x11-font-utils fontconfig
+	rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+
+
+	# for Ubuntu
+	apt-get install msttcorefonts
+
+
+We also need to install some Korean fonts that we use in PMIS Document:
 
 Checkout the folder ``STND_PMIS_util/etc/fonts`` on your computer.
 
@@ -106,7 +142,7 @@ Then execute the following command to update the font cache::
 
 
 
-5. Download & Install Apache Tomcat
+6. Download & Install Apache Tomcat
 ----------------------------------------
 
 We are going to take Apache Tomcat 7 
@@ -145,7 +181,7 @@ Edit ``-Xmx`` parameter in case you need to change the **Max Heap Size** memory 
 
 
 
-6. Tomcat ``server.xml`` settings
+7. Tomcat ``server.xml`` settings
 ------------------------------------
 
 We need to configure the ``server.xml`` inside ``conf`` directory. 
@@ -202,7 +238,7 @@ Replace all the content of the file with the following and modify it accordingly
 
 
 
-7. Create Project folder
+8. Create Project folder
 -----------------------------
 
 Create the project folder under ``/home/sangah/SAPP``::
@@ -215,7 +251,7 @@ Create the project folder under ``/home/sangah/SAPP``::
 
 
 
-8. Deploy the web folder under the new project folder
+9. Deploy the web folder under the new project folder
 -------------------------------------------------------
 
 Use WinSCP to upload all the files (jsp, class, ecc...) 
@@ -223,7 +259,7 @@ inside the new ``web`` under the project directory
 
 
 
-9. Create ``log``, ``thumb``, ``temp`` and ``edms`` folder under project folder
+10. Create ``log``, ``thumb``, ``temp`` and ``edms`` folder under project folder
 ---------------------------------------------------------------------------------
 
 Create some folders under the project directory required for the execution::
@@ -239,8 +275,10 @@ Create a symbolic link to edms folder under the web/data folder::
 	cd /home/sangah/SAPP/PROJECT_FOLDER
 	cd web/data
 	ln -s /home/sangah/SAPP/PROJECT_FOLDER/edms .
+	
+	
 
-10. Create ``/home/sangah/SAPP/util/pdf`` and create a symbolic link for wkhtmltopdf
+11. Create ``/home/sangah/SAPP/util/pdf`` and create a symbolic link for wkhtmltopdf
 -----------------------------------------------------------------------------------------------------
 
 Make sure the executable exists::
@@ -261,7 +299,7 @@ inside our SAPP folder::
 
 
 
-11. Deploy ``struts.properties``, ``log4j.properties`` and ``system_config_ko.properties``
+12. Deploy ``struts.properties``, ``log4j.properties`` and ``system_config_ko.properties``
 -------------------------------------------------------------------------------------------
 
 Using WinSCP upload the following files inside the project folder ``~/WEB-INF/classes``:
@@ -277,7 +315,7 @@ Using WinSCP upload the following files inside the project folder ``~/WEB-INF/cl
 
 
 
-12. Configure system_config_ko.properties
+13. Configure system_config_ko.properties
 ---------------------------------------------
 
 Good time for editing ``system_config_ko.properties``
@@ -294,7 +332,7 @@ Good time for editing ``system_config_ko.properties``
 
 
 
-13. Download mod_jk (Tomcat Connector for Apache HTTP)
+14. Download mod_jk (Tomcat Connector for Apache HTTP)
 --------------------------------------------------------
 
 Before starting you should know the location of the apache configuration folder. 
@@ -330,7 +368,7 @@ Download the tomcat connector from here http://archive.apache.org/dist/tomcat/to
 
 
 
-14. Compile and install mod_jk
+15. Compile and install mod_jk
 ----------------------------------
 
 Make sure you have apxs with::
@@ -358,7 +396,7 @@ Check that the module has been placed in the modules folder of apache.
 	
 	
 
-15. Load module mod_jk for Apache HTTP
+16. Load module mod_jk for Apache HTTP
 ---------------------------------------
 
 We need to tell apache about the new module or he will not load it.
@@ -388,8 +426,8 @@ AJP configuration::
 	worker.worker1.type=ajp13
 
 
-16. Create a conf file for the project under the folder ``conf.d`` of Apache
----------------------------------------------------------------------------
+17. Create a conf file for the project under the folder ``conf.d`` of Apache
+------------------------------------------------------------------------------
 
 From the apache folder create a new configuration file for the project inside the ``conf.d`` folder::
 
@@ -406,7 +444,7 @@ Place into the file the VirtualHost settings similar to the following:
 	Include conf.d/*.conf
 
 
-17. Change permission of /home/sangah to 755
+18. Change permission of /home/sangah to 755
 ----------------------------------------------
 
 Make sure every users can access the web directory or you will get an access denied.
@@ -417,7 +455,7 @@ Change the permissions to 755 for the folders until the ``web`` if necessary.
 --------------------
 
 
-18. [Centos] Change Enforcement on SAPP folder
+19. [Centos] Change Enforcement on SAPP folder
 --------------------------------------------------
 
 **This step is only for Centos server!**
