@@ -177,7 +177,6 @@ Others
 
 	milestone.xml.root=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/web/data/xml/milestone
 	xml.root=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/web/Main/assets
-	devnote.home=C:\\Users\\Disco\\workspace\\devnote
 
 
 Groupware Module
@@ -205,10 +204,8 @@ System SMTP Mail Configuration
 	
 ::
 	
-	system.mail.transport.protocol=smtp
 	system.mail.smtp.host=smtp.gmail.com
 	system.mail.smtp.port=465
-	system.mail.smtp.socketFactory.class=
 	system.mail.authid=
 	system.mail.authpwd=
 
@@ -272,12 +269,22 @@ excel & eMail & SMS template
 	email.template.home=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/web/data/template
 	excel.template.home=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/web/WEB-INF/excelTemplete
 	
+
+File Upload Handler
+-----------------------------
+
+::
+
+	# The only value available is ``nginx``, leave empty for default
+	system.upload.handler=nginx
 	
+	
+
 Edms server mirroring
 ------------------------
 
 ::
-
+ 
 	mirror.server=SERVER3
 
 

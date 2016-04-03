@@ -18,32 +18,33 @@ Version 1.8 -> http://nginx.org/download/nginx-1.8.1.tar.gz
 
 ::
     
-    $ wget http://nginx.org/download/nginx-1.8.1.tar.gz
+	cd ~
+    wget http://nginx.org/download/nginx-1.8.1.tar.gz
 
 2. Extract the archive
 ------------------------
 
 Extract the nginx archive where you want with::
 
-    $ tar -xvf nginx-1.8.1.tar.gz
+    tar -xvf nginx-1.8.1.tar.gz
 
 3. Install the required libraries
 -----------------------------------
 
 For Centos::
 
-    $ sudo yum install -y httpd-devel pcre perl pcre-devel zlib zlib-devel openssl-devel
+    sudo yum install -y httpd-devel pcre perl pcre-devel zlib zlib-devel openssl-devel
     
 For Ubuntu::
 
-    $ sudo apt-get install libpcre3-dev zlib1g-dev libssl-dev
+    sudo apt-get install libpcre3-dev zlib1g-dev libssl-dev
 
 4. Compile & Install
 -------------------------- 
 
 Execute the following commands in sequence inside the nginx folder::
 
-    $ ./configure \
+    ./configure \
     --user=nginx                          \
     --group=nginx                         \
     --prefix=/etc/nginx                   \
@@ -60,8 +61,8 @@ Execute the following commands in sequence inside the nginx folder::
     --with-file-aio                       \
     --with-http_realip_module
 
-    $ make
-    $ sudo make install
+    make
+    sudo make install
 
 5. Auto Configure
 ------------------- 
@@ -71,13 +72,14 @@ We need to execute a script that will do some configuration for us.
  
 From this `repository <https://github.com/emawind84/nginx-upload-handler-conf.git>`_ take the following file::
 
-    $ sudo wget https://raw.githubusercontent.com/emawind84/nginx-upload-handler-conf/master/nginx_configure.sh \
+    sudo wget https://raw.githubusercontent.com/emawind84/nginx-upload-handler-conf/master/nginx_configure.sh \
     -O /etc/nginx/configure.sh
     
 Let's execute the script::
 
-    $ sudo chmod +x configure.sh
-    $ sudo ./configure
+    cd /etc/nginx
+    sudo chmod +x configure.sh
+    sudo ./configure
 
 This script should grab several files from the repository, test the configuration for errors
 and test a file upload on the server. If everything is ok you should see some instructions
