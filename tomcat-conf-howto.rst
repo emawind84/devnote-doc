@@ -273,7 +273,7 @@ SSL Apache Configuration
 		#ServerAlias www.kamcoybd.kspmis.com
 		RewriteEngine on
 		ReWriteCond %{SERVER_PORT} !^443$
-		RewriteRule ^/(.*) https://%{HTTP_HOST}/$1 [NC,R,L]
+		RewriteRule ^/(.*) https://%{HTTP_HOST}/$1 [NE,R,L]
 	</VirtualHost>
 
 4. Modify the VirtualHost listening on port 80 as follow::
