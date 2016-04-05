@@ -137,5 +137,14 @@ Check that the handler is working with the following commands::
     $ sudo curl --user ngxupload:ngxupload --data-binary '@/tmp/test.tmp' http://127.0.0.1:8180/upload
     
     {"fileId":"0046678708","fileEdmsId":"","filePath":"/tmp/0046678708","contentType":"application/octet-stream;charset=UTF-8"}
+	
 
-If you received the following response you are done. Otherwise call Disco.
+8. Project Setting
+------------------------
+
+Add the following property to the project system configuration file::
+
+	system.upload.handler=nginx
+	
+
+Restart the application and do some upload test on WebHard.
