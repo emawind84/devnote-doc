@@ -107,6 +107,26 @@ Add the following Proxy configuration to the Apache VirtualHost::
 
     ProxyPass "/upload" "http://127.0.0.1:8180/upload"
     ProxyPassReverse "/upload" "http://127.0.0.1:8180/upload"
+	
+	
+.. important::
+
+	Because the file handler need a response on 
+	http://127.0.0.1/Common/TemporaryFile/fastupload.action
+	we need to add the following default jkMount to the default VirtualHost if exists::
+
+		# default host
+		<VirtualHost _default_:80>
+			ServerName 127.0.0.1
+			DocumentRoot "/tmp"
+
+			...
+
+			# nginx file upload result handler
+			jkMount /Common/TemporaryFile/* worker1
+
+		</VirtualHost>
+	
     
 7. Test
 ------------
