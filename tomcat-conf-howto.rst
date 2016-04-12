@@ -253,7 +253,8 @@ Locate the folder ``/etc/pki/tls`` create folder ``kspmis`` and put the followin
 		
 	_wildcard_kspmis_com_SHA256WITHRSA.key
 		Server private key file
-		
+
+You can find these files on SVN http://125.141.221.126/repo/STND_PMIS_util/etc/20160215-167040-_wildcard_kspmis_com.pfx 	
 
 2. In order to use SSL verify that ``mod_ssl`` module is enabled.
 
