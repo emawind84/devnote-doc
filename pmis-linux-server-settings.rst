@@ -485,6 +485,45 @@ and so the enforcement will be disabled for this directory and all the subdirect
 -----------------------
 
 
+
+Install PhantomJS HTML builder & loader
+---------------------------------------------
+
+PhantomJS is required for the Document module in order to create the PDF version,
+so is important to install it correctly on the server.
+
+1. Get the phantomjs folder from the SVN
+
+The executable can be get from the SVN following this address:
+**http://125.141.221.126/repo/STND_PMIS_util/phantomjs**
+
+Inside the folder there are three versions, one for Windows, one for Linux 32bit and for Linux 64bit.
+
+2. Locate the folder ``util`` on the server (``/home/sangah/util`` or ``/home/sangah/SAPP/util``),
+if not exists just create it and then copy the ``phantomjs`` folder inside it.
+
+3. Assuming the server is linux and the ``phantomjs`` folder is located in ``/home/sangah/SAPP/util/phantomjs``
+add the executable flag to the files to make them executable::
+
+	cd /home/sangah/SAPP/util/phantomjs
+	chmod +x phantomjs*
+	
+4. Test the executable to see if run correctly::
+
+	./phantomjs_x64 -v
+	2.1.1
+	
+5. Two new properties need to be added to the ``system_config_ko.properties`` file::
+
+	phantomjs.executable=/home/sangah/SAPP/util/phantomjs/phantomjs_x64
+	phantomjs.script.docexport=/home/sangah/SAPP/STND_PMIS/web/pmis/STND_PMIS/doc2/script/pmis_doc_export.js
+	
+.. important:: 
+	Change the paths to the right location of the ``phantomjs`` executable and
+ 	to the right location of the ``pmis_doc_export.js`` script
+
+
+
 [Extra] Install Nginx File Upload Server
 -----------------------------------------------
 
@@ -498,11 +537,6 @@ and so the enforcement will be disabled for this directory and all the subdirect
 :ref:`load_balancer_howto`
 
 
-
-[Extra] Install HTML builder & loader (PhantomJS)
----------------------------------------------------
-
-*TODO*
 
 
 .. seealso:: Other resources:
