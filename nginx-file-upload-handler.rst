@@ -6,8 +6,20 @@
 Nginx File Upload Handler Install & Configuration
 ==================================================
 
+
 About Nginx
     https://www.nginx.com/resources/wiki/start/topics/tutorials/gettingstarted/
+
+
+.. important:: 
+	
+	Make sure the **Nginx temporary folder** is the **same** used by the web application ( properties ``upload.temp`` )
+	to prevent lots of waste of space and other issues...
+
+--------------------------
+
+On Linux Machine
+^^^^^^^^^^^^^^^^^^^^^
 
 1. Download nginx
 ------------------
@@ -21,12 +33,14 @@ Version 1.8 -> http://nginx.org/download/nginx-1.8.1.tar.gz
 	cd ~
     wget http://nginx.org/download/nginx-1.8.1.tar.gz
 
+
 2. Extract the archive
 ------------------------
 
 Extract the nginx archive where you want with::
 
     tar -xvf nginx-1.8.1.tar.gz
+
 
 3. Install the required libraries
 -----------------------------------
@@ -38,6 +52,7 @@ For Centos::
 For Ubuntu::
 
     sudo apt-get install libpcre3-dev zlib1g-dev libssl-dev
+
 
 4. Compile & Install
 -------------------------- 
@@ -63,6 +78,7 @@ Execute the following commands in sequence inside the nginx folder::
 
     make
     sudo make install
+
 
 5. Auto Configure
 ------------------- 
@@ -95,7 +111,8 @@ for starting, stopping and reloading nginx.::
     Start nginx using: nginx
     Reload nginx using: nginx -s reload
     Stop nginx using: nginx -s stop
-		
+
+
 6. Apache Proxy
 ------------------- 
 
@@ -143,6 +160,92 @@ Check that the handler is working with the following commands::
 ------------------------
 
 Add the following property to the project system configuration file::
+
+	system.upload.handler=nginx
+	
+
+Restart the application and do some upload test on WebHard.
+
+
+--------------------------
+
+
+	
+On Windows Machine
+^^^^^^^^^^^^^^^^^^^^^
+
+
+1. Download and Copy Nginx
+----------------------------
+
+Take the nginx folder from SVN at this url: **http://125.141.221.126/repo/STND_PMIS_util/nginx-1.8.1**
+
+Copy the folder on the server.
+
+
+2. Settings Nginx
+---------------------------
+
+Supposing the nginx folder is located at ``C:/nginx-1.8.1`` we need to change some paths inside
+some configuration files.
+
+Locate the file ``conf/nginx.conf`` and change the following path with the right one::
+
+	include C:/nginx-1.8.1/conf/sites-enabled/*.conf;
+	
+Locate the file ``conf/includes/upload_handler.conf`` and change the following path with the right one::
+
+	client_body_temp_path      C:/tmp/;
+	
+Locate the file ``conf/sites-enabled/upload.conf`` and do the same::
+
+	root C:/tmp;
+	...
+	include C:/nginx-1.8.1/conf/includes/upload_handler.conf;
+
+
+3. Install Nginx Service
+--------------------------
+
+Open a shell go to the nginx folder and type the following::
+
+	> nginx-service.cmd install
+	
+This should install a Windows Service for the Nginx Upload Service with the name
+``Nginx File Upload Handler``.
+
+You can start and stop the service with the following commands::
+
+	> nginx-service.cmd start
+	> nginx-service.cmd stop
+	
+You can do the same from the Windows Service List as Administrator.
+
+
+4. Test Nginx Up and Running
+------------------------------
+
+Test if nginx server is running executing ``nginx-status.cmd`` from the nginx folder.
+
+You should see an output like this::
+
+	C:\nginx-1.8.1>tasklist /fi "imagename eq nginx.exe"
+
+	Image Name                     PID Session Name        Session#    Mem Usage
+	========================= ======== ================ =========== ============
+	nginx.exe                     6296 Services                   0      7,808 K
+	nginx.exe                     6284 Services                   0      8,116 K
+	nginx.exe                     8224 Services                   0      8,132 K
+
+	C:\nginx-1.8.1>PAUSE
+	Press any key to continue . . .
+	
+	
+
+5. Project Setting
+------------------------
+
+Remember to add the following property to the project system configuration file::
 
 	system.upload.handler=nginx
 	
