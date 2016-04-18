@@ -130,7 +130,7 @@ Add the following Proxy configuration to the Apache VirtualHost::
 
 	Because the file handler need a response on 
 	http://127.0.0.1/Common/TemporaryFile/fastupload.action
-	we need to add the following default jkMount to the default VirtualHost if exists::
+	we need to add the following default jkMount to the default VirtualHost::
 
 		# default host
 		<VirtualHost _default_:80>
@@ -144,6 +144,7 @@ Add the following Proxy configuration to the Apache VirtualHost::
 
 		</VirtualHost>
 	
+	Change the ``worker1`` with the one present on the server.
     
 7. Test
 ------------
