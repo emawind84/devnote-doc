@@ -205,7 +205,8 @@ System SMTP Mail Configuration
 ::
 	
 	system.mail.smtp.host=smtp.gmail.com
-	system.mail.smtp.port=465
+	system.mail.smtp.port=25
+	system.mail.smtp.ssl.enable=false
 	system.mail.authid=
 	system.mail.authpwd=
 
