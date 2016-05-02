@@ -116,6 +116,17 @@ for starting, stopping and reloading nginx.::
 6. Apache Proxy
 ------------------- 
 
+.. important::
+
+    Make sure the modules ``proxy_module`` and ``proxy_http_module`` are installed before continuing.
+    
+    Verify the following directives are present inside the main Apache configuration file::
+        
+        LoadModule proxy_module modules/mod_proxy.so
+        LoadModule proxy_http_module modules/mod_proxy_http.so
+        
+        
+
 Add the following Proxy configuration to the Apache VirtualHost::
 
     <VirtualHost *:80>
