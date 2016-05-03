@@ -87,7 +87,9 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
-   nginx-file-upload-handler.rst
+   windows-modsecurity-install-howto
+   linux-modsecurity-install-howto
+   nginx-file-upload-handler
    pmis-linux-server-settings
    pmis-framework-training
    howto-oracledb-user-import&export
