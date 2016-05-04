@@ -39,7 +39,7 @@ Version 1.8 -> http://nginx.org/download/nginx-1.8.1.tar.gz
 
 Extract the nginx archive where you want with::
 
-t	ar -xvf nginx-1.8.1.tar.gz
+	tar -xvf nginx-1.8.1.tar.gz
 
 
 3. Install the required libraries
@@ -113,51 +113,7 @@ for starting, stopping and reloading nginx.::
 	Stop nginx using: nginx -s stop
 
 
-6. Apache Proxy
-------------------- 
-
-.. important::
-
-	Make sure the modules ``proxy_module`` and ``proxy_http_module`` are installed before continuing.
-
-	Verify the following directives are present inside the main Apache configuration file::
-		
-		LoadModule proxy_module modules/mod_proxy.so
-		LoadModule proxy_http_module modules/mod_proxy_http.so
-		
-		
-
-Add the following Proxy configuration to the Apache VirtualHost::
-
-	<VirtualHost *:80>
-	ServerAdmin webmaster@dummy-host.example.com
-	...
-
-	ProxyPass "/upload" "http://127.0.0.1:8180/upload"
-	ProxyPassReverse "/upload" "http://127.0.0.1:8180/upload"
-
-	
-.. important::
-
-	Because the file handler need a response on 
-	http://127.0.0.1/Common/TemporaryFile/fastupload.action
-	we need to add the following default jkMount to the default VirtualHost::
-
-		# default host
-		<VirtualHost _default_:80>
-			ServerName 127.0.0.1
-			DocumentRoot "/tmp"
-
-			...
-
-			# nginx file upload result handler
-			jkMount /Common/TemporaryFile/* worker1
-
-		</VirtualHost>
-	
-	Change the ``worker1`` with the one present on the server.
-
-7. Test
+6. Test
 ------------
 
 Check that the handler is working with the following commands::
@@ -166,17 +122,6 @@ Check that the handler is working with the following commands::
 	$ sudo curl --user ngxupload:ngxupload --data-binary '@/tmp/test.tmp' http://127.0.0.1:8180/upload
 
 	{"fileId":"0046678708","fileEdmsId":"","filePath":"/tmp/0046678708","contentType":"application/octet-stream;charset=UTF-8"}
-
-
-8. Project Setting
-------------------------
-
-Add the following property to the project system configuration file::
-
-	system.upload.handler=nginx
-	
-
-Restart the application and do some upload test on WebHard.
 
 
 --------------------------
@@ -252,10 +197,71 @@ You should see an output like this::
 	C:\nginx-1.8.1>PAUSE
 	Press any key to continue . . .
 	
+-------------
+
+
+Apache and Project Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Apache Proxy Settings
+--------------------------
+
+.. important::
+
+	Make sure the modules ``proxy_module`` and ``proxy_http_module`` are installed before continuing.
+
+	Verify the following directives are present inside the main Apache configuration file::
+		
+		LoadModule proxy_module modules/mod_proxy.so
+		LoadModule proxy_http_module modules/mod_proxy_http.so
+		
+		
+
+Add the following Proxy configuration to the Apache VirtualHost::
+
+	<VirtualHost *:80>
+	ServerAdmin webmaster@dummy-host.example.com
+	...
+
+	ProxyPass "/upload" "http://127.0.0.1:8180/upload"
+	ProxyPassReverse "/upload" "http://127.0.0.1:8180/upload"
+
+	
+.. important::
+
+	Because the file handler need to do a request on http://127.0.0.1/Common/TemporaryFile/fastupload.action
+	we need to add the following default jkMount to the default VirtualHost if it is present::
+
+		# default host
+		<VirtualHost _default_:80>
+			ServerName 127.0.0.1
+			DocumentRoot "/tmp"
+
+			...
+
+			# [IMPORTANT] nginx file upload result handler
+			jkMount /Common/TemporaryFile/* worker1
+
+		</VirtualHost>
+	
+	Change the ``worker1`` with the actual one used on the server.
+	
+.. important:: 
+	
+	There is a problem on big file upload with the following error::
+	
+		[error] (103)Software caused connection abort: proxy: pass request body failed to 127.0.0.1:50000 (127.0.0.1)                                                                           
+		[error] proxy: pass request body failed to 127.0.0.1:50000 (127.0.0.1) from 1.1.1.1.1 ()
+
+	To resolve this error add the following directives inside the Apache configuration file::
+	
+		SetEnv proxy-sendchunked 1
+		SetEnv proxy-sendchunks 1
+	
 	
 
-5. Project Setting
-------------------------
+2. Final Project Setting
+--------------------------
 
 Remember to add the following property to the project system configuration file::
 
