@@ -332,6 +332,7 @@ Document & Workflow
 	
 	#@@ Register Doc. No. generation service
 	register.idgnr.service.name=registerIdGnrService
+
 	
 Document Notification Template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -348,6 +349,7 @@ Document Notification Template
 	doc.noti.sms.waitapprove=sms_noti_doc_wait_app.txt
 	doc.noti.sms.trn.waitreview=sms_noti_trn_wait_rev.txt
 
+
 Module Workflow/Transmittal Enable/Disable
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -355,6 +357,19 @@ Module Workflow/Transmittal Enable/Disable
 	
 	workflow.disabled=false
 	transmittal.disabled=false
+
+
+PhantomJS Document HTML Content Builder
+------------------------------------------
+
+::
+
+	# PhantomJS executable
+	phantomjs.executable=C:/phantomjs/bin/phantomjs.exe
+
+	# PhantomJS script for document PDF conversion process
+	phantomjs.script.docexport=C:/Users/Disco/workspace_4.5/STND_PMIS/web/pmis/STND_PMIS/doc2/script/pmis_doc_export.js
+
 
 Aconex Dashboard
 -----------------
@@ -365,6 +380,7 @@ Aconex Dashboard
 	aconex.auth.username=
 	aconex.auth.password=
 	aconex.auth.project=
+	
 	
 DEPRECATED PROPERTIES
 -------------------------
