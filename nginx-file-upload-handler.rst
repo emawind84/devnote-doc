@@ -223,6 +223,8 @@ Add the following Proxy configuration to the Apache VirtualHost::
 	ServerAdmin webmaster@dummy-host.example.com
 	...
 
+	ProxyBadHeader Ignore
+	ProxyTimeout 2400
 	ProxyPass "/upload" "http://127.0.0.1:8180/upload"
 	ProxyPassReverse "/upload" "http://127.0.0.1:8180/upload"
 
@@ -257,8 +259,9 @@ Add the following Proxy configuration to the Apache VirtualHost::
 	
 		SetEnv proxy-sendchunked 1
 		SetEnv proxy-sendchunks 1
-	
-	
+		SetEnv downgrade-1.0 1
+		SetEnv proxy-sendcl 1
+
 
 2. Final Project Setting
 --------------------------
