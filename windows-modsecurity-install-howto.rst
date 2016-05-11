@@ -130,3 +130,8 @@ ModSecurity will write his log into the file defined from the following directiv
 	SecAuditLog logs/modsec_audit.log
 	
 Check it and see if it block bad things!
+
+.. note::
+
+	Reference Manual
+		https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual
