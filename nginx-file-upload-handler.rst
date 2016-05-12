@@ -223,10 +223,15 @@ Add the following Proxy configuration to the Apache VirtualHost::
 	ServerAdmin webmaster@dummy-host.example.com
 	...
 
-	ProxyBadHeader Ignore
-	ProxyTimeout 2400
-	ProxyPass "/upload" "http://127.0.0.1:8180/upload"
-	ProxyPassReverse "/upload" "http://127.0.0.1:8180/upload"
+	# FILE UPLOAD HANDLER
+	<LocationMatch '/upload'>
+		<IfModule security2_module>
+			SecRuleEngine Off
+		</IfModule>
+
+		ProxyPass "http://127.0.0.1:8180/upload"
+		ProxyPassReverse "http://127.0.0.1:8180/upload"
+	</LocationMatch>
 
 	
 .. important::

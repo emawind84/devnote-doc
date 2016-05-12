@@ -131,6 +131,7 @@ Load the ModSecurity module adding the following directive to ``httpd.conf`` or 
 
 ::
 
+	# [IMPORTANT] Put this directive before the Include directives!
 	LoadModule security2_module modules/mod_security2.so
 
 	
@@ -223,6 +224,10 @@ Add the following directives to the main apache conf file and change the locatio
 	Include /usr/local/modsecurity/crs/*.conf
 	Include /usr/local/modsecurity/crs/activated_rules/*.conf
 
+
+.. important::
+
+	**Put all the ``Include`` directives after the LAST ``LoadModule`` directive!**
 
 
 8. Activate ModSecurity

@@ -102,11 +102,18 @@ At the end of httpd.conf file you should have the following directives::
 	...
 
 	# mod security
+	# [IMPORTANT] Put this directive before the Include directives!
 	LoadModule security2_module modules/mod_security2.so
+	
+	# Put all the Include after the LAST LoadModule directive!
 	Include conf/extra/modsecurity.conf
 
 	IncludeOptional conf/extra/modsecurity_crs_10_setup.conf
 	IncludeOptional extra-modules/mod_security-2.8.0/activated_rules/*.conf
+	
+.. important::
+
+	**Put all the ``Include`` directives after the LAST ``LoadModule`` directive!**
 
 
 5. Turn it ON!
