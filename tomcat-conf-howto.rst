@@ -284,6 +284,13 @@ If the module is not present install it with::
 		RewriteRule ^/(.*) https://%{HTTP_HOST}/$1 [NE,R,L]
 	</VirtualHost>
 
+.. important:: 
+
+	Make sure you enabled the mod_rewrite module to make use of the above directives!::
+
+		# This module have to be enabled 
+		LoadModule rewrite_module modules/mod_rewrite.so
+
 4. Modify the VirtualHost listening on port 80 as follow::
 
 	<VirtualHost *:443>

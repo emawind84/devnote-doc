@@ -53,9 +53,6 @@ Base/System Properties
 	system.project.id=
 	system.project.name=
 	
-	# Define the default locale (language)
-	system.locale=ko_KR
-	
 	# Define Paths
 	system.log=C:/Users/Disco/workspace_egov/log/error
 	system.errorpage=/pmis/STND_PMIS/common/error/Error.jsp
@@ -103,8 +100,17 @@ Password Validation Properties
 	
 	# Max life for user password (days)
 	system.pwd.maxlife=90
-	
-	
+
+
+Default Language (Locale)
+--------------------------
+
+::
+
+	# Define the default locale (language)
+	system.locale=en_US
+
+
 Zip Encoding
 -----------------
 
@@ -138,14 +144,6 @@ DB Connection Info Properties
 	db.RemoveAbandoned=true
 	db.RemoveAbandonedTimeout=30
 	db.LogAbandoned=false
-
-
-Default Locale
---------------------
-
-::
-
-	default_locale=en_US
 
 
 Common Modules (appliables for each program modules)
