@@ -35,7 +35,9 @@ This is the new file manager, no more iframe.
 		hide_downall: true,
 		disabledblclick: true,
 		show_reg_date: true,
-		hide_btns: false
+		hide_reg_name: false,
+		hide_btns: false,
+		resizable: true
 	});
 
 
@@ -103,6 +105,12 @@ hide_downall
 
 hide_btns
 	Remove the buttons header.
+	
+hide_reg_name
+	Remove the submitter name.
+	
+resizable
+	The user can drag the border at the bottom and resize the container.
 
 disabledblclick
 	Disable the double click inside the grid.

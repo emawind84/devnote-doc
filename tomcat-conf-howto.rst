@@ -85,8 +85,81 @@ For logging java garbage collector add this java options (CATALINA_BASE have to 
 
     -Xloggc:$CATALINA_BASE/logs/gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps
 
--------------
+----------------------------
 
+
+[Linux] Apache Tomcat Logging Settings
+---------------------------------------
+
+Set logging.properties
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default with the default settings in ``logging.properties``, Tomcat will rotate the logs and it will logs lots of stuff
+and it will write same log on catalina.out and catalina.log and we do not want this in production.
+
+Replace the ``logging.properties`` file inside the ``conf`` folder of tomcat with this::
+	
+	handlers = 1catalina.org.apache.juli.FileHandler
+
+	.handlers = 1catalina.org.apache.juli.FileHandler
+
+	############################################################
+	# Handler specific properties.
+	# Describes specific configuration info for Handlers.
+	############################################################
+
+	1catalina.org.apache.juli.FileHandler.level = FINE
+	1catalina.org.apache.juli.FileHandler.directory = ${catalina.base}/logs
+	1catalina.org.apache.juli.FileHandler.prefix = catalina
+	1catalina.org.apache.juli.FileHandler.rotatable = false
+
+	############################################################
+	# Facility specific properties.
+	# Provides extra control for each logger.
+	############################################################
+
+Configure a log rotate
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Create a file into /etc/logrotate.d folder:
+
+.. code-block:: bash
+
+	# touch /etc/logrotate.d/tomcat
+	
+Put this content inside the file::
+
+	/var/log/tomcat/*.log {
+		copytruncate
+		daily
+		rotate 7
+		compress
+		missingok
+		size 5M
+	}
+
+Then create a symbolic link to the ``catalina.log``
+(replace the path to the tomcat and change the name catalina.log if you need to):
+
+.. code-block:: bash
+
+	ln -s /usr/local/tomcat/logs/catalina.log catalina.log
+	
+Reload the logrotate deamon:
+
+.. code-block:: bash
+
+	# /usr/sbin/logrotate /etc/logrotate.conf
+
+More on logrorate:
+
+.. code-block:: bash
+
+	# man logrotate
+	
+-----------------------------------
+
+.. _apache-pmis-conf-example:
 
 Apache Configuration
 ---------------------------
@@ -99,6 +172,9 @@ replace ``<PROJECT PATH>`` and ``<PROJECT DOMAIN>``.
 
 .. code-block:: apacheconf
 
+	# Add this for Apache 2.2
+	NameVirtualHost *:80
+
 	SetEnvIf Request_URI "^/ext/" dontlog
 	SetEnvIf Request_URI "/maintenance.html" no-jk
 
@@ -107,20 +183,19 @@ replace ``<PROJECT PATH>`` and ``<PROJECT DOMAIN>``.
 		DocumentRoot "<PROJECT PATH>/web"
 		ServerName <PROJECT DOMAIN>
 		ErrorLog "logs/garam-error_log"
-		#CustomLog "logs/garam-access_log" common
 		CustomLog "logs/garam-access.log" common env=!dontlog
 
 		DirectoryIndex index.jsp
 
 		<Directory "<PROJECT PATH>/web">
-			Options FollowSymLinks
-			Order allow,deny
-			Allow from all
+		Options FollowSymLinks
+		Order allow,deny
+		Allow from all
 		</Directory>
 
 		# DENY ACCESS TO WEB-INF
 		<Location "/WEB-INF/">
-		deny from all
+		Deny from all
 		</Location>
 
 		#jkMount /*                 balance1
@@ -162,7 +237,88 @@ replace ``<PROJECT PATH>`` and ``<PROJECT DOMAIN>``.
 
 -------------
 
-.. load_balancer_howto:
+
+SSL Apache Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Upload files necessary for using SSL protocol into the server. 
+
+Locate the folder ``/etc/pki/tls`` create folder ``kspmis`` and put the following files:
+
+	_wildcard_kspmis_com.crt
+		Server certificate data file
+		
+	rsa-dv.chain-bundle.pem
+		Server CA Certificates
+		
+	_wildcard_kspmis_com_SHA256WITHRSA.key
+		Server private key file
+
+You can find these files on SVN http://125.141.221.126/repo/STND_PMIS_util/etc/20160215-167040-_wildcard_kspmis_com.pfx 	
+
+2. In order to use SSL verify that ``mod_ssl`` module is enabled.
+
+- ``mod_ssl.so`` should be present in modules folder
+
+- The following directives should be present somewhere. 
+	Check files inside extra folder (ex. httpd-ssl.conf)
+	and ``httpd.conf``.::
+	
+		LoadModule ssl_module modules/mod_ssl.so
+		Listen 443
+			
+If the module is not present install it with::
+
+	# for Centos
+	yum install mod_ssl
+		
+			
+3. Create a VirtualHost listening on port 80 that will redirect requests from ``*.kspmis.com`` to 443::
+
+	<VirtualHost *:80>
+		ServerAlias *.kspmis.com
+		#ServerName kamcoybd.kspmis.com
+		#ServerAlias www.kamcoybd.kspmis.com
+		RewriteEngine on
+		ReWriteCond %{SERVER_PORT} !^443$
+		RewriteRule ^/(.*) https://%{HTTP_HOST}/$1 [NE,R,L]
+	</VirtualHost>
+
+.. important:: 
+
+	Make sure you enabled the mod_rewrite module to make use of the above directives!::
+
+		# This module have to be enabled 
+		LoadModule rewrite_module modules/mod_rewrite.so
+
+4. Modify the VirtualHost listening on port 80 as follow::
+
+	<VirtualHost *:443>
+	...
+
+	# ============ SSL CERTIFICATE HERE =============
+	SSLEngine On
+	SSLCertificateFile    /etc/pki/tls/kspmis/_wildcard_kspmis_com.crt
+	SSLCertificateKeyFile /etc/pki/tls/kspmis/_wildcard_kspmis_com_SHA256WITHRSA.key
+	SSLCertificateChainFile /etc/pki/tls/kspmis/rsa-dv.chain-bundle.pem
+	# ================================================
+
+5. Test the apache configuration::
+
+	# apachectl -t
+
+	[Thu Feb 25 16:04:11 2016] [warn] _default_ VirtualHost overlap on port 443, the first has precedence
+	Syntax OK
+		
+.. note:: 
+	The warning is due to the file ``ssl.conf`` inside the ``conf.d`` folder; 
+	the VirtualHost inside that file should be deleted.
+		
+-------------
+
+
+
+.. _load_balancer_howto:
 
 Load Balancer How-To
 --------------------------
@@ -266,8 +422,8 @@ Add the following code to the directive VirtualHost inside the host configuratio
 	# JK MANAGER
 	<Location /jkmanager/>
 	JkMount jkstatus
-	Require all denied
-	Require host 127.0.0.1
+	#Require all denied
+	Require ip 127.0.0.1
 	</Location>
 
 .. note:: The Status Manager will be available at the URI ``<schema>://127.0.0.1/jkmanager/``.
@@ -275,7 +431,7 @@ Add the following code to the directive VirtualHost inside the host configuratio
 	
 .. code-block:: apacheconf
 
-	# JK MANAGER
+	# JK MANAGER 2.2
 	<Location /jkmanager/>
 	JkMount jkstatus
 	Order deny,allow
@@ -283,6 +439,15 @@ Add the following code to the directive VirtualHost inside the host configuratio
 	Allow from 127.0.0.1
 	Allow from 200.300.20.0/24
 	Allow from 192.168.0.10
+	</Location>
+	
+	# JK MANAGER 2.4
+	<Location /jkmanager/>
+	JkMount jkstatus
+	
+	Require ip 127.0.0.1
+	Require ip 200.300.20.0/24
+	Require ip 192.168.0.10
 	</Location>
 	
 .. _`LoadBalancer HowTo`: https://tomcat.apache.org/connectors-doc/common_howto/loadbalancers.html

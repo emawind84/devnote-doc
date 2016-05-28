@@ -53,9 +53,6 @@ Base/System Properties
 	system.project.id=
 	system.project.name=
 	
-	# Define the default locale (language)
-	system.locale=ko_KR
-	
 	# Define Paths
 	system.log=C:/Users/Disco/workspace_egov/log/error
 	system.errorpage=/pmis/STND_PMIS/common/error/Error.jsp
@@ -103,8 +100,17 @@ Password Validation Properties
 	
 	# Max life for user password (days)
 	system.pwd.maxlife=90
-	
-	
+
+
+Default Language (Locale)
+--------------------------
+
+::
+
+	# Define the default locale (language)
+	system.locale=en_US
+
+
 Zip Encoding
 -----------------
 
@@ -140,14 +146,6 @@ DB Connection Info Properties
 	db.LogAbandoned=false
 
 
-Default Locale
---------------------
-
-::
-
-	default_locale=en_US
-
-
 Common Modules (appliables for each program modules)
 -----------------------------------------------------------------
 
@@ -177,7 +175,6 @@ Others
 
 	milestone.xml.root=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/web/data/xml/milestone
 	xml.root=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/web/Main/assets
-	devnote.home=C:\\Users\\Disco\\workspace\\devnote
 
 
 Groupware Module
@@ -205,10 +202,9 @@ System SMTP Mail Configuration
 	
 ::
 	
-	system.mail.transport.protocol=smtp
 	system.mail.smtp.host=smtp.gmail.com
-	system.mail.smtp.port=465
-	system.mail.smtp.socketFactory.class=
+	system.mail.smtp.port=25
+	system.mail.smtp.ssl.enable=false
 	system.mail.authid=
 	system.mail.authpwd=
 
@@ -272,12 +268,22 @@ excel & eMail & SMS template
 	email.template.home=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/web/data/template
 	excel.template.home=C:/Users/Disco/workspace_egov/STND_PMIS_comm_branch/web/WEB-INF/excelTemplete
 	
+
+File Upload Handler
+-----------------------------
+
+::
+
+	# The only value available is ``nginx``, leave empty for default
+	system.upload.handler=nginx
 	
+	
+
 Edms server mirroring
 ------------------------
 
 ::
-
+ 
 	mirror.server=SERVER3
 
 
@@ -324,6 +330,7 @@ Document & Workflow
 	
 	#@@ Register Doc. No. generation service
 	register.idgnr.service.name=registerIdGnrService
+
 	
 Document Notification Template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -340,6 +347,7 @@ Document Notification Template
 	doc.noti.sms.waitapprove=sms_noti_doc_wait_app.txt
 	doc.noti.sms.trn.waitreview=sms_noti_trn_wait_rev.txt
 
+
 Module Workflow/Transmittal Enable/Disable
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -347,6 +355,19 @@ Module Workflow/Transmittal Enable/Disable
 	
 	workflow.disabled=false
 	transmittal.disabled=false
+
+
+PhantomJS Document HTML Content Builder
+------------------------------------------
+
+::
+
+	# PhantomJS executable
+	phantomjs.executable=C:/phantomjs/bin/phantomjs.exe
+
+	# PhantomJS script for document PDF conversion process
+	phantomjs.script.docexport=C:/Users/Disco/workspace_4.5/STND_PMIS/web/pmis/STND_PMIS/doc2/script/pmis_doc_export.js
+
 
 Aconex Dashboard
 -----------------
@@ -357,6 +378,7 @@ Aconex Dashboard
 	aconex.auth.username=
 	aconex.auth.password=
 	aconex.auth.project=
+	
 	
 DEPRECATED PROPERTIES
 -------------------------

@@ -1,5 +1,6 @@
-.. _oracle-install-centos:
 .. highlight:: console
+
+.. _oracle-install-centos:
 
 ========================================================
 Oracle 11g r2 Installation on RHEL/CentOS 6.x/5.x/4.x

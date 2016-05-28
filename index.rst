@@ -24,6 +24,11 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   web-app-maven-and-eclipse
+   windows-modsecurity-install-howto
+   linux-modsecurity-install-howto
+   nginx-file-upload-handler
+   pmis-linux-server-settings   
    raspi-adhoc-wifi-network
    howto-raspi-speech-recognition-and-jasper
    disk-io-test
