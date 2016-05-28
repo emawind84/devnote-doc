@@ -41,26 +41,21 @@ In your file you might have something along this line:
 	
 We need to change the line that says **iface default inet dhcp** 
 and replace it with **iface default inet static**
-
-::
+and add static **address** and **netmask** with the following two lines 
+just below the iface line::
 
 	allow-hotplug wlan0
 	iface wlan0 inet manual
 	wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 	#iface default inet dhcp
 	iface default inet static
-
-Lets set static **address** and **netmask** with the following two lines 
-just below the iface line:
-
-::
-
+	
 	# change these with whatever you want
 	address 192.168.10.1
 	netmask 255.255.255.0
 
 .. important::
-	Now in case your distribution are running the DHCP client **dhcpcd** 
+	Now in case your distribution are running the DHCP client **dhcpcd** (Debian Jessie) 
 	the above static address will not be used.
 	
 	Check if this service is running with the command:
@@ -113,7 +108,7 @@ and add the new network as below::
 		pairwise=NONE
 		group=CCMP
 		psk="myraspihoc"
-		id_str="raspihoc"
+		#id_str="raspihoc"
 	}
 	
 You might want to change **ssid**, **psk** and **id_str** before saving.
