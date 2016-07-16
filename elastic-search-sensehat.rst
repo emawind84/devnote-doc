@@ -25,7 +25,7 @@ What you need:
 * A good code editor
 
 
-1. The Logger Script
+1. Python - The Logger Script
 -----------------------------------------------
 
 We need something in order to save the information gathered from the SenseHAT and persist them.
@@ -152,7 +152,7 @@ We will use it in the next script to save the Sense HAT data.
     but it use a buffer that wait until 10 rows are generated to save them on the file.
 
 
-2. Persist Sense HAT Data
+2. Python - Persist Sense HAT Data
 -----------------------------------------------
 
 The next script read sensors data from the Sense HAT and ask to PyLog to persist them.
@@ -260,7 +260,7 @@ of the SenseHAT taken every 10 seconds.
 .. note:: By default it will log data every 5 minutes
 
 
-3. A Pretty UI
+3. HTML - A Pretty UI
 -----------------------------------------------
 
 Now we have lots of number inside a file CSV that you will never read.
@@ -472,7 +472,7 @@ You should see lots of data in a JSON format.
 We are going to use the output in the UI page we already made.
 
 
-5. Server Settings
+5. Nginx - Server Settings
 ----------------------
 
 As you can see and you should know now we have a web service on the Raspberry Pi
@@ -525,8 +525,8 @@ of ``elasticsearch.yml`` with the following:
     bootstrap.mlockall: true
 
 This will create a cluster named ``elasticsearch`` with one node named ``raspi-node-1``, 
-listening on port 9200, this is where the Restful API listen for requests.
-The port 9300 is used internally by ElasticSearch to comunicate between nodes within the cluster.
+listening on port ``9200``, this is where the Restful API listen for requests.
+The port ``9300`` is used internally by ElasticSearch to comunicate between nodes within the cluster.
 
 You can run the engine from the bin folder with the following command::
 
@@ -550,7 +550,7 @@ I made a bash script that you can use to start the service below:
 
     sh $SCRIPT_BASE_PATH/elasticsearch
 
-It is important to set the variable ES_HEAP_SIZE and change the default heap memory
+It is important to set the variable ``ES_HEAP_SIZE`` and change the default heap memory
 to a more suitable one for our Raspberry Pi, 128m should be fine.
 
 You can try ElasticSearch and see if is working going to http://127.0.0.1:9200 with a browser
