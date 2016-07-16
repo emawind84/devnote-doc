@@ -24,6 +24,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   elastic-search-sensehat
    web-app-maven-and-eclipse
    windows-modsecurity-install-howto
    linux-modsecurity-install-howto
