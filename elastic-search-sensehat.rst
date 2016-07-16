@@ -4,13 +4,17 @@
 Raspberry Pi + SenseHAT + ElasticSearch + Python + Node-RED = Awesomeness
 =========================================================================
 
-So at first there was a Raspberry Pi a SenseHAT and a Python script 
+So at first there was a **Raspberry Pi** a **SenseHAT** and a **Python** script 
 working together gathering information about
-temperature, pressure, humidity, gravity, motion and other cool data all inside a CSV file,
-then Node-RED joined the group together with HTML to help make the study of this data more easier.
-But as the data gathered became more and more Node-RED starting to feel sick and could not handle
-the search of these data anymore (too much stress, too much of them), the CSV file didn't want to collaborate, 
-so he asked help to ElasticSearch, a search engine with the only purpose to help searching data, tons of them, in a flash.
+temperature, pressure, humidity, gravity, motion and other cool data all inside a **CSV file**.
+
+Then **Node-RED** joined the group together with **HTML** to help make the study of this data more easier.
+
+But as the data gathered became more and more **Node-RED** starting to feel sick and could not handle
+the search of these data anymore (too much stress, too much of them), the **CSV file** didn't want to collaborate.
+
+So he asked help to **ElasticSearch**, a search engine with the only purpose to help searching data, 
+tons of them, in a flash.
 
 So this is the story in brief and If you keep reading you will know how it happened.
 
@@ -25,6 +29,7 @@ What you need:
 
 
 1. The Logger Script
+-----------------------------------------------
 
 We need something in order to save the information gathered from the SenseHAT and persist them.
 The following Python script is the PyLog the object that will persist these data in a CSV format.
@@ -149,7 +154,9 @@ We will use it in the next script to save the Sense HAT data.
 .. note:: This logger will not persist data immediately, 
     but it use a buffer that wait until 10 rows are generated to save them on the file.
 
+
 2. Persist Sense HAT Data
+-----------------------------------------------
 
 The next script read sensors data from the Sense HAT and ask to PyLog to persist them.
 
@@ -257,6 +264,7 @@ of the SenseHAT taken every 10 seconds.
 
 
 3. A Pretty UI
+-----------------------------------------------
 
 Now we have lots of number inside a file CSV that you will never read.
 Lets make these data a little more readable with a web interface.
@@ -442,6 +450,7 @@ and the scipt below::
 
 
 4. Node-RED - The Web Service **/sensedata**
+-----------------------------------------------
 
 I am not going to tell you how to install and run Node-RED,
 what you have here is the flow that you can use to retrieve the CSV data in a JSON format,
