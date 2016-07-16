@@ -24,6 +24,11 @@ What you need:
 * ElasticSearch (The Data Keeper)
 * A good code editor
 
+| You can see the final result on http://raspi.emawind.com/senselog
+| UI Source: https://github.com/emawind84/sensehat-datalog/tree/data_pagined
+| Senselogger script: https://github.com/emawind84/sensehat-discotest/blob/master/senselogger.py
+| Senselog Import script: https://github.com/emawind84/sensehat-discotest/blob/master/senselog_esimport.py
+
 
 1. Python - The Logger Script
 -----------------------------------------------
