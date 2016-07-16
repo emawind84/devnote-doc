@@ -5,14 +5,11 @@ Raspberry Pi + SenseHAT + ElasticSearch + Python + Node-RED = Awesomeness
 =========================================================================
 
 So at first there was a **Raspberry Pi** a **SenseHAT** and a **Python** script 
-working together gathering information about
-temperature, pressure, humidity, gravity, motion and other cool data all inside a **CSV file**.
-
+working together gathering information about temperature, pressure, humidity, gravity, motion 
+and other cool data all inside a **CSV file**.
 Then **Node-RED** joined the group together with **HTML** to help make the study of this data more easier.
-
 But as the data gathered became more and more **Node-RED** starting to feel sick and could not handle
 the search of these data anymore (too much stress, too much of them), the **CSV file** didn't want to collaborate.
-
 So he asked help to **ElasticSearch**, a search engine with the only purpose to help searching data, 
 tons of them, in a flash.
 
@@ -20,12 +17,12 @@ So this is the story in brief and If you keep reading you will know how it happe
 
 What you need:
 
-#. A Raspberry Pi (The Boss)
-#. A Sense HAT (The Retriever)
-#. Python (The Script Professor)
-#. Node-RED (The IOT God)
-#. ElasticSearch (The Data Keeper)
-#. A good code editor
+* A Raspberry Pi (The Boss)
+* A Sense HAT (The Retriever)
+* Python (The Script Professor)
+* Node-RED (The IOT God)
+* ElasticSearch (The Data Keeper)
+* A good code editor
 
 
 1. The Logger Script
@@ -274,7 +271,9 @@ Lets make these data a little more readable with a web interface.
     https://github.com/emawind84/sensehat-datalog/releases/latest
 
 The following is the HTML layout, and you will notice that we are going to use 
-AngularJS for the logic and Bootstrap to make a pretty UI::
+AngularJS for the logic and Bootstrap to make a pretty UI
+
+.. code-block:: html
 
     <!DOCTYPE html>
     <html ng-app="senseui">
@@ -394,7 +393,9 @@ AngularJS for the logic and Bootstrap to make a pretty UI::
 
     </html>
 
-and the scipt below::
+and the scipt below
+
+.. code-block:: javascript
 
     (function ($){
         "use strict";
@@ -462,6 +463,8 @@ ready to be used inside your UI page.
 
 
 5. ElasticSearch - Let's Index All 
+--------------------------------------
 
 
-6. Node-RED - We need to change some stuff
+6. Node-RED - The Game Change
+------------------------------
