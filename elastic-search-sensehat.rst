@@ -483,7 +483,7 @@ We are going to use the output in the UI page we already made.
 
 
 5. Nginx - Server Settings
-----------------------
+-----------------------------
 
 As you can see and you should know now we have a web service on the Raspberry Pi
 listening on the port ``1880`` and path ``/sensedata``, 
