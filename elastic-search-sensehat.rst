@@ -37,7 +37,8 @@ What you need:
 We need something in order to save the information gathered from the SenseHAT and persist them.
 The following Python script is the PyLog the object that will persist these data in a CSV format.
 
-::
+.. code-block::
+    :caption: pylog.py
 
     #!/usr/bin/env python
 
@@ -163,7 +164,8 @@ We will use it in the next script to save the Sense HAT data.
 
 The next script read sensors data from the Sense HAT and ask to PyLog to persist them.
 
-::
+.. code-block::
+    :caption: senselogger.py
 
     #!/usr/bin/env python
 
@@ -280,6 +282,7 @@ The following is the HTML layout, and you will notice that we are going to use
 AngularJS for the logic and Bootstrap to make a pretty UI
 
 .. code-block:: html
+    :caption: index.html
 
     <!DOCTYPE html>
     <html ng-app="senseui">
@@ -402,6 +405,7 @@ AngularJS for the logic and Bootstrap to make a pretty UI
 and the scipt below
 
 .. code-block:: javascript
+    :caption: main.js
 
     (function ($){
         "use strict";
@@ -517,6 +521,7 @@ Before run the service, go to the config folder and replace the content
 of ``elasticsearch.yml`` with the following:
 
 .. code-block:: yaml
+    :caption: elasticsearch.yml
 
     cluster.name: elasticsearch
     node.name: raspi-node-1
