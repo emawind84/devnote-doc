@@ -588,7 +588,8 @@ or on the linux server inside the terminal with::
 Now that ElasticSearch is working we need to index all the data in the CSV file that we gathered so far.
 We will use a python script that read the CSV file and index every row inside the search engine.
 
-::
+.. code-block:: python
+    :caption: senselog_esimport.py
 
     #!/usr/bin/env python3
 
