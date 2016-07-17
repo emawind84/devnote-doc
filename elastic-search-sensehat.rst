@@ -37,7 +37,7 @@ What you need:
 We need something in order to save the information gathered from the SenseHAT and persist them.
 The following Python script is the PyLog the object that will persist these data in a CSV format.
 
-.. code-block::
+.. code-block:: python
     :caption: pylog.py
 
     #!/usr/bin/env python
@@ -164,7 +164,7 @@ We will use it in the next script to save the Sense HAT data.
 
 The next script read sensors data from the Sense HAT and ask to PyLog to persist them.
 
-.. code-block::
+.. code-block:: python
     :caption: senselogger.py
 
     #!/usr/bin/env python
