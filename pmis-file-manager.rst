@@ -39,7 +39,8 @@ This is the new file manager, no more iframe.
 		hide_btns: false,
 		resizable: true,
 		maxfilesize: 2147483648,
-		template: "/pmis/STND_PMIS/common/file/filemanager.jsp"
+		template: "/pmis/STND_PMIS/common/file/filemanager.jsp",
+		show_file_log: true
 	});
 
 
@@ -126,6 +127,8 @@ maxfilesize
 template
 	This is the template of the file manager, change this if you want to change the layout
 
+show_file_log
+	Show the event log of the edms file
 
 Available Functions & Objects
 -------------------------------
