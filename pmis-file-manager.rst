@@ -37,7 +37,9 @@ This is the new file manager, no more iframe.
 		show_reg_date: true,
 		hide_reg_name: false,
 		hide_btns: false,
-		resizable: true
+		resizable: true,
+		maxfilesize: 2147483648,
+		template: "/pmis/STND_PMIS/common/file/filemanager.jsp"
 	});
 
 
@@ -118,6 +120,11 @@ disabledblclick
 show_reg_date
 	Show the file uploaded date.
 
+maxfilesize
+	Reject the upload of files over this size limit (in byte) 
+
+template
+	This is the template of the file manager, change this if you want to change the layout
 
 
 Available Functions & Objects
