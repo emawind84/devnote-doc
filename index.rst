@@ -77,7 +77,7 @@ How to edit this documentation
     the next time you open the powershell, if you want to build the doc, make sure you run the following command inside *devnote*::
     
         PS C:\devnote> .\sphinx\Scripts\activate
-        (sphinx) PS C:\devnote\doc> .\make.bat html
+        (sphinx) PS C:\devnote\doc> make.bat html
 
 .. seealso:: `[Python] 스핑크스(sphinx)를 이용한 파이썬 API 문서화 <http://egloos.zum.com/mcchae/v/11080328>`_
 
@@ -87,6 +87,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   web_application_build_and_deploy
    pmis-secured-access-with-token
    web-app-maven-and-eclipse
    windows-modsecurity-install-howto
