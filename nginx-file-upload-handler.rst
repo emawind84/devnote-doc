@@ -47,11 +47,11 @@ Extract the nginx archive where you want with::
 
 For Centos::
 
-	sudo yum install -y httpd-devel pcre perl pcre-devel zlib zlib-devel openssl-devel
+	sudo yum install -y httpd-devel httpd-tools pcre perl pcre-devel zlib zlib-devel openssl-devel
 
 For Ubuntu::
 
-	sudo apt-get install libpcre3-dev zlib1g-dev libssl-dev
+	sudo apt-get install libpcre3-dev zlib1g-dev libssl-dev make apache2-utils
 
 
 4. Compile & Install

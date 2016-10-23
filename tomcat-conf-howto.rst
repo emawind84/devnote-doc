@@ -182,10 +182,10 @@ replace ``<PROJECT PATH>`` and ``<PROJECT DOMAIN>``.
 		ServerAdmin webmaster@dummy-host.example.com
 		DocumentRoot "<PROJECT PATH>/web"
 		ServerName <PROJECT DOMAIN>
-		ErrorLog "logs/garam-error_log"
+		ErrorLog "logs/garam-error.log"
 		CustomLog "logs/garam-access.log" common env=!dontlog
 
-		DirectoryIndex index.jsp
+		DirectoryIndex index.jsp index.html
 
 		<Directory "<PROJECT PATH>/web">
 		Options FollowSymLinks
@@ -231,6 +231,9 @@ replace ``<PROJECT PATH>`` and ``<PROJECT DOMAIN>``.
 		</Location>
 
 	</VirtualHost>
+
+
+.. important:: Make sure the **rewrite module** is enabled!
 
 
 ... and read this https://httpd.apache.org/docs/2.4/upgrading.html if using **Apache 2.4**.

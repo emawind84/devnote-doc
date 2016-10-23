@@ -25,6 +25,8 @@ Contents:
    :maxdepth: 1
 
    elastic-search-sensehat
+   web_application_build_and_deploy
+   pmis-secured-access-with-token
    web-app-maven-and-eclipse
    windows-modsecurity-install-howto
    linux-modsecurity-install-howto
