@@ -526,7 +526,8 @@ of ``elasticsearch.yml`` with the following:
     cluster.name: elasticsearch
     node.name: raspi-node-1
 
-    network.bind_host: [192.168.0.10, _local_]
+    network.bind_host: [_local_]
+    network.publish_host: _local_
     
     http.port: 9200
     transport.tcp.port: 9300
@@ -536,8 +537,52 @@ of ``elasticsearch.yml`` with the following:
     bootstrap.mlockall: true
 
 This will create a cluster named ``elasticsearch`` with one node named ``raspi-node-1``, 
-listening on port ``9200``, this is where the Restful API listen for requests.
+listening on port ``9200`` on the loopback address, this is where the Restful API listen for requests.
 The port ``9300`` is used internally by ElasticSearch to comunicate between nodes within the cluster.
+
+Just out of curiosity you can type the following::
+
+    # ss -l | grep 9200
+    # ss -l | grep 9300
+
+and you should see both ports binded to the local address.
+
+-----------------
+
+Multi Nodes! Mega Cluster!
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is a simple cluster with only one node, but if you want to create a cluster with two or more nodes,
+much cooler!, we need to change some settings like: 
+
+network.publish_host
+    ex. ``network.publish_host``: _eth0_
+    
+    It tell to other nodes, `Look! I am here and you can use this address if you want to call me!`,
+    so the other nodes when they need they can reach you using this address.
+    
+    .. important:: Must be one and only one address!
+
+discovery.zen.ping.unicast.hosts
+    ex. ``discovery.zen.ping.unicast.hosts``: [10.0.0.1, 10.0.0.2, 10.0.0.3]
+    
+    With this option you tell to your node about the others nodes present in the cluster, 
+    so when you turn on your node it will contact one of these other nodes to ask them, 
+    `Hey! tell me who is my Master please!`, and then your node will be able to join the cluster.
+    
+    .. note:: You don't have to put your ip here
+
+network.bind_host
+    ex. ``network.bind_host``: [_eth0_, _local_]
+    
+    If other nodes need to exchange data with you, 
+    then you need to make sure other nodes can access at least the **port 9300**
+    from wherever they are, so make sure you put here the network address usable from other nodes.
+    
+    .. seealso:: ``transport.bind_host`` and ``http.bind_host`` if you need more control.
+
+
+--------------
 
 You can run the engine from the bin folder with the following command::
 

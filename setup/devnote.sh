@@ -112,7 +112,7 @@ build (){
 
 	# check for update
 	echo "Checking for updates..."
-	git pull
+	git pull origin disconote
 
 	# build documentation
 	echo "Building documentation..."
