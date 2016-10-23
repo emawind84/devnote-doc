@@ -638,7 +638,7 @@ We will use a python script that read the CSV file and index every row inside th
 
     #!/usr/bin/env python3
 
-    import json, csv, requests, logging
+    import json, csv, requests, logging, argparse
     import dateutil.parser
 
     CSV_MAP = ['temp_h','temp_p','humidity','pressure',
@@ -649,7 +649,7 @@ We will use a python script that read the CSV file and index every row inside th
             'timestamp']
 
     # ElasticSearch parameters
-    ES_HOST = '203.239.21.69'
+    ES_HOST = '127.0.0.1'
     ES_PORT = '9200'
     ES_INDEX = 'sense'
     ES_TYPE = 'stats'
@@ -664,8 +664,8 @@ We will use a python script that read the CSV file and index every row inside th
     def main():
         s = requests.Session()
         
-        r = s.delete( "http://%s:%s/%s/" % (ES_HOST, ES_PORT, ES_INDEX) )
-        _logger.debug(r.text)
+        #r = s.delete( "http://%s:%s/%s/" % (ES_HOST, ES_PORT, ES_INDEX) )
+        #_logger.debug(r.text)
         
         with open(CSV_FILE_PATH, 'rt') as csvfile:
             reader = csv.reader(csvfile, delimiter=',')
@@ -687,7 +687,15 @@ We will use a python script that read the CSV file and index every row inside th
                 _logger.debug(r.text)
             
     if __name__ == '__main__':
+        parser = argparse.ArgumentParser()
+        parser.add_argument('-l', '--log', action='store', dest='logfile', help='The log file to import into elasticsearch engine')
+        args = parser.parse_args()
+
+        if args.logfile:
+            CSV_FILE_PATH = args.logfile
+            
         main()
+
 
 
 In the script you need to change some parameters like ``ES_HOST``, ``ES_PORT`` and ``CSV_FILE_PATH``.
