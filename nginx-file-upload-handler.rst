@@ -157,9 +157,16 @@ Locate the file ``start-nginx.bat`` inside the nginx folder and fix the followin
 	%NGINX_EXE% -p /cygdrive/c/nginx/
 
 You should need to change only the drive letter here.
-Just make sure you put nginx folder right under the root of the drive.
+Just make sure you put ``nginx`` folder right under the root of the drive (ex. c:/nginx).
 
-**Don't change the path /cygdrive/ !**
+.. warning:: 
+  **Don't change the path /cygdrive/ !**
+
+.. note:: 
+	All the temporary files will go under the folder ``temp`` inside the nginx root folder.
+
+	**Replace the folder temp with a symbolic link to the web application temporary folder** 
+	so the folder is cleaned up when 'cleanup' task is executed by the web application.
 
 
 3. OLD Install Nginx Service
