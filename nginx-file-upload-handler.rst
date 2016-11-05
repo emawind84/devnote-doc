@@ -135,7 +135,8 @@ On Windows Machine
 1. Download and Copy Nginx
 ----------------------------
 
-Take the nginx folder from SVN at this url: **http://125.141.221.126/repo/STND_PMIS_util/nginx-1.8.1**
+Take the nginx folder from SVN at this url: **http://125.141.221.126/repo/STND_PMIS_util/nginx.zip**
+or from our owncloud website: ???
 
 Copy the folder on the server.
 
@@ -143,22 +144,23 @@ Copy the folder on the server.
 2. Settings Nginx
 ---------------------------
 
-Supposing the nginx folder is located at ``C:/nginx-1.8.1`` we need to change some paths inside
+Supposing the nginx folder is located at ``C:/nginx`` we need to change some paths inside
 some configuration files.
-
-Locate the file ``conf/nginx.conf`` and change the following path with the right one::
-
-	include C:/nginx-1.8.1/conf/sites-enabled/*.conf;
 	
-Locate the file ``conf/includes/upload_handler.conf`` and change the following path with the right one::
+Locate the file ``conf/sites-enabled/upload.conf`` 
+and fix the following line where you see the drive letter with the correct path to nginx folder::
 
-	client_body_temp_path      C:/tmp/;
-	
-Locate the file ``conf/sites-enabled/upload.conf`` and do the same::
+	fastcgi_param   SCRIPT_FILENAME  c:/nginx/html$fastcgi_script_name;
 
-	root C:/tmp;
-	...
-	include C:/nginx-1.8.1/conf/includes/upload_handler.conf;
+Locate the file start-nginx.bat inside the nginx folder and fix the following lines::
+
+	SET NGINX_HOME=c:\nginx
+	%NGINX_EXE% -p /cygdrive/c/nginx/
+
+You should need to change only the drive letter here.
+Just make sure you put nginx folder right under the root of the drive.
+
+**Don't change the path /cygdrive/ !**
 
 
 3. Install Nginx Service
@@ -171,12 +173,22 @@ Open a shell go to the nginx folder and type the following::
 This should install a Windows Service for the Nginx Upload Service with the name
 ``Nginx File Upload Handler``.
 
-You can start and stop the service with the following commands::
+You can start and stop the service with the following executables::
 
-	> nginx-service.cmd start
-	> nginx-service.cmd stop
+	> start-nginx.bat
+	> stop-nginx.bat
 	
-You can do the same from the Windows Service List as Administrator.
+To start the service automatically create a Task in the Task Scheduler:
+
+.. figure:: _images/nginx/f1.png
+
+.. figure:: _images/nginx/f2.png
+
+.. figure:: _images/nginx/f3.png
+
+.. figure:: _images/nginx/f4.png
+
+.. figure:: _images/nginx/f5.png
 
 
 4. Test Nginx Up and Running
@@ -196,6 +208,18 @@ You should see an output like this::
 
 	C:\nginx-1.8.1>PAUSE
 	Press any key to continue . . .
+
+
+5. Test Upload
+------------------------
+
+You can test upload service going with a browser to the following address:
+
+**http://127.0.0.1:8180/test.html**
+
+From here just upload a file and check the response 
+making sure it return a json result with the temporary file information.
+
 	
 -------------
 
@@ -235,7 +259,7 @@ Add the following Proxy configuration to the Apache VirtualHost::
 
 	
 .. important::
-
+	**NOT REQUIRED ANYMORE IF USING PHP REQUEST**
 	Because the file handler need to do a request on http://127.0.0.1/Common/TemporaryFile/fastupload.action
 	we need to add the following default jkMount to the default VirtualHost if it is present::
 
