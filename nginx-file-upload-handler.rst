@@ -225,11 +225,21 @@ You can test upload service going with a browser to the following address:
 From here just upload a file and check the response 
 making sure it return a json result with the temporary file information.
 
+If the service is running fine:
+
 .. figure:: _images/nginx/f6.png
+
+
+If the PHP service is not running:
 
 .. figure:: _images/nginx/f7.png
 
-	
+
+Check if the file has been created:
+
+.. figure:: _images/nginx/f8.png
+
+
 -------------
 
 
@@ -269,7 +279,7 @@ Add the following Proxy configuration to the Apache VirtualHost::
 	
 .. important::
 	**NOT REQUIRED ANYMORE IF USING PHP REQUEST**
-	
+
 	Because the file handler need to do a request on http://127.0.0.1/Common/TemporaryFile/fastupload.action
 	we need to add the following default jkMount to the default VirtualHost if it is present::
 
