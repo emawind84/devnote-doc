@@ -135,11 +135,10 @@ On Windows Machine
 1. Download and Copy Nginx
 ----------------------------
 
-Take the nginx folder from SVN at this url: **http://125.141.221.126/repo/STND_PMIS_util/nginx.zip**
-or from our owncloud website: ???
+| Take the nginx folder from the SVN `here <http://125.141.221.126/repo/STND_PMIS_util/nginx.zip>`_
+| Or from the owncloud website `here <http://dev.sangah.com/owncloud/index.php/s/nim9D8CUaH1q3uv>`_
 
-Copy the folder on the server.
-
+Copy the folder on the server, and make sure it is just below the root of the drive (ex. c:\nginx).
 
 2. Settings Nginx
 ---------------------------
@@ -152,7 +151,7 @@ and fix the following line where you see the drive letter with the correct path 
 
 	fastcgi_param   SCRIPT_FILENAME  c:/nginx/html$fastcgi_script_name;
 
-Locate the file start-nginx.bat inside the nginx folder and fix the following lines::
+Locate the file ``start-nginx.bat`` inside the nginx folder and fix the following lines::
 
 	SET NGINX_HOME=c:\nginx
 	%NGINX_EXE% -p /cygdrive/c/nginx/
@@ -163,8 +162,10 @@ Just make sure you put nginx folder right under the root of the drive.
 **Don't change the path /cygdrive/ !**
 
 
-3. Install Nginx Service
+3. OLD Install Nginx Service
 --------------------------
+
+.. warning:: Doesn't work anymore.
 
 Open a shell go to the nginx folder and type the following::
 
@@ -172,6 +173,10 @@ Open a shell go to the nginx folder and type the following::
 	
 This should install a Windows Service for the Nginx Upload Service with the name
 ``Nginx File Upload Handler``.
+
+
+4. Start & Stop script
+----------------------------------------------
 
 You can start and stop the service with the following executables::
 
@@ -191,7 +196,7 @@ To start the service automatically create a Task in the Task Scheduler:
 .. figure:: _images/nginx/f5.png
 
 
-4. Test Nginx Up and Running
+5. Test Nginx Up and Running
 ------------------------------
 
 Test if nginx server is running executing ``nginx-status.cmd`` from the nginx folder.
@@ -210,7 +215,7 @@ You should see an output like this::
 	Press any key to continue . . .
 
 
-5. Test Upload
+6. Test Upload Service
 ------------------------
 
 You can test upload service going with a browser to the following address:
