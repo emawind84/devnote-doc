@@ -92,7 +92,8 @@ Contents:
    web-app-maven-and-eclipse
    windows-modsecurity-install-howto
    linux-modsecurity-install-howto
-   nginx-file-upload-handler
+   nginx-file-upload-handler-windows
+   nginx-file-upload-handler-linux
    pmis-linux-server-settings
    pmis-framework-training
    howto-oracledb-user-import&export

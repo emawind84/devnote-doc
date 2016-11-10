@@ -2,9 +2,9 @@
 
 .. _nginx-file-upload-handler:
 
-==================================================
-Nginx File Upload Handler Install & Configuration
-==================================================
+===============================================================
+[For Windows] Nginx File Upload Handler Install & Configuration
+===============================================================
 
 
 About Nginx
@@ -18,129 +18,20 @@ About Nginx
 
 --------------------------
 
-On Linux Machine
-^^^^^^^^^^^^^^^^^^^^^
-
-1. Download nginx
-------------------
-
-Go `here <http://nginx.org/en/download.html>`_ for the latest version or...
-
-Version 1.8 -> http://nginx.org/download/nginx-1.8.1.tar.gz
-
-::
-
-	cd ~
-	wget http://nginx.org/download/nginx-1.8.1.tar.gz
-
-
-2. Extract the archive
-------------------------
-
-Extract the nginx archive where you want with::
-
-	tar -xvf nginx-1.8.1.tar.gz
-
-
-3. Install the required libraries
------------------------------------
-
-For Centos::
-
-	sudo yum install -y httpd-devel httpd-tools pcre perl pcre-devel zlib zlib-devel openssl-devel
-
-For Ubuntu::
-
-	sudo apt-get install libpcre3-dev zlib1g-dev libssl-dev make apache2-utils
-
-
-4. Compile & Install
--------------------------- 
-
-Execute the following commands in sequence inside the nginx folder::
-
-	./configure \
-	--user=nginx                          \
-	--group=nginx                         \
-	--prefix=/etc/nginx                   \
-	--sbin-path=/usr/sbin/nginx           \
-	--conf-path=/etc/nginx/nginx.conf     \
-	--pid-path=/var/run/nginx.pid         \
-	--lock-path=/var/run/nginx.lock       \
-	--error-log-path=/var/log/nginx/error.log \
-	--http-log-path=/var/log/nginx/access.log \
-	--with-http_gzip_static_module        \
-	--with-http_stub_status_module        \
-	--with-http_ssl_module                \
-	--with-pcre                           \
-	--with-file-aio                       \
-	--with-http_realip_module
-
-	make
-	sudo make install
-
-
-5. Auto Configure
-------------------- 
-
-Now that Nginx is installed we need to configure the file upload handler. 
-We need to execute a script that will do some configuration for us.
- 
-From this `repository <https://github.com/emawind84/nginx-upload-handler-conf.git>`_ take the following file::
-
-	sudo wget https://raw.githubusercontent.com/emawind84/nginx-upload-handler-conf/master/nginx_configure.sh \
-	-O /etc/nginx/configure.sh
-
-Let's execute the script::
-
-	cd /etc/nginx
-	sudo chmod +x configure.sh
-	sudo ./configure
-
-This script should grab several files from the repository, test the configuration for errors
-and test a file upload on the server. If everything is ok you should see some instructions
-for starting, stopping and reloading nginx.::
-
-	...
-	nginx: [warn] duplicate MIME type "text/html" in /etc/nginx/nginx.conf:40
-	nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-	nginx: configuration file /etc/nginx/nginx.conf test is successful
-	Starting nginx server...
-	nginx: [warn] duplicate MIME type "text/html" in /etc/nginx/nginx.conf:40
-	https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/
-	Start nginx using: nginx
-	Reload nginx using: nginx -s reload
-	Stop nginx using: nginx -s stop
-
-
-6. Test
-------------
-
-Check that the handler is working with the following commands::
-
-	$ sudo dd if=/dev/zero of=/tmp/test.tmp bs=512k count=1 >/dev/null 2>&1
-	$ sudo curl --user ngxupload:ngxupload --data-binary '@/tmp/test.tmp' http://127.0.0.1:8180/upload
-
-	{"fileId":"0046678708","fileEdmsId":"","filePath":"/tmp/0046678708","contentType":"application/octet-stream;charset=UTF-8"}
-
-
---------------------------
-
-
-	
-On Windows Machine
-^^^^^^^^^^^^^^^^^^^^^
-
 
 1. Download and Copy Nginx
 ----------------------------
 
-| Take the nginx folder from the SVN `here <http://125.141.221.126/repo/STND_PMIS_util/nginx.zip>`_
-| Or from the owncloud website `here <http://dev.sangah.com/owncloud/index.php/s/nim9D8CUaH1q3uv>`_
+Take the nginx folder from one of these links below: 
 
-Copy the folder on the server, and make sure it is just below the root of the drive (ex. c:\nginx).
+- SVN Repository http://125.141.221.126/repo/STND_PMIS_util/nginx.zip
+- SangAh Cloud http://dev.sangah.com/owncloud/index.php/s/nim9D8CUaH1q3uv
 
-2. Settings Nginx
+Copy the folder on the server, and put the folder just below the root of the drive (ex. c:\nginx)
+to prevent to make mistakes with the path later.
+
+
+2. Nginx Settings
 ---------------------------
 
 Supposing the nginx folder is located at ``C:/nginx`` we need to change some paths inside
@@ -160,7 +51,7 @@ You should need to change only the drive letter here.
 Just make sure you put ``nginx`` folder right under the root of the drive (ex. c:/nginx).
 
 .. warning:: 
-  **Don't change the path /cygdrive/ !**
+  **Don't change the path /cygdrive/ !** only the drive letter.
 
 .. note:: 
 	All the temporary files will go under the folder ``temp`` inside the nginx root folder.
@@ -169,10 +60,10 @@ Just make sure you put ``nginx`` folder right under the root of the drive (ex. c
 	so the folder is cleaned up when 'cleanup' task is executed by the web application.
 
 
-3. OLD Install Nginx Service
+3. [OLD] Install Nginx Service
 --------------------------
 
-.. warning:: Doesn't work anymore.
+.. warning:: Doesn't work anymore skip to step 4.
 
 Open a shell go to the nginx folder and type the following::
 
@@ -185,26 +76,40 @@ This should install a Windows Service for the Nginx Upload Service with the name
 4. Start & Stop script
 ----------------------------------------------
 
-You can start and stop the service with the following executables::
+You can start and stop the service with the following executables:
 
-	> start-nginx.bat
-	> stop-nginx.bat
-	
-To start the service automatically create a Task in the Task Scheduler:
+**start-nginx.bat**
+	Start the service Nginx + PHP
 
-.. figure:: _images/nginx/f1.png
+**stop-nginx.bat**
+	Stop the service Nginx + PHP
 
-.. figure:: _images/nginx/f2.png
 
-.. figure:: _images/nginx/f3.png
+Create a schedule to start the service automatically from the Task Scheduler, 
+just follow the steps below:
 
-.. figure:: _images/nginx/f4.png
+Open the Task Scheduler using the application ``taskschd.msc``. Then create a new task:
 
-.. figure:: _images/nginx/f5.png
+	.. figure:: _images/nginx/f1.png
+
+	.. figure:: _images/nginx/f2.png
+
+	.. figure:: _images/nginx/f3.png
+
+	.. figure:: _images/nginx/f4.png
+
+	.. figure:: _images/nginx/f5.png
 
 
 5. Test Nginx Up and Running
 ------------------------------
+
+
+
+Start the service by running the schedule you created:
+
+	.. figure:: _images/nginx/f11.png
+
 
 Test if nginx server is running executing ``nginx-status.cmd`` from the nginx folder.
 
@@ -225,26 +130,56 @@ You should see an output like this::
 6. Test Upload Service
 ------------------------
 
-You can test upload service going with a browser to the following address:
+You can test the upload service using a test page from the following address:
 
 **http://127.0.0.1:8180/test.html**
 
 From here just upload a file and check the response 
 making sure it return a json result with the temporary file information.
 
-If the service is running fine:
+*If the service is running fine*
 
 .. figure:: _images/nginx/f6.png
 
 
-If the PHP service is not running:
+*If the service is not running or there is some problems*
 
 .. figure:: _images/nginx/f7.png
 
 
-Check if the file has been created:
+*Check if the file has been created*
 
 .. figure:: _images/nginx/f8.png
+
+
+7. Restart On Crash
+------------------------
+
+In case nginx service or PHP service go down we need to start again these services as soon as possible
+to prevent to many problems.
+
+The application we are going to use is RestartOnCrash.exe inside ``nginx/etc/roc`` folder.
+We install the application as as service so it will start automatically on windows startup.
+
+.. note:: The application monitor nginx and php services and if they go down they will be restarted automatically.
+
+Open a terminal **as administrator** and go to the folder ``roc`` where is located the executable
+``RestartOnCrash.exe``, from there type::
+
+	> roc-service.exe install
+	
+*The application installed as a service*
+
+	.. figure:: _images/nginx/f9.png
+
+The service will be installed and you can start it from the Services panel of Windows or by typing::
+
+	> roc-service.exe start
+
+
+Check that the application is running looking at the Start Task Manager of Windows
+
+	.. figure:: _images/nginx/f10.png
 
 
 -------------
