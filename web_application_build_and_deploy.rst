@@ -32,6 +32,8 @@ this folder contains the final web application that should be deployed to the se
 
    .. figure:: _images/antbuild/ScreenClip2.png
 
+.. _important-update:
+
 .. note:: The new build process create a unique jar file containing all the compiled java classes,
   what it means is that you will not upload lots of class files anymore, but just one jar file located
   inside the lib folder of the application named ``stnd_pmis.jar``.
