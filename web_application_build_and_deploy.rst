@@ -7,6 +7,8 @@ How to Build and Deploy our Web Application
 Build
 --------------------
 
+.. important:: Always change the ``build.properties`` file with the correct Tomcat directory before running Ant tasks
+
 
 The project has a ``build.xml`` file, that is the task configuration file for Ant and that we use to build the application.
 
@@ -19,16 +21,22 @@ The project has a ``build.xml`` file, that is the task configuration file for An
 
    .. figure:: _images/antbuild/ScreenClip.png
 
-4. Depending from the option 'Hide Internal Targets' you will see several tasks. What we need are: ``build-js`` and ``web``.
+4. Depending from the option 'Hide Internal Targets' you will see several tasks. 
+   What we need are: ``build-js`` and ``web`` tasks.
+   If ``build.properties`` configuration is correct after you click the ``web`` task, 
+   Ant will start copying all the compiled java classes with all the rest of the files 
+   inside a new folder named 'build' under your project.
 
-	If build.properties is correct after you click the web task, Ant will start copying all the compiled java classes with all the rest of the files
-	inside a new folder named 'build' under your project.
-
-When Ant has finished the task execution, you will see a new folder ``build/web``, 
+When Ant has finished his operation, you will see a new folder ``build/web``, 
 this folder contains the final web application that should be deployed to the server.
 
    .. figure:: _images/antbuild/ScreenClip2.png
 
+.. note:: The new build process create a unique jar file containing all the compiled java classes,
+  what it means is that you will not upload lots of class files anymore, but just one jar file located
+  inside the lib folder of the application named ``stnd_pmis.jar``.
+  So the first time you build with the new process, on sync is **important** that you delete all the classes, 
+  WinSCP will show lots of classes to delete, just delete them!
 
 
 Deploy
@@ -115,5 +123,3 @@ and make sure you copy this file inside the folder ``ext/script`` inside the ``w
 
 
 .. important:: As a side note to make this task really useful make sure the system property ``system.devmode`` is false.
-
-.. important:: Always change the ``build.properties`` file with the correct Tomcat directory before running Ant tasks

@@ -61,7 +61,7 @@ Just make sure you put ``nginx`` folder right under the root of the drive (ex. c
 
 
 3. [OLD] Install Nginx Service
---------------------------
+---------------------------------
 
 .. warning:: Doesn't work anymore skip to step 4.
 

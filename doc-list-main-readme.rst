@@ -35,19 +35,19 @@ srch_priv
 type
 	목록보기 구분
 
-	ALL_ENTPRS
-		업체 모든 문서 (srch_priv 개인만)
+	ALL_ENTPRS (*deprecated*)
+		사용자 볼수 있는 문서 다 나옴
 		
 	ALL_PRIVATE
 		개인 모든 문서
 		
 	ALL_PUBLIC
-		모든 문서 (srch_priv 개인만)
+		모든 문서 권한 없음
 	
-	EXT_ENTPRS_INBOX
+	EXT_ENTPRS_INBOX (*deprecated*)
 		수신문서
-		
-	EXT_ENTPRS_OUTBOX
+		 
+	EXT_ENTPRS_OUTBOX (*deprecated*)
 		발신문서
 	
 	EXT_DRAFT
@@ -74,14 +74,14 @@ type
 	PENDING
 		결재 진행중
 	
-	DIST_INBOX
+	DIST_INBOX (*deprecated*)
 		배포 수신
 		
-	DIST_OUTBOX
+	DIST_OUTBOX (*deprecated*)
 		배포 발신
 	
 	[empty]
-		모든 문서 + 삭제된 문서 (srch_priv 개인만)
+		모든 문서 + 삭제된 문서
 	
 
 Main JSP Tabs
