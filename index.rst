@@ -87,6 +87,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   pmis-javascript-guideline
    web_application_build_and_deploy
    pmis-secured-access-with-token
    web-app-maven-and-eclipse
