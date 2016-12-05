@@ -289,3 +289,50 @@ Better Indentation
     </body>
 
     </html>
+
+
+How To Use Google Chart Libraries
+------------------------------------
+
+Before
+^^^^^^^^^^^^^
+
+The script tags are correctly loaded only if the document is not ready yet. 
+In this situation the google libraries and d3 library are loaded first and then the script below them is executed. 
+This is a scenario that we can NOT use.
+
+::
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="/ext/d3/d3.v3.min.js" ></script>
+
+    <script type="text/javascript">
+    // this script is executed after the google libraries and d3 library are loaded
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawVisualization);
+
+    function drawVisualization(){
+        ...
+    }
+    </script>
+
+After
+^^^^^^^^^^^^^^^^^^^
+
+When we execute this script the document will be already loaded so we need to change the previous code with the following,
+in order to correctly load the necessary libraries before executing any functions declared inside them.
+We use *PmisJsLoader* and we attach an handler that is executed only after the required libraries are loaded.
+
+::
+
+    PmisJsLoader.loadModule(["https://www.google.com/jsapi", "/ext/d3/d3.v3.min.js"], 
+    // the handler
+    function(){
+        // initialize google chart and on callback create the chart
+        google.load('visualization', '1', {packages: ['corechart'], callback: function(){
+
+            // do something here
+            drawVisualization();
+
+        }});
+    });
