@@ -109,6 +109,8 @@ two handlers will be executed, not one! That's why we need pmis.off to remove th
 Mistakes
 ^^^^^^^^^^^^^^^^^^^
 
+What you see below is usually what you should not do::
+
     pmis.off('afterDoingSomething');  // it doesn't work...
     pmis.on('afterDoingSomething', function(){});
 
