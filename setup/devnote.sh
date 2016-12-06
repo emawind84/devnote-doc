@@ -4,7 +4,7 @@ SCRIPT_BASE_PATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 SCRIPT_NAME="${0##*/}"
 DOC_FOLDER="../"
 PY_ENV_FOLDER="python"
-SVN_URL=https://github.com/emawind84/devnote-doc.git
+SVN_URL=https://github.com/sangahco/devnote-doc.git
 
 set -e
 
@@ -112,7 +112,7 @@ build (){
 
 	# check for update
 	echo "Checking for updates..."
-	git pull
+	git pull origin master
 
 	# build documentation
 	echo "Building documentation..."
