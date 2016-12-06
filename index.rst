@@ -81,7 +81,9 @@ How to edit this documentation
 
 .. seealso:: `[Python] 스핑크스(sphinx)를 이용한 파이썬 API 문서화 <http://egloos.zum.com/mcchae/v/11080328>`_
 
-Contents:
+---------------------------
+
+Notes
 ---------
 
 .. toctree::
@@ -201,7 +203,8 @@ Contents:
    media-types-official-list-(contenttype)
    system-properties
 
-Python Scripts:
+
+Python Scripts
 -----------------
 
 .. note::
