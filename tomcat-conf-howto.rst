@@ -164,8 +164,8 @@ More on logrorate:
 Apache Configuration
 ---------------------------
 
-The following configuration should be added to the Apache file
-``httpd-vhosts.conf`` or whatever the configuration file is.
+Create a configuration file under apache ``conf.d`` folder ending with ``.conf`` extension (ex. pmis.conf),
+and copy inside the following content:
 
 **Adapt the configuration to your project settings**, 
 replace ``<PROJECT PATH>`` and ``<PROJECT DOMAIN>``.
@@ -232,6 +232,12 @@ replace ``<PROJECT PATH>`` and ``<PROJECT DOMAIN>``.
 
 	</VirtualHost>
 
+Add the default VirtualHost directive for deny access by ip to the server, 
+you can put the following file inside the conf.d folder, just take the correct file.
+
+| for Apache 2.4 https://gist.github.com/emawind84/65552b048a6c153a16e37ec0c50b4517
+| for Apache 2.2 https://gist.github.com/emawind84/2e5b3051b69f94b7ab7701c7c6aa1352
+
 
 .. important:: Make sure the **rewrite module** is enabled!
 
@@ -246,7 +252,7 @@ SSL Apache Configuration
 
 1. Upload files necessary for using SSL protocol into the server. 
 
-Locate the folder ``/etc/pki/tls`` create folder ``kspmis`` and put the following files:
+ Locate the folder ``/etc/pki/tls`` create folder ``kspmis`` and put the following files:
 
 	_wildcard_kspmis_com.crt
 		Server certificate data file
@@ -257,23 +263,23 @@ Locate the folder ``/etc/pki/tls`` create folder ``kspmis`` and put the followin
 	_wildcard_kspmis_com_SHA256WITHRSA.key
 		Server private key file
 
-You can find these files on SVN http://125.141.221.126/repo/STND_PMIS_util/etc/20160215-167040-_wildcard_kspmis_com.pfx 	
+ You can find these files on SVN http://125.141.221.126/repo/STND_PMIS_util/etc/20160215-167040-_wildcard_kspmis_com.pfx 	
 
 2. In order to use SSL verify that ``mod_ssl`` module is enabled.
 
-- ``mod_ssl.so`` should be present in modules folder
+ - ``mod_ssl.so`` should be present in modules folder
 
-- The following directives should be present somewhere. 
+  If the module is not present install it with::
+
+	# for Centos
+	yum install mod_ssl
+
+ - The following directives should be present somewhere. 
 	Check files inside extra folder (ex. httpd-ssl.conf)
 	and ``httpd.conf``.::
 	
 		LoadModule ssl_module modules/mod_ssl.so
 		Listen 443
-			
-If the module is not present install it with::
-
-	# for Centos
-	yum install mod_ssl
 		
 			
 3. Create a VirtualHost listening on port 80 that will redirect requests from ``*.kspmis.com`` to 443::
@@ -287,7 +293,7 @@ If the module is not present install it with::
 		RewriteRule ^/(.*) https://%{HTTP_HOST}/$1 [NE,R,L]
 	</VirtualHost>
 
-.. important:: 
+ .. important:: 
 
 	Make sure you enabled the mod_rewrite module to make use of the above directives!::
 
@@ -313,7 +319,7 @@ If the module is not present install it with::
 	[Thu Feb 25 16:04:11 2016] [warn] _default_ VirtualHost overlap on port 443, the first has precedence
 	Syntax OK
 		
-.. note:: 
+ .. note:: 
 	The warning is due to the file ``ssl.conf`` inside the ``conf.d`` folder; 
 	the VirtualHost inside that file should be deleted.
 		
