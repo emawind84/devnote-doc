@@ -109,6 +109,8 @@ two handlers will be executed, not one! That's why we need pmis.off to remove th
 Mistakes
 ^^^^^^^^^^^^^^^^^^^
 
+What you see below is usually what you should not do::
+
     pmis.off('afterDoingSomething');  // it doesn't work...
     pmis.on('afterDoingSomething', function(){});
 
@@ -336,3 +338,13 @@ We use *PmisJsLoader* and we attach an handler that is executed only after the r
 
         }});
     });
+
+
+.. note:: 
+    These are some changes required to correct some of the problems above:
+
+    | ``\$\(document\)(\.on\(["'].*["'],[\s]*function\()[\s]*e,[\s]*(.*\))`` => ``pmis$1$2``
+    | ``(\$\([\s]*window[\s]*\)\.on\(["'])resize(\..*)?(["'],[\s]*function\(.*\))`` => ``$1resize.pmis$3``
+    | ``(\$\([\s]*window[\s]*\)\.)resize\(([\s]*function[\s]*\(\))`` => ``$1on('resize.pmis', $2``
+
+    You should replace the left regular expression with the right replacement string

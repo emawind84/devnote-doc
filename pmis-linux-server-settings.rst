@@ -153,7 +153,7 @@ Make an ``util`` folder inside the ``sangah`` home if you didn't already::
 	mkdir /home/sangah/util
 	cd /home/sangah/util
 
-Download Tomcat and extract the archive::
+Download the latest version of Tomcat 7 from here https://tomcat.apache.org/download-70.cgi and extract the archive::
 
 	wget http://mirror.apache-kr.org/tomcat/tomcat-7/v7.0.68/bin/apache-tomcat-7.0.68.tar.gz
 	tar -xvf apache-tomcat-7.0.68.tar.gz
@@ -367,8 +367,8 @@ Download the tomcat connector from here http://archive.apache.org/dist/tomcat/to
 
 ::
 
-	wget http://archive.apache.org/dist/tomcat/tomcat-connectors/jk/tomcat-connectors-1.2.41-src.tar.gz
-	tar -xvf tomcat-connectors-1.2.41-src.tar.gz	
+	wget http://archive.apache.org/dist/tomcat/tomcat-connectors/jk/tomcat-connectors-1.2.37-src.tar.gz
+	tar -xvf tomcat-connectors-1.2.37-src.tar.gz
 
 
 
@@ -378,6 +378,9 @@ Download the tomcat connector from here http://archive.apache.org/dist/tomcat/to
 Make sure you have apxs with::
 
 	ls /usr/bin/apxs
+	ls /usr/sbin/apxs
+
+.. important:: Change the path accordingly ``bin`` or ``sbin``!
 	
 Compile and install::
 
@@ -429,6 +432,12 @@ AJP configuration::
 	worker.worker1.host=localhost
 	worker.worker1.type=ajp13
 
+.. important:: The port ``8010`` have to match the port of the **AJP** connector inside the Tomcat configuration file ``server.xml``.
+
+	::
+
+		<Connector enableLookups="false" port="8010" protocol="AJP/1.3" redirectPort="443" URIEncoding="UTF-8" />
+
 
 17. Create a conf file for the project under the folder ``conf.d`` of Apache
 ------------------------------------------------------------------------------
@@ -465,7 +474,7 @@ Change the permissions to 755 for the folders until the ``web`` if necessary.
 **This step is only for Centos server!**
 
 SELinux Enforcement is a problem for web application 
-and to prevent a Permission Denied error we need to fix it.
+and to prevent a Permission Denied error we need to fix it:
 
 ::
 
@@ -480,6 +489,18 @@ and to prevent a Permission Denied error we need to fix it.
 	
 We just told to Centos that the ``SAPP`` folder is a directory that contains web content
 and so the enforcement will be disabled for this directory and all the subdirectories.
+
+Do the following to allow httpd to access the network and other stuff...
+
+::
+
+	# Allow HTTPD scripts and modules to connect to the network using TCP.
+	setsebool -P httpd_can_network_connect 1
+
+	# Allow HTTPD scripts and modules to connect to databases over the network.
+	setsebool -P httpd_can_network_connect_db 1
+
+.. important:: The above commands are really important to make the all thing work properly, don't forge it!
 
 
 -----------------------
@@ -527,7 +548,9 @@ add the executable flag to the files to make them executable::
 [Extra] Install Nginx File Upload Server
 -----------------------------------------------
 
-:ref:`nginx-file-upload-handler`
+:ref:`nginx-file-upload-handler-linux`
+
+:ref:`nginx-file-upload-handler-windows`
 
 
 
