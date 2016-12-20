@@ -100,8 +100,8 @@ create (){
 build (){
 
 	# activate python environment
-        echo "Activating Python environment..."
-        source $PY_ENV_FOLDER/bin/activate
+	echo "Activating Python environment..."
+	source $PY_ENV_FOLDER/bin/activate
 
 	if [ ! -d "$DOC_FOLDER" ]; then
 		echo "Doc folder not found, install first!"

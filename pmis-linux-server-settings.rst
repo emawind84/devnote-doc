@@ -367,8 +367,8 @@ Download the tomcat connector from here http://archive.apache.org/dist/tomcat/to
 
 ::
 
-	wget http://archive.apache.org/dist/tomcat/tomcat-connectors/jk/tomcat-connectors-1.2.41-src.tar.gz
-	tar -xvf tomcat-connectors-1.2.41-src.tar.gz	
+	wget http://archive.apache.org/dist/tomcat/tomcat-connectors/jk/tomcat-connectors-1.2.37-src.tar.gz
+	tar -xvf tomcat-connectors-1.2.37-src.tar.gz
 
 
 
