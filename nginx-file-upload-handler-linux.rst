@@ -1,6 +1,6 @@
 .. highlight:: bash
 
-.. _nginx-file-upload-handler:
+.. _nginx-file-upload-handler-linux:
 
 =============================================================
 [For Linux] Nginx File Upload Handler Install & Configuration
