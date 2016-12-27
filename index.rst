@@ -89,6 +89,7 @@ Notes
 .. toctree::
    :maxdepth: 1
 
+   pmis-basic-authentication
    pmis-javascript-guideline
    web_application_build_and_deploy
    pmis-secured-access-with-token
