@@ -343,7 +343,7 @@ We use *PmisJsLoader* and we attach an handler that is executed only after the r
 .. note:: 
     These are some changes required to correct some of the problems above:
 
-    | ``\$\(document\)(\.on\(["'].*["'],[\s]*function\()[\s]*e,[\s]*(.*\))`` => ``pmis$1$2``
+    | ``\$\(document\)(\.on\(["'].*["'],[\s]*function\()(?:[\s]*e,[\s]*)?(.*\))`` => ``pmis$1$2``
     | ``(\$\([\s]*window[\s]*\)\.on\(["'])resize(\..*)?(["'],[\s]*function\(.*\))`` => ``$1resize.pmis$3``
     | ``(\$\([\s]*window[\s]*\)\.)resize\(([\s]*function[\s]*\(\))`` => ``$1on('resize.pmis', $2``
 
