@@ -9,28 +9,28 @@ SVN_URL=https://github.com/emawind84/devnote-doc.git
 set -e
 
 while getopts ":p:d:" optname
-    do
-      case "$optname" in
-        "d")
-          echo "Document folder $OPTARG specified"
-          DOC_FOLDER=$OPTARG
-          ;;
-        "p")
-          echo "Python folder $OPTARG specified"
-	  PY_ENV_FOLDER=$OPTARG
-          ;;
-        "?")
-          echo "Unknown option $OPTARG"
-          ;;
-        ":")
-          echo "No argument value for option $OPTARG"
-          ;;
-        *)
-        # Should not occur
-          echo "Unknown error while processing options"
-          ;;
-      esac
-    done
+do
+    case "$optname" in
+    "d")
+        echo "Document folder $OPTARG specified"
+        DOC_FOLDER=$OPTARG
+        ;;
+    "p")
+        echo "Python folder $OPTARG specified"
+        PY_ENV_FOLDER=$OPTARG
+        ;;
+    "?")
+        echo "Unknown option $OPTARG"
+        ;;
+    ":")
+        echo "No argument value for option $OPTARG"
+        ;;
+    *)
+    # Should not occur
+        echo "Unknown error while processing options"
+        ;;
+    esac
+done
 
 shift $(($OPTIND - 1))
 

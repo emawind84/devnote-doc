@@ -7,6 +7,7 @@ Creating an ad hoc Wi-Fi network
 The purpose of this tutorial is to create a direct access 
 to the Raspberry Pi 2 using a wireless connection,
 without the need of using a router or access point.
+
 This tutorial has been tested on **Raspbian wheezy** distribution.
 
 .. seealso:: Some reference:
@@ -15,48 +16,70 @@ This tutorial has been tested on **Raspbian wheezy** distribution.
 	| https://wiki.gentoo.org/wiki/Network_management_using_DHCPCD
 	| https://www.raspberrypi.org/forums/viewtopic.php?f=36&t=125139
 
-We need to edit the network interfaces configuration:
+First of all we need to edit the network interfaces configuration,
+and what we are going to do is to assign a static address to our wifi interface
+and tell to the networking service to invoke the wpa_supplicant with custom parameters when the wifi go up
+and to kill the wpa_supplicant when the wifi go down.
+
+Your configuration might be something like this if you are using Raspbian Jessie::
+
+    ...
+    source-directory /etc/network/interfaces.d
+
+    auto lo
+    iface lo inet loopback
+
+    iface eth0 inet manual
+
+    allow-hotplug wlan0
+    iface wlan0 inet manual
+        wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+    allow-hotplug wlan1
+    iface wlan1 inet manual
+        wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+
+Let's open the configuration and start editing.
 
 ::
 
 	$ sudo nano /etc/network/interfaces
-	
-In your file you might have something along this line:
 
-::
+Replace the configuration of ``wlan0`` 
+or whatever interface you want to use with the configuration below::
 
-	auto lo
-	iface lo inet loopback
-	
-	auto eth0
-	allow-hotplug eth0
-	iface eth0 inet dhcp
+    allow-hotplug wlan0
+    iface wlan0 inet static
+    pre-up wpa_supplicant -Dwext -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf -B
+    post-down killall -q wpa_supplicant
+    #wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+    address 192.168.10.1
+    netmask 255.255.255.0
 
-	allow-hotplug wlan0
-	iface wlan0 inet manual
-	wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-	iface default inet dhcp 
-	
-	...
-	
-We need to change the line that says **iface default inet dhcp** 
-and replace it with **iface default inet static**
-and add static **address** and **netmask** with the following two lines 
-just below the iface line::
+``iface wlan0 inet static``
+    Define a static ip address, and doing this we don't bother dhcp services.
 
-	allow-hotplug wlan0
-	iface wlan0 inet manual
-	wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-	#iface default inet dhcp
-	iface default inet static
-	
-	# change these with whatever you want
-	address 192.168.10.1
-	netmask 255.255.255.0
+``pre-up wpa_supplicant -Dwext -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf -B``
+    The networking service call wpa_supplicant
+    with ``-D nl80211,wext``, telling to the service to use the first driver that works for him.
+    Unfortunately it picks ``nl80211`` that doesn't work in Ad-Hoc mode, at least on my system.
+    So we leave only ``wext`` as available driver and it should works.
+
+``post-down killall -q wpa_supplicant``
+    We kill wpa_supplicant when the interface go down. 
+    The networking service doesn't kill it if we don't use ``wpa-conf`` property so we have to do it.
+
+``address 192.168.10.1``
+    The ip address we want to set for this machine.
+
+``netmask 255.255.255.0``
+    The netmask we want to set for the network.
+
 
 .. important::
-	Now in case your distribution are running the DHCP client **dhcpcd** (Debian Jessie) 
-	the above static address will not be used.
+	In case your distribution are running the DHCP client **dhcpcd** (Debian Jessie) 
+	the above static address (might) not work.
 	
 	Check if this service is running with the command:
 	
@@ -146,16 +169,13 @@ After your device has been connected to the network you can check the next step 
 
 With **ip addr** you shoud be able to see if the network has been set with the right address,
 looking at my output **inet 192.168.10.1/24**, you can see my network has the address I set before.
-
-.. important::
-	Make sure that your device is connected to your ad hoc network before executing **ip addr**.
 	
 Now you can connect directly to your Raspberry Pi 2 using his local address **192.168.10.1**.
 
 ----------------------
 
-*skip this part it doesn't work*
----------------------------------
+.. important: 
+    *The following part need to be revised cause it doesn't work as intended.*
 
 You will see that you can not use this network to access Internet.
 In case you want to be able to use internet using this network
