@@ -102,6 +102,10 @@ Deploy
 
 #. You can start again the Web Application Server (Tomcat).
 
+.. important:: For **Windows FTP Server only** make sure you set the correct filename encoding as below.
+
+  .. figure:: _images/winscp/Image4.png
+
 
 ----------------------
 

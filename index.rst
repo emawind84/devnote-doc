@@ -92,7 +92,7 @@ Notes
    pmis-basic-authentication
    pmis-javascript-guideline
    web_application_build_and_deploy
-   pmis-secured-access-with-token
+   pmis-token-authentication
    web-app-maven-and-eclipse
    windows-modsecurity-install-howto
    linux-modsecurity-install-howto
