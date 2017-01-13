@@ -45,11 +45,11 @@ Extract the nginx archive where you want with::
 
 For Centos::
 
-	sudo yum install -y httpd-devel httpd-tools pcre perl pcre-devel zlib zlib-devel openssl-devel
+	sudo yum install -y httpd-devel httpd-tools pcre perl pcre-devel zlib zlib-devel openssl-devel php-fpm
 
 For Ubuntu::
 
-	sudo apt-get install libpcre3-dev zlib1g-dev libssl-dev make apache2-utils
+	sudo apt-get install libpcre3-dev zlib1g-dev libssl-dev make apache2-utils php5-fpm
 
 
 4. Compile & Install
@@ -109,6 +109,30 @@ for starting, stopping and reloading nginx.::
 	Start nginx using: nginx
 	Reload nginx using: nginx -s reload
 	Stop nginx using: nginx -s stop
+
+
+#. PHP Configuration
+----------------------------
+
+We need to check the user running php service is the same runnig nginx service 
+and make sure this user has access to the web folder ( www or /var/www/html ) set in nginx configuration.
+
+On Centos you need to edit the file ``/etc/php-fpm.d/www.conf``::
+
+	user = www-data
+	group = www-data
+
+On Ubuntu I don't remember...
+
+
+Make sure the service is running (probably not), check with::
+
+	ps -ef | grep php
+
+if not start the service with::
+
+	sudo service php-fpm start
+
 
 
 6. Test
