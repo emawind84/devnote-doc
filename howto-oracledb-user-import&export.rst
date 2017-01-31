@@ -99,7 +99,8 @@ and a schema: ``YRP`` -> ``YSG``
 	$ impdp system/[PWD] \
 	> remap_tablespace=YRP:YSG,RWJEJU:YSG \
 	> remap_schema=YRP:YSG \
-	> directory=DATA_PUMP_DIR dumpfile=[dmp file here]
+	> directory=DATA_PUMP_DIR dumpfile=[dmp file here] \
+	> exclude=STATISTICS
 
 .. image:: _images/odb_io/sc12.png
 
