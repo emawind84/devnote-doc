@@ -89,6 +89,7 @@ Notes
 .. toctree::
    :maxdepth: 1
 
+   docker-scattered-notes
    pmis-basic-authentication
    pmis-javascript-guideline
    web_application_build_and_deploy
