@@ -1,6 +1,6 @@
 .. highlight:: bash
 
-.. _nginx-file-upload-handler-window:
+.. _nginx-file-upload-handler-windows:
 
 ===============================================================
 [For Windows] Nginx File Upload Handler Install & Configuration
