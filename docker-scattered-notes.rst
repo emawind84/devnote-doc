@@ -2,30 +2,6 @@
 Docker Scattered Notes
 ===============================
 
-Install Docker Compose
--------------------------
-
-::
-
-    $ curl -L "https://github.com/docker/compose/releases/download/1.10.0/docker-compose-$(uname -s)-$(uname -m)" \
-      -o /usr/local/bin/docker-compose
-    $ chmod +x /usr/local/bin/docker-compose
-    $ docker-compose --version
-    docker-compose version: 1.10.0
-
-
-Install Docker Machine
----------------------------
-
-On Linux::
-
-    $ curl -L https://github.com/docker/machine/releases/download/v0.9.0/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
-    chmod +x /tmp/docker-machine &&
-    sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
-
-*For Windows just install Windows Toolbox or Docker for Windows.*
-
-
 Start a Jenkins container
 --------------------------------
 
@@ -206,62 +182,3 @@ SSH to the instance machine and type::
 Test if the ecs agent has been installed and attached to the cluster with::
 
     $ curl http://localhost:51678/v1/metadata
-
-
-Create TLS Certificate for Docker Host machine
-==================================================
-
-CA Key/Certificate
-----------------------------
-
-::
-
-    $ openssl genrsa -aes256 -out ca-key.pem 4096
-    $ openssl req -new -x509 -days 365 -key ca-key.pem -sha256 -out ca.pem
-
-
-Server Key/Certificate
--------------------------
-
-export HOST=dev.sangah.com
-
-::
-
-    $ openssl genrsa -out server-key.pem 4096
-    $ openssl req -subj "/CN=$HOST" -sha256 -new -key server-key.pem -out server.csr
-    $ echo subjectAltName = DNS:$HOST,IP:203.239.21.121,IP:127.0.0.1 > extfile.cnf
-    $ openssl x509 -req -days 365 -sha256 -in server.csr -CA ca.pem -CAkey ca-key.pem \
-      -CAcreateserial -out server-cert.pem -extfile extfile.cnf
-
-
-Client Key/Certificate
--------------------------
-
-::
-
-    $ openssl genrsa -out key.pem 4096
-    $ openssl req -subj '/CN=client' -new -key key.pem -out client.csr
-    $ echo extendedKeyUsage = clientAuth > extfile.cnf
-    $ openssl x509 -req -days 365 -sha256 -in client.csr -CA ca.pem -CAkey ca-key.pem \
-      -CAcreateserial -out cert.pem -extfile extfile.cnf
-
-
-Copy required files into docker config folder::
-
-    $ cp -v ca.pem /etc/docker && \
-      cp -v server-key.pem /etc/docker && \
-      cp -v server-cert.pem /etc/docker
-
-Check the docker config file ``/etc/default/docker`` and change the docker options as below::
-
-::
-
-    DOCKER_OPTS='
-    -H tcp://0.0.0.0:2376
-    -H unix:///var/run/docker.sock
-    --storage-driver aufs
-    --tlsverify
-    --tlscacert /etc/docker/ca.pem
-    --tlscert /etc/docker/server-cert.pem
-    --tlskey /etc/docker/server-key.pem
-    --label provider=generic
