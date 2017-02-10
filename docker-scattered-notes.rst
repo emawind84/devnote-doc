@@ -209,10 +209,10 @@ Test if the ecs agent has been installed and attached to the cluster with::
 
 
 Create TLS Certificate for Docker Host machine
-==================================================
+--------------------------------------------------
 
 CA Key/Certificate
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
@@ -221,7 +221,7 @@ CA Key/Certificate
 
 
 Server Key/Certificate
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 export HOST=dev.sangah.com
 
@@ -235,7 +235,7 @@ export HOST=dev.sangah.com
 
 
 Client Key/Certificate
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
@@ -245,8 +245,19 @@ Client Key/Certificate
     $ openssl x509 -req -days 365 -sha256 -in client.csr -CA ca.pem -CAkey ca-key.pem \
       -CAcreateserial -out cert.pem -extfile extfile.cnf
 
+At the end of the process you should have 6 files:
 
-Copy required files into docker config folder::
+- ``ca-key.pem`` (0600)
+- ``ca.pem`` (0644)
+- ``server-key.pem`` (0600)
+- ``server-cert.pem`` (0644)
+- ``client-key.pem`` (0600)
+- ``client-cert.pem`` (0644)
+
+.. important::
+    The ``ca-key`` should be put in a safe place (with this key you can generate other client certificate)
+
+Copy the required files into docker config folder::
 
     $ cp -v ca.pem /etc/docker && \
       cp -v server-key.pem /etc/docker && \
