@@ -254,8 +254,6 @@ Copy required files into docker config folder::
 
 Check the docker config file ``/etc/default/docker`` and change the docker options as below::
 
-::
-
     DOCKER_OPTS='
     -H tcp://0.0.0.0:2376
     -H unix:///var/run/docker.sock
