@@ -38,11 +38,14 @@ Start a Jenkins container
 Backup Jenkins Home Folder
 --------------------------------
 
+Replace */home/ec2-user/jenkins* with a location where you want to put the backup file
+and  *3b809ef3fe51* with the right container id.
+
 ::
 
     $ docker run --rm --volumes-from 3b809ef3fe51 \
     -v /home/ec2-user/jenkins:/backup alpine \
-    tar cvf /backup/jenkins-home.tar /var/jenkins_home
+    tar cvf --exclude=workspace /backup/jenkins-home.tar /var/jenkins_home
 
 SVN Tunnel
 --------------------------------
