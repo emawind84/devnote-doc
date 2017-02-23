@@ -45,7 +45,7 @@ and  *3b809ef3fe51* with the right container id.
 
     $ docker run --rm --volumes-from 3b809ef3fe51 \
     -v /home/ec2-user/jenkins:/backup alpine \
-    tar cvf --exclude=workspace /backup/jenkins-home.tar /var/jenkins_home
+    tar --exclude=workspace -cvf /backup/jenkins-home.tar /var/jenkins_home
 
 SVN Tunnel
 --------------------------------
@@ -87,7 +87,7 @@ Format New Amazon EBS Volume
     sudo file -s /dev/xvdf
     /dev/xvdf: data
 
-# if return `data` create the partition::
+# **ONLY IF** return `data`, create the partition with the following command::
 
     $ sudo mkfs -t ext4 /dev/xvdf
 
