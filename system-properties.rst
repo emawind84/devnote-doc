@@ -376,7 +376,16 @@ Aconex Dashboard
     **aconex.auth.password**
 
     **aconex.auth.project**
+
+Activities Group & Sort
+-----------------------------
     
+    **group.use.default**
+        Define whether to use global setting (set by master user).
+
+    **group.use.menu_cd**
+        Define whether to use profile per menu or one common profile amongst every menu.
+
     
 DEPRECATED PROPERTIES
 -------------------------
