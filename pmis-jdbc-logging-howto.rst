@@ -9,7 +9,7 @@ In order to see sql log, we need to activate a spring profile ``p6spy``.
 
 .. figure:: _images/p6spy_log/ice_screenshot_20170406-144600.png
 
-2. Click *Open launch configuration
+2. Click *Open launch configuration*
 ------------------------------------------------
 
 .. figure:: _images/p6spy_log/ice_screenshot_20170406-145032.png
