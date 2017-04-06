@@ -303,7 +303,9 @@ Document
         Default ID generation service format token available: 
         ``${ENTPRS}`` ``${FBS}`` ``${YEAR}`` ``${PJT_CD}``
 
-    **doc.idgnr.required=true**
+    **doc.idgnr.required**
+        Define if auto numbering is mandatory.
+        Accepted values are ``false``, ``0``, ``no``, ``<empty>`` for false and any other for true.
     
     **doc.authorization.mode=ORG**
         | View by Organization or Private
@@ -316,6 +318,8 @@ Document
     **register.idgnr.service.name=registerIdGnrService**
         #@@ Register Doc. No. generation service
     
+    **doc.tags.enabled**
+        Enable Tags for document (User can add tags/labels to the document)
 
 Document Notification Template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -376,7 +380,16 @@ Aconex Dashboard
     **aconex.auth.password**
 
     **aconex.auth.project**
+
+Activities Group & Sort
+-----------------------------
     
+    **group.use.default**
+        Define whether to use global setting (set by master user).
+
+    **group.use.menu_cd**
+        Define whether to use profile per menu or one common profile amongst every menu.
+
     
 DEPRECATED PROPERTIES
 -------------------------
