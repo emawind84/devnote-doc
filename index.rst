@@ -89,6 +89,7 @@ Notes
 .. toctree::
    :maxdepth: 1
 
+   pmis-docker-infrastructure
    docker-machine-base
    docker-scattered-notes
    pmis-basic-authentication
