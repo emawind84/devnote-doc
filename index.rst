@@ -89,6 +89,7 @@ Notes
 .. toctree::
    :maxdepth: 1
 
+   edms-cloud-settings
    pmis-jdbc-logging-howto
    pmis-docker-infrastructure
    docker-machine-base
