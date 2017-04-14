@@ -17,6 +17,8 @@ PMIS - Linux Server Configuration
 
 	# for Centos
 	yum update
+    yum -y install epel-release
+    yum repolist
 	
 	# for Ubuntu
 	apt-get update && apt-get upgrade
@@ -39,17 +41,27 @@ PMIS - Linux Server Configuration
 2. Install PDF Conversion Tool (wkhtmltopdf)
 ----------------------------------------------
 
-Checkout on your local computer the folder ``STND_PMIS_util/htmltopdf`` from the SVN.
+Just follow the commands below but in case wkhtmltopdf doesn't work
+you might need to check the version.
+There are several versions on SangAh Cloud (**dev.sangah.com/owncloud**) 
+inside ``etc/server_setup/linux`` directory.
 
-URL: **http://125.141.221.126/repo/STND_PMIS_util/htmltopdf**
+::
 
-Copy the right version on the server and install it with::
+    # dependencies for Centos
+    yum install xorg-x11-fonts-75dpi
 
-	# for Centos
-	rpm -i wkhtmltox-0.12.2.1_linux-centos6-amd64.rpm
+    mkdir -p /home/sangah/SAPP/util
+    cd /home/sangah/SAPP/util
+
+    # download the package from Sangah cloud
+    wget https://dev.sangah.com/owncloud/index.php/s/86Ra260Dtts7dq5 -O wkhtmltopdf.rpm
+    
+	# install for Centos
+	rpm -i wkhtmltopdf.rpm
 	
-	# for Ubuntu
-	dpkg --install wkhtmltox-0.12.2.1_linux-wheezy-amd64.deb
+	# install for Ubuntu
+	dpkg --install wkhtmltopdf.deb
 
 Find the location of the executable for later use with::
 
@@ -126,20 +138,13 @@ We need to install some common Microsoft fonts::
 
 We also need to install some Korean fonts that we use in PMIS Document:
 
-Checkout the folder ``STND_PMIS_util/etc/fonts`` on your computer.
+::
 
-URL: **http://125.141.221.126/repo/STND_PMIS_util/etc/fonts**
-
-Make a new directory on the server where we will put the fonts::
-
-	mkdir /usr/share/fonts/pmisfonts
-
-Place all the \*tff files in the new directory using WinSCP. 
-
-Then execute the following command to update the font cache::
-
-	fc-cache -f -v
-
+    mkdir /usr/share/fonts/pmisfonts
+    cd /usr/share/fonts/pmisfonts
+    wget https://dev.sangah.com/owncloud/index.php/s/RvkV0OjjfRz5pSD/download -O fonts.zip
+    unzip fonts.zip
+    fc-cache -f -v
 
 
 6. Download & Install Apache Tomcat

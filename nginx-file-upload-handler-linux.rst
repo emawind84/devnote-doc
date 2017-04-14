@@ -133,6 +133,9 @@ if not start the service with::
 
 	sudo service php-fpm start
 
+or try with::
+
+    sudo systemctl start php-fpm
 
 
 6. Test
