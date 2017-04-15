@@ -51,4 +51,16 @@ Then mount the volume with::
     mount -a
     df
 
+Make sure the mount is writable::
+
+    cd /media/edms
+    touch test
+
 You should see the new mount to */media/edms*.
+
+.. important:: To make it work with PMIS make sure the the mount is using nfs version 4::
+
+    mount | grep nfs
+    <server>://sa83/edms on /media/edms type nfs4 (rw,relatime,sync,vers=4.0,...)
+
+  Looking at the option **vers=4.0**, you can see the exported folder is using nfs4.
