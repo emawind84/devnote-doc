@@ -317,6 +317,9 @@ Document
     
     **register.idgnr.service.name=registerIdGnrService**
         #@@ Register Doc. No. generation service
+        
+    **register.module.wbslink.enabled**
+        Enable WBS/Activity Link Module for Document Register
     
     **doc.tags.enabled**
         Enable Tags for document (User can add tags/labels to the document)
