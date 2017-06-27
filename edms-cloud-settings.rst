@@ -44,7 +44,7 @@ replacing *server_ip* and *client_name*.
 
 ::
 
-    <server_ip>:/home/sangah/nfsshare/<client_name>/edms  /media/edms  nfs  rw,sync,hard,intr  0 0
+    <server_ip>:/<client_name>/edms  /media/edms  nfs4  rw,sync,hard,intr  0 0
 
 Then mount the volume with::
 
