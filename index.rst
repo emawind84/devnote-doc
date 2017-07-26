@@ -24,6 +24,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   raspi-reindex
    elastic-search-sensehat
    web_application_build_and_deploy
    pmis-secured-access-with-token
