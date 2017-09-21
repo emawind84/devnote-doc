@@ -457,7 +457,7 @@ Place into the file the VirtualHost settings similar to the following:
 :ref:`apache-pmis-conf-example`
 
 .. important::
-To make all of this working inside the ``httpd.conf`` there should be a line like this::
+  To make all of this working inside the ``httpd.conf`` there should be a line like this::
 
     Include conf.d/*.conf
 
