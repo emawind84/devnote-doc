@@ -55,7 +55,7 @@ inside ``etc/server_setup/linux`` directory.
     cd /home/sangah/SAPP/util
 
     # download the package from Sangah cloud
-    wget https://dev.sangah.com/owncloud/index.php/s/86Ra260Dtts7dq5 -O wkhtmltopdf.rpm
+    wget https://dev.sangah.com/owncloud/index.php/s/86Ra260Dtts7dq5/download -O wkhtmltopdf.rpm
     
     # install for Centos
     rpm -i wkhtmltopdf.rpm
