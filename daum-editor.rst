@@ -56,7 +56,7 @@ Set content editor:
     });
 
 
-.. code-block:: html
+.. code-block:: jsp
 
     <div class="editor-container">
     <%@ include file="/ext/daumeditor/editor.jsp"%>
