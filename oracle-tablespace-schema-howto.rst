@@ -36,17 +36,10 @@ Now that you are connected you can create a tablespace. The definition that I us
 
 ::
 
-	SQL> create tablespace CRAIG_DATA
-		datafile '/ora/fs2000/u04/CRAIG/craig_data_01.dbf' size 1000M
-		extent management local autoallocate segment space management auto;
-
-
-Another example:
-
-::
-
-	create tablespace SYC datafile '/u02/oradata/AL32UTF8/syc_data_01.dbf' size 1000M 
-	extent management local autoallocate segment space management auto;
+	SQL> create tablespace PMIS1
+		datafile '/home/oracle/oradata/pmis1.dbf' size 2G autoextend on next 10M
+		extent management local
+		segment space management auto;
 
 
 Creating the User
@@ -56,12 +49,12 @@ With the tablespace created we can now create the user.
 The reasoan we had to create the tablespace first was that the tablespace name is used in the definition of the user.
  
 To create a user we use the following string which creates a user named craig 
-with password craig and uses the tablespace CRAIG_DATA. 
+with password craig and uses the tablespace PMIS1. 
 Of course change the name, password, and tablespace to your own:
 
 ::
 
-	SQL> create user craig identified by "craig" default tablespace CRAIG_DATA;
+	SQL> create user craig identified by "craig" default tablespace PMIS1;
 
 Now that the user is created we will give them some basic permissions so they can start working. 
 
@@ -75,7 +68,7 @@ Here is the syntax for the three permissions (change the names to your own):
 ::
 
 	SQL> grant connect to craig;
-	SQL> alter user craig quota unlimited on CRAIG_DATA;
+	SQL> alter user craig quota unlimited on PMIS1;
 	SQL> grant create table to craig;
 
 
