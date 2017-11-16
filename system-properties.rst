@@ -127,16 +127,12 @@ DB Connection Info Properties
     **db.Username**
 
     **db.Password**
+
+    **db.MinIdle=20**
     
-    **db.MaxIdle=20**
+    **db.MaxIdle=50**
 
-    **db.MaxActive=50**
-
-    **db.RemoveAbandoned=true**
-
-    **db.RemoveAbandonedTimeout=30**
-
-    **db.LogAbandoned=false**
+    **db.MaxTotal=300**
 
 
 Common Modules (appliables for each program modules)
@@ -393,7 +389,63 @@ Activities Group & Sort
     **group.use.menu_cd**
         Define whether to use profile per menu or one common profile amongst every menu.
 
+
+SSL/TLS KeyStore Properties
+------------------------------
+
+    **ssl.keystore.password**
+        The keystore password (shared between keystore and truststore file!).
+        The keystore password should be the same as the private key password.
+
+    **ssl.keystore.path**
+        The path to the keystore containing client certificate and private key.
+
+    **ssl.truststore.path**
+        The path to the certificate authority in keystore format.
+
+
+Elasticsearch Properties
+--------------------------------
+
+    **elasticsearch.ssl.enabled**
     
+    **elasticsearch.host**
+
+    **elasticsearch.port**
+
+    **elasticsearch.username**
+
+    **elasticsearch.password**
+
+
+Biztalk Kakao Service Properties
+--------------------------------------
+
+    **biztalk.noti.doc.received**
+
+    **biztalk.noti.msg.received**
+
+    **biztalk.noti.doc.review**
+
+    **biztalk.noti.doc.approval**
+
+    **biztalk.noti.pw.change**
+
+    **biztalk.noti.pw.reset**
+
+    **biztalk.noti.workflow.status.change**
+
+    **biztalk.noti.actmulti.weekly.app**
+
+    **biztalk.noti.actmulti.monthly.app**
+
+    **biztalk.domain**
+
+    **biztalk.accessToken**
+
+    **biztalk.senderKey**
+
+
 DEPRECATED PROPERTIES
 -------------------------
 
