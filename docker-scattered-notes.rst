@@ -60,7 +60,7 @@ SVN Tunnel
 
 ::
 
-    $ ssh -f -N -i sangahdev.key -L 9001:125.141.221.126:80 sangah@dev.sangah.com
+    $ ssh -f -N -i sangahdev.key -L *:9001:125.141.221.126:80 sangah@dev.sangah.com
 
 Docker Daemon tunnel
 --------------------------------
