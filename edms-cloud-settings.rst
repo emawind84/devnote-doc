@@ -1,8 +1,43 @@
-EDMS File Server Configuration
-================================
+EDMS File Server Using NFS Server
+====================================
 
 Server Side
 ------------------
+
+Install the Service
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+NFS client needs portmap service, simply install nfs-comman package as follows to fix this problem::
+
+    $ sudo apt-get install nfs-common
+
+Make sure portmap service is running::
+
+    $ sudo service portmap status
+    portmap start/running, process 4193
+
+If is not started just run::
+
+    $ sudo service portmap start
+
+One installed you can see all shared NFS directories as follows::
+
+    $ showmount -e [remoteip or blank]
+    Export list for fs2:
+    /Sales
+    /Web
+    /Accounting
+    /Recordings
+    /Public
+    /Network Recycle Bin 1
+    /Music
+    /Download
+    /Games
+    /Family
+
+
+Create and set the shared folder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create a new ``edms`` folder that will be used by the client,
 replace the *client_name* with a meaningful name 
