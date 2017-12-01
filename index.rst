@@ -89,6 +89,7 @@ Notes
 .. toctree::
    :maxdepth: 1
 
+   howto-rds-oracle-schema-import
    edms-cloud-settings
    pmis-jdbc-logging-howto
    pmis-docker-infrastructure
