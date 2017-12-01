@@ -35,6 +35,10 @@ One installed you can see all shared NFS directories as follows::
     /Games
     /Family
 
+.. important:: 
+    Open the port **2049** so the client can access the NFS Share
+    Other ports might be required such as **111** and **20048**
+
 
 Create and set the shared folder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
