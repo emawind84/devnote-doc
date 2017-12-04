@@ -9,7 +9,7 @@ Install the Service
 
 NFS client needs portmap service, simply install nfs-comman package as follows to fix this problem::
 
-    $ sudo apt-get install nfs-common
+    $ sudo apt-get install -y nfs-common nfs-kernel-server
 
 Make sure portmap service is running::
 
