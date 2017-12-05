@@ -89,6 +89,7 @@ Notes
 .. toctree::
    :maxdepth: 1
 
+   aws-create-ebs-and-attach-to-instance
    howto-rds-oracle-schema-import
    edms-cloud-settings
    pmis-jdbc-logging-howto
