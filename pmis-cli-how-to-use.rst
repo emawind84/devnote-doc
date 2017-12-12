@@ -49,6 +49,69 @@ arguments sent to the script through the shell.
 Right into the code
 ---------------------------
 
+.. important:: The following code is based on Python 2.7 (NOT 3.x)
+
+.. code-block:: python
+
+    import jarray
+    from pmis.core import CoreUtil
+
+These lines tell to python to import some modules that we require for the execution of the script.
+You can see there is a python module ``jarray`` and a PMIS module ``CoreUtil``, 
+so whenever you need to use some java class always import the class first.
+
+.. code-block:: python
+
+    temp = Beans.temporaryFileService
+    newfile = temp.getNewFile('.html')
+
+With this line we can import the TemporaryFileService instance into the python script 
+and use it like if it was inside a Java class.
+
+``Beans`` is a special class that we defined inside ``spring-scripting.xml`` 
+that use the Spring ApplicationContext to retrieve the instance of a service.
+Since we provide the ApplicationContext as a builtin object, 
+we can achieve the same purpose writing the following::
+
+    temp = ApplicationContext.get('temporaryFileService')
+    newfile = temp.getNewFile('.html')
+
+So if you need other services like ``UserService`` or ``CoreDao`` just do like this:
+
+.. code-block:: python
+
+    user_srv = Beans.userService
+    coredao = Beans.coreDao
+
+If you want to know the type of a variable you can use the ``type`` module:
+
+.. code-block:: python
+
+    print type(ApplicationContext.getContainer())
+    print type(Beans.userService)
+
+
+Another function that you should know about is ``sql``:
+
+.. code-block:: python
+
+    ret = sql('''
+    select * from pmis_user
+    ;''')
+
+With ``sql`` you can execute queries directly on the database, 
+only ``select`` queries, if you want to insert, update or delete you need to use
+``sqlexec``:
+
+.. code-block:: python
+
+    sqlexec('''
+    update work_report set file_seq= ? where seq = ?
+    ;''', value1, value2)
+
+``sqlexec`` should be used with cautions!
+
+
 ...to be continued
 
 
