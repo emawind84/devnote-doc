@@ -47,7 +47,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'SangAh Development Note'
-copyright = u'2015, SangAh Management Consulting Co.,Ltd.'
+copyright = u'2015 - 2018, SangAh Management Consulting Co.,Ltd.'
 author = u'Disco Emanuele'
 
 # The version info for the project you're documenting, acts as replacement for
