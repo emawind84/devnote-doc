@@ -89,6 +89,7 @@ Notes
 .. toctree::
    :maxdepth: 1
 
+   pmis-cli-how-to-use
    aws-create-ebs-and-attach-to-instance
    howto-rds-oracle-schema-import
    edms-cloud-settings
