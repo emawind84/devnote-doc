@@ -20,7 +20,7 @@ If is not started just run::
 
     $ sudo service portmap start
 
-One installed you can see all shared NFS directories as follows::
+One installed you can see all shared NFS directories as follows (server side and client side, try on both!)::
 
     $ showmount -e [remoteip or blank]
     Export list for fs2:
@@ -77,15 +77,28 @@ Usually not required but you can restart the service with::
 Client Side
 ------------------
 
+Install required packages:
+
+On a Red Hat Enterprise Linux or SuSE Linux server::
+
+    sudo yum install -y nfs-utils
+
+On an Ubuntu server::
+
+    sudo apt-get install nfs-common
+
 
 Add a new line to ``/etc/fstab`` as follow,
 replacing *server_ip* and *client_name*.
 
 ::
 
-    <server_ip>:/<client_name>/edms  /media/edms  nfs4  rw,sync,hard,intr  0 0
+    <server_ip>:/<client_name>/edms  /media/edms  nfs4  rsize=32768,wsize=32768,hard,intr,timeo=600,retrans=2  0 0
 
-Then mount the volume with::
+.. important:: The `sync` option has performance implication and might slow down the connection speed drastically, so don't use it.
+
+
+Mount the volume with::
 
     mount -a
     df
