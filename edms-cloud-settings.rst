@@ -93,7 +93,7 @@ replacing *server_ip* and *client_name*.
 
 ::
 
-    <server_ip>:/<client_name>/edms  /media/edms  nfs4  rsize=32768,wsize=32768,hard,intr,timeo=600,retrans=2  0 0
+    <server_ip>:/<client_name>/edms  /media/edms  nfs4  rsize=8192,wsize=8192,hard,intr,timeo=600,retrans=2  0 0
 
 .. important:: The `sync` option has performance implication and might slow down the connection speed drastically, so don't use it.
 
