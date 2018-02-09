@@ -89,6 +89,7 @@ Notes
 .. toctree::
    :maxdepth: 1
 
+   update-pmis-without-restarting-docker
    pmis-cli-how-to-use
    aws-create-ebs-and-attach-to-instance
    howto-rds-oracle-schema-import
