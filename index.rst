@@ -89,6 +89,7 @@ Notes
 .. toctree::
    :maxdepth: 1
 
+   todo-export-register-document
    update-pmis-without-restarting-docker
    pmis-cli-how-to-use
    aws-create-ebs-and-attach-to-instance
