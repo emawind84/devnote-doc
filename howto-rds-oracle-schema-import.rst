@@ -99,3 +99,27 @@ Delete the dump file from RDS instance
 
     select * from table(RDSADMIN.RDS_FILE_UTIL.LISTDIR('DATA_PUMP_DIR')) order by mtime;
     exec utl_file.fremove('DATA_PUMP_DIR','<file name>');
+
+
+Export schema into dump file
+----------------------------------
+
+::
+
+    DECLARE
+        handle NUMBER;
+    BEGIN
+        handle := DBMS_DATAPUMP.open (operation => 'EXPORT', job_mode => 'SCHEMA', job_name => null, version => 'LATEST');
+        DBMS_DATAPUMP.ADD_FILE (handle => handle, filename => 'PMISDEV1_20180725.log', directory => 'DATA_PUMP_DIR', filetype => DBMS_DATAPUMP.KU$_FILE_TYPE_LOG_FILE);
+        DBMS_DATAPUMP.ADD_FILE (handle => handle,filename => 'PMISDEV1_20180725.dmp',directory => 'DATA_PUMP_DIR',filetype => DBMS_DATAPUMP.KU$_FILE_TYPE_DUMP_FILE);
+        DBMS_DATAPUMP.METADATA_FILTER (handle => handle,name => 'SCHEMA_EXPR',VALUE => 'IN (''PMISDEV1'')');
+        DBMS_DATAPUMP.START_JOB (handle);
+        DBMS_DATAPUMP.DETACH (handle);
+    END;
+    /
+
+
+Kill sessions
+-------------------------
+
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.CommonDBATasks.System.html#Appendix.Oracle.CommonDBATasks.DisconnectingSession
