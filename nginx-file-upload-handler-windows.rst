@@ -19,19 +19,18 @@ About Nginx
 --------------------------
 
 
-1. Download and Copy Nginx
+Download and Copy Nginx
 ----------------------------
 
 Take the nginx folder from one of these links below: 
 
-- SVN Repository http://125.141.221.126/repo/STND_PMIS_util/nginx.zip
-- SangAh Cloud http://dev.sangah.com/owncloud/index.php/s/nim9D8CUaH1q3uv
+- SangAh Cloud https://dev.sangah.com/owncloud/s/YhLPK5HMUufwgd0
 
 Copy the folder on the server, and put the folder just below the root of the drive (ex. c:\nginx)
 to prevent to make mistakes with the path later.
 
 
-2. Nginx Settings
+Nginx Settings
 ---------------------------
 
 Supposing the nginx folder is located at ``C:/nginx`` we need to change some paths inside
@@ -59,21 +58,7 @@ Just make sure you put ``nginx`` folder right under the root of the drive (ex. c
 	**Replace the folder temp with a symbolic link to the web application temporary folder** 
 	so the folder is cleaned up when 'cleanup' task is executed by the web application.
 
-
-3. [OLD] Install Nginx Service
----------------------------------
-
-.. warning:: Doesn't work anymore skip to step 4.
-
-Open a shell go to the nginx folder and type the following::
-
-	> nginx-service.cmd install
-	
-This should install a Windows Service for the Nginx Upload Service with the name
-``Nginx File Upload Handler``.
-
-
-4. Start & Stop script
+Start & Stop script
 ----------------------------------------------
 
 You can start and stop the service with the following executables:
@@ -101,7 +86,7 @@ Open the Task Scheduler using the application ``taskschd.msc``. Then create a ne
 	.. figure:: _images/nginx/f5.png
 
 
-5. Test Nginx Up and Running
+Test Nginx Up and Running
 ------------------------------
 
 
@@ -127,7 +112,7 @@ You should see an output like this::
 	Press any key to continue . . .
 
 
-6. Test Upload Service
+Test Upload Service
 ------------------------
 
 You can test the upload service using a test page from the following address:
@@ -152,7 +137,7 @@ making sure it return a json result with the temporary file information.
 .. figure:: _images/nginx/f8.png
 
 
-7. Restart On Crash
+Restart On Crash
 ------------------------
 
 In case nginx service or PHP service go down we need to start again these services as soon as possible
