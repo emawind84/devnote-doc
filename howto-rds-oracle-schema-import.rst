@@ -95,24 +95,29 @@ Delete the dump file from RDS instance
 
 .. note:: To do on the destination DB
 
-::
+Check the dump files present on the server with::
 
     select * from table(RDSADMIN.RDS_FILE_UTIL.LISTDIR('DATA_PUMP_DIR')) order by mtime;
+
+Then delete the file with the following procedure::
+
     exec utl_file.fremove('DATA_PUMP_DIR','<file name>');
 
 
-Export schema into dump file
-----------------------------------
+Create a dump file
+---------------------------
+
+Replace the filename ``<<DUMP FILENAME>>`` and the schema name ``<<SCHEMA NAME>>`` with the right values.
 
 ::
 
     DECLARE
         handle NUMBER;
     BEGIN
-        handle := DBMS_DATAPUMP.open (operation => 'EXPORT', job_mode => 'SCHEMA', job_name => null, version => 'LATEST');
-        DBMS_DATAPUMP.ADD_FILE (handle => handle, filename => 'PMISDEV1_20180725.log', directory => 'DATA_PUMP_DIR', filetype => DBMS_DATAPUMP.KU$_FILE_TYPE_LOG_FILE);
-        DBMS_DATAPUMP.ADD_FILE (handle => handle,filename => 'PMISDEV1_20180725.dmp',directory => 'DATA_PUMP_DIR',filetype => DBMS_DATAPUMP.KU$_FILE_TYPE_DUMP_FILE);
-        DBMS_DATAPUMP.METADATA_FILTER (handle => handle,name => 'SCHEMA_EXPR',VALUE => 'IN (''PMISDEV1'')');
+        handle := DBMS_DATAPUMP.open (operation => 'EXPORT', job_mode => 'SCHEMA', job_name    => null, version => 'LATEST');
+        DBMS_DATAPUMP.ADD_FILE (handle => handle, filename => 'export.log', directory => 'DATA_PUMP_DIR', filetype => DBMS_DATAPUMP.KU$_FILE_TYPE_LOG_FILE);
+        DBMS_DATAPUMP.ADD_FILE (handle => handle,filename => '<<DUMP FILENAME>>',directory => 'DATA_PUMP_DIR',filetype => DBMS_DATAPUMP.KU$_FILE_TYPE_DUMP_FILE);
+        DBMS_DATAPUMP.METADATA_FILTER (handle => handle,name => 'SCHEMA_EXPR',VALUE => 'IN (''<<SCHEMA NAME>>'')');
         DBMS_DATAPUMP.START_JOB (handle);
         DBMS_DATAPUMP.DETACH (handle);
     END;
